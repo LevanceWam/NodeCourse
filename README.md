@@ -1,7 +1,19 @@
 <h1 id='home'>NodeCourse</h1>
 
-<h4>Install node</h4>
+<h4>Installing node</h4>
+
 <p>https://nodejs.org/en/</p>
+
+<p>To check current version</p>
+```
+node --version
+```
+
+<p>To run Node program in terminal make sure to be in the same folder as the file</p>
+
+```
+node nameOfFile.js
+```
 
 <p>Welcome to my Node.js tutorial here I will be learning everything I can about Node.js.</p>
 
