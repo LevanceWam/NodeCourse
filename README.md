@@ -1,5 +1,8 @@
 <h1 id='home'>NodeCourse</h1>
 
+<h4>Install node</h4>
+<p>https://nodejs.org/en/</p>
+
 <p>Welcome to my Node.js tutorial here I will be learning everything I can about Node.js.</p>
 
 <h3>What is Node:</h3>
@@ -29,3 +32,5 @@
 <p>Node Applications are asynchronous by default. We have a single thread to handle all request. When a request arrives that single thread is used to handle that request. If we need to query a database, our thread doesn't have to wait for the database to return the data. While the database is executing our query that thread will be used to serve another client. When the database prepares the results it puts the message in what we call a event queue. Node is consistently monitor this queue in the background. When it finds an event in this queue it will take it out and process it. This kind of architecture makes Node ideal for building applications that include a lot of disk or network access. We can serve more clients without the need to throw in more hardwareand that's why Node applications are highly scaleable.</p>
 
 <p>Node should not be used for CPU-instensive like video encoding or an image manipulation service. In these kind of applications we have a lot of calculations that should be done by CPU and few operations that touch the file system or the network. Since Node applications are single threaded when performing the calculations to server one client, other clients have to wait and that's why node shouldn't be used for CPU intensive applications. It should only be used for building data intensive and real time applications.</p>
+
+
