@@ -57,4 +57,4 @@ module.exports.log = log;
 // they're implementation detail and they can change significantly from one model to another
 // but what we see on the outside is almost stable or static across different models 
 
-module.exports.endPoint = url;
+// module.exports.endPoint = url;
