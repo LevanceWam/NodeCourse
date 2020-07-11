@@ -40,4 +40,14 @@ window.message;
 global.console.log();
 global.setTimeout();
 
-// of course it is easier t
+// of course it is easier to use the shorthand instead of prefixing them with this global
+
+// One thing we need to know about Node is that these variable 
+// that we define here they are not added to the global object
+// in other words if we do this
+
+console.log(global.message); // this will return undefined 
+
+// all the variables and bjects we defined are not added to the global object they are only a scope to this file
+// so they are not available outside of this file and this is because of Node's modular system 
+// we will learn more about this in the next file.
