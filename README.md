@@ -45,4 +45,10 @@ node nameOfFile.js
 
 <p>Node should not be used for CPU-instensive like video encoding or an image manipulation service. In these kind of applications we have a lot of calculations that should be done by CPU and few operations that touch the file system or the network. Since Node applications are single threaded when performing the calculations to server one client, other clients have to wait and that's why node shouldn't be used for CPU intensive applications. It should only be used for building data intensive and real time applications.</p>
 
+<h2>Table of Contents</h2>
+<li><a href='#section1'>Node Module System</a></li>
+
+
+
+<h2 id=section1>Node Module System</h2>
 
