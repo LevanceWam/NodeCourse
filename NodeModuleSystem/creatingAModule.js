@@ -38,7 +38,7 @@ function log(message) {
 // so here we are adding the method log to the export object
 // then we are simply setting it to this log function we have defined 
 
-module.exports.log = log;
+// module.exports.log = log;
 
 // we can also export the url
 // we can change the name of what is being exported to the outside
@@ -58,3 +58,9 @@ module.exports.log = log;
 // but what we see on the outside is almost stable or static across different models 
 
 // module.exports.endPoint = url;
+
+// due to a later video we learned that we do not 
+// have to export a object if we need the singler function
+// we can just export the function to make it easier on us
+
+module.exports = log;

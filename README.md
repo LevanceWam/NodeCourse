@@ -1,5 +1,8 @@
 <h1 id='home'>NodeCourse</h1>
 
+<h3>IMPORTANT</h3>
+<p>There is a slight change in my file structure going forward while learning node. The title of the skill I wll be learning is going to be the name of the folder. This is so that the files can match the name of the one's I see in the tutorial and when I come back to reference the skill it will be easier to find. The first 5 videos of the first section does not follow this will go back to fix at a later time.</p>
+
 <h4>Installing node</h4>
 
 <p>https://nodejs.org/en/</p>
