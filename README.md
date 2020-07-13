@@ -51,6 +51,7 @@ node nameOfFile.js
 
 <h2>Table of Contents</h2>
 <li><a href='#section1'>Node Module System</a></li>
+<li><a href='#section2'>Node Package Manager</a></li>
 
 
 
@@ -81,3 +82,6 @@ const logger = require(‘./logger’);
 ```
 <a href="#home">Top</a>
 
+<h2 id=section2>Node Package Manager</h2>
+
+<a href="#home">Top</a>
