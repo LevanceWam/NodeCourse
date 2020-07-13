@@ -33,7 +33,7 @@ node nameOfFile.js
 
 <p>Node is ideal for building highly-scalable,data-intensive and real time back end services that power our client applications.</p>
 
-<p>Node is easy to get started and can be used for prototyping and agile development. It can also be used for building super fast and highly scaleable services. It's used in production by large companies such as Paypal, Uber, Netflix, Walmart and plenty more. Fun Fact at Paypal they rebuilt one of their Java and spring based applications using node and found that the node application was built twice as fast with fewer people, in 33% fewer lines of code and 40% fewer files and more importantly they double the number of request served per secong while decreasing the aversage response time by 35%. Node is an excellent choice for building highly scaleable services.</p>
+a<p>Node is easy to get started and can be used for prototyping and agile development. It can also be used for building super fast and highly scaleable services. It's used in production by large companies such as Paypal, Uber, Netflix, Walmart and plenty more. Fun Fact at Paypal they rebuilt one of their Java and spring based applications using node and found that the node application was built twice as fast with fewer people, in 33% fewer lines of code and 40% fewer files and more importantly they double the number of request served per secong while decreasing the aversage response time by 35%. Node is an excellent choice for building highly scaleable services.</p>
 
 <p>Another reason to be using Node is that in Node applications we use Javascript so if you're a front end developer and know Javascript. You can reuse your Javascript skills and transitions to be a fullstack developer and get a better job with better pay. With this we can use javascript on the frontend and the back end and the source code will be cleaner anf more consistent. This allows us to use the same naming conventions, tools, and best practices. </p>
 
@@ -55,6 +55,11 @@ node nameOfFile.js
 
 
 <h2 id=section1>Node Module System</h2>
+
+<h4>Global Object</h4>
+
+<p>In Node we do not have a window object. The global object in node is called global. Unlike browser applications, variables we define are not added to global. This is because all the variables and objects we defined are not added to the global object they are only a scope to this file. So they are not available outside of this file and this is because of Node's modular system 
+.</p>
 
 <a href="#home">Top</a>
 

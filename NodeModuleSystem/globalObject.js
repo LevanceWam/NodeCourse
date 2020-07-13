@@ -48,6 +48,6 @@ global.setTimeout();
 
 console.log(global.message); // this will return undefined 
 
-// all the variables and bjects we defined are not added to the global object they are only a scope to this file
+// all the variables and objects we defined are not added to the global object they are only a scope to this file
 // so they are not available outside of this file and this is because of Node's modular system 
 // we will learn more about this in the next file.
