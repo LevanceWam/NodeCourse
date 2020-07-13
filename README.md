@@ -58,8 +58,29 @@ a<p>Node is easy to get started and can be used for prototyping and agile develo
 
 <h4>Global Object</h4>
 
-<p>In Node we do not have a window object. The global object in node is called global. Unlike browser applications, variables we define are not added to global. This is because all the variables and objects we defined are not added to the global object they are only a scope to this file. So they are not available outside of this file and this is because of Node's modular system 
-.</p>
+<p>In Node we do not have a window object. The global object in node is called global. Unlike browser applications, variables we define are not added to global. This is because all the variables and objects we defined are not added to the global object they are only a scope to this file. So they are not available outside of this file and this is because of Node's modular system.</p>
+
+<h4>Modules</h4>
+
+<a href='https://nodejs.org/docs/latest-v12.x/api/'>Node Docs</a>
+
+<p>Here is a link to the modules that we covered in this section. We can find all of the methods, properties and classes in this section.</p>
+
+<p>Every file in a Node application is a module. Node automatically wraps the code in each file with an IIFE (Immediately-invoked Function Expression) to create scope. So, variables and functions defined in one file are only scoped to that file and not visible to other files unless explicitly exported.</p>
+
+<p>To export a variable or a function from a module we have to module.exports like this:</p>
+
+```
+module.exports.sayHello = sayHello;
+```
+
+<p>To load a module, use the require function. This function returns the module.exports object exported from the target module: </p>
+
+```
+const logger = require(‘./logger’);
+```
+
+
 
 <a href="#home">Top</a>
 
