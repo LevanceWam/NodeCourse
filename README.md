@@ -33,7 +33,7 @@ node nameOfFile.js
 
 <p>Node is ideal for building highly-scalable,data-intensive and real time back end services that power our client applications.</p>
 
-a<p>Node is easy to get started and can be used for prototyping and agile development. It can also be used for building super fast and highly scaleable services. It's used in production by large companies such as Paypal, Uber, Netflix, Walmart and plenty more. Fun Fact at Paypal they rebuilt one of their Java and spring based applications using node and found that the node application was built twice as fast with fewer people, in 33% fewer lines of code and 40% fewer files and more importantly they double the number of request served per secong while decreasing the aversage response time by 35%. Node is an excellent choice for building highly scaleable services.</p>
+<p>Node is easy to get started and can be used for prototyping and agile development. It can also be used for building super fast and highly scaleable services. It's used in production by large companies such as Paypal, Uber, Netflix, Walmart and plenty more. Fun Fact at Paypal they rebuilt one of their Java and spring based applications using node and found that the node application was built twice as fast with fewer people, in 33% fewer lines of code and 40% fewer files and more importantly they double the number of request served per secong while decreasing the aversage response time by 35%. Node is an excellent choice for building highly scaleable services.</p>
 
 <p>Another reason to be using Node is that in Node applications we use Javascript so if you're a front end developer and know Javascript. You can reuse your Javascript skills and transitions to be a fullstack developer and get a better job with better pay. With this we can use javascript on the frontend and the back end and the source code will be cleaner anf more consistent. This allows us to use the same naming conventions, tools, and best practices. </p>
 
@@ -79,8 +79,5 @@ module.exports.sayHello = sayHello;
 ```
 const logger = require(‘./logger’);
 ```
-
-
-
 <a href="#home">Top</a>
 
