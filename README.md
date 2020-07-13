@@ -1,7 +1,23 @@
 <h1 id='home'>NodeCourse</h1>
 
-<h4>Install node</h4>
+<h3>IMPORTANT</h3>
+<p>There is a slight change in my file structure going forward while learning node. The title of the skill I wll be learning is going to be the name of the folder. This is so that the files can match the name of the one's I see in the tutorial and when I come back to reference the skill it will be easier to find. The first 5 videos of the first section does not follow this will go back to fix at a later time.</p>
+
+<h4>Installing node</h4>
+
 <p>https://nodejs.org/en/</p>
+
+<p>To check current version</p>
+
+```
+node --version
+```
+
+<p>To run Node program in terminal make sure to be in the same folder as the file</p>
+
+```
+node nameOfFile.js
+```
 
 <p>Welcome to my Node.js tutorial here I will be learning everything I can about Node.js.</p>
 
@@ -33,4 +49,10 @@
 
 <p>Node should not be used for CPU-instensive like video encoding or an image manipulation service. In these kind of applications we have a lot of calculations that should be done by CPU and few operations that touch the file system or the network. Since Node applications are single threaded when performing the calculations to server one client, other clients have to wait and that's why node shouldn't be used for CPU intensive applications. It should only be used for building data intensive and real time applications.</p>
 
+<h2>Table of Contents</h2>
+<li><a href='#section1'>Node Module System</a></li>
+
+
+
+<h2 id=section1>Node Module System</h2>
 
