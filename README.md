@@ -84,4 +84,10 @@ const logger = require(‘./logger’);
 
 <h2 id=section2>Node Package Manager</h2>
 
+<h4>NPM</h4>
+
+<a href="https://www.npmjs.com/package/check-node-version">npmjs.com</a>
+
+<p>Node Package Mananger (NPM) is a command line tool as well as a registry of third party libraries that we can add to our Node Applications. Pretty much any kind of functionality we want to add to an application there is most likely a free open sourced library or package or Node module on NPM registry.</p>
+
 <a href="#home">Top</a>
