@@ -1,6 +1,7 @@
 <h1 id='home'>NodeCourse</h1>
 
 <h3>IMPORTANT</h3>
+
 <p>There is a slight change in my file structure going forward while learning node. The title of the skill I wll be learning is going to be the name of the folder. This is so that the files can match the name of the one's I see in the tutorial and when I come back to reference the skill it will be easier to find. The first 5 videos of the first section does not follow this will go back to fix at a later time.</p>
 
 <h4>Installing node</h4>
@@ -89,5 +90,31 @@ const logger = require(‘./logger’);
 <a href="https://www.npmjs.com/package/check-node-version">npmjs.com</a>
 
 <p>Node Package Mananger (NPM) is a command line tool as well as a registry of third party libraries that we can add to our Node Applications. Pretty much any kind of functionality we want to add to an application there is most likely a free open sourced library or package or Node module on NPM registry.</p>
+
+<h4>Package.json</h4>
+
+<p>Package.json is a json file that includes some basic information about your application or our project. Things like the name, version, authors, address of the git repository, it's dependencies and so on. Basically a bunch of metadata about the application. All Node applications by standard have a package.json.</p>
+
+<p>So before adding any node packages to our application. We have to create a package.json file</p>
+
+<p>To create a package.json file we run this command:</p>
+
+```
+npm init
+```
+
+<>
+
+<p>There is a shorter way to create a package.json:</p>
+
+```
+npm init --yes
+```
+
+<p>By adding this yes flag this allows us to skip the basic questions about our project. This gives us a package.json with default values.</p>
+
+
+
+
 
 <a href="#home">Top</a>
