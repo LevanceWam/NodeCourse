@@ -103,8 +103,6 @@ const logger = require(‘./logger’);
 npm init
 ```
 
-<>
-
 <p>There is a shorter way to create a package.json:</p>
 
 ```
@@ -113,8 +111,14 @@ npm init --yes
 
 <p>By adding this yes flag this allows us to skip the basic questions about our project. This gives us a package.json with default values.</p>
 
+<h4>Installing Packages</h4>
 
+<p>To install third party packages we would run this in the terminal:</p>
 
+```
+npm i nameOfPackage
+```
+<p>If we go on npmjs.com we can search and find the package that is best for our project. Once we find the package we would click on it and it will show us the correct way to install it. Along with the documenation and source site.</p>
 
 
 <a href="#home">Top</a>
