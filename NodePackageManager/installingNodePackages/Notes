@@ -1,0 +1,22 @@
+For this file will be notes for package.json in the install packages folder
+
+so in this file we already did a npm init --yes if we remember this sets the default settings
+on the package.json so we don't have to go through all the basic questions. After that we went to npmjs.org
+
+On npmjs.org we have a plethora of 3rd party libraries we can add to our project
+for this tutorial we are going to be using the underscore package. So on npmjs we 
+searched underscore and we clicked on it.
+
+Once we clicked on it we see quite a bit of information about the package the version number, the terminal command 
+to install it and the source site to read more of it's documentation
+
+the command we had to type was: npm i (short for install) underscore
+after we run the command 2 things happen
+
+first in the package.json we can see that we have a new property called dependencies and under that we have the underscore 
+we added to the project.
+So inside of our package.json we specify all the dependencies of our product and their version.
+
+the current version of underscore we are using is: ^1.10.2
+so when we run npm install npm is going to download the latest version of the given package
+from the npm registry and then it will store it in a folder called node_modules

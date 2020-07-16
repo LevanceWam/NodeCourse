@@ -118,6 +118,7 @@ npm init --yes
 ```
 npm i nameOfPackage
 ```
+
 <p>If we go on npmjs.com we can search and find the package that is best for our project. Once we find the package we would click on it and it will show us the correct way to install it. Along with the documenation and source site.</p>
 
 
