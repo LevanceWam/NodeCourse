@@ -1,0 +1,9 @@
+These are notes for the section package dependencies 
+
+We start off with an exercise to download 'mongoose' to our project
+we do that by running this command: 
+npm i mongoose
+
+then we were tasked to install it and inspect it.
+
+the first thing that we notice is in the package.json in the dependencies we have 2 of them now
