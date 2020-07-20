@@ -1,0 +1,65 @@
+This is notes for the semantic versioning sectiong 
+
+Earlier in our tutorial we saw this character in front of the version number of the dependency we downloaded
+this is the character: '^' we call this a caret character
+
+In order to understand what the character does we need to learn about and understand what is semantic versioning is or as it is referred to as semver
+
+In semantic versioning the version of a node package has three components please look at my example below
+
+Example:
+"mongoose": "^4.13.6" // SemVer
+ These three numbers have a meaning to them 
+
+ The first number '4'is what we call the major version
+ The second number '13' is what we call the minor version
+ The third number '6' is what we call the patch version/release this is used for bug fixes
+
+ So if in the future the developers of mongoose find a bug in the current version they
+ will fix the bug and release a new version and that version would be  4.13.7
+ so when ever a bug is fixed they will increase the patch version
+
+ The minor version is used for adding minor features that won't the existing API
+ so if the mongoose team add a new feature with out breaking the exisiting API 
+ they would increase the minor version to 4.14.0. 0 beacuse in this version version they haven't found a bug yet so that version could be unstable and as they find and fix the 
+ bugs they will increase the patch version.
+
+ The major version is when we add a new feature that can potentially break the exisiting applications that depend upon mongoose
+ then they will increase the major version to 5.0.0
+
+ this is what we call semantic versioning or SemVer
+
+ Now this '^' caret character that we see tells npm that we're interested in any version of mongoose
+ as long as the major version is 4 so if there is a newer minor or patch version available it will be interested in that package as well
+
+ so right now we are using 4.13.6 in the future someone checks out this code from our git repo
+ they restore the packages using npm install at that time if there is a newer version of mongoose available 
+ as long as it is version 4 so there are no breaking changes or no new major changes the newer version will be downloaded and installed inside of the node_modules folder
+
+ Another syntax that does the same thing without the caret character is like this
+ 4.x this is equal or the same to ^4.13.6
+
+ sometimes in the real world applications instead of seeing the caret character
+ we might see a tilda ~
+
+ ~4.13.6
+this means we are interested in any version as long as the major version is 4 and the minor version is 13
+ the alternative syntax to specify this version is like this 
+ 4.13.x
+so if there is a newer patch release we will be interested in this version as well 
+
+the caret and tilda characters help us kep the applications up to date with the 
+latest releases of these dependencies 
+
+However,
+this can sometimes cause an issue in the real world for example 
+lets say mongoose releases a version ~4.13.7 they fixed a bug but they may break something else
+this can interfere with our application
+
+in that case  we want to make sure that we are using the exact same version
+so if someone checks out this code from the repo in the future we want to make sure that we have the exact same version of mongoose that we used on day one
+
+To do this all we have to do is remove the caret or tilda character 
+like this: 4.13.6
+
+So the next time we install we get the exact version
