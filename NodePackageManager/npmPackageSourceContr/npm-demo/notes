@@ -1,0 +1,23 @@
+This is the notes for npm package source and control
+
+Up to this point our node_module folder has quite a lot of folders inside of it
+in the real world we are going to have more folders than this and the size of the node_module folder is going to be 
+in the hundred megabytes 
+
+when pushing our code to a repositry we want to avoid sending this up because everytime someone looks at our code or pulls it
+they are going to get those files 
+
+or if we want to send it by email bluetooth airdrop etc thats a lot of data to be downloaded and transfered
+
+This is where our dependencies come to help us out.
+So if we look inside of our package.json we will see that our dependencies are stored here
+with npm along with the dependencies we can restore the versions of the dependencies on any machine
+
+so we can delete the node_module folder and then go inside of terminal and run:
+'npm i'
+
+by doing this npm will look at the package.json and download the versions needed from there 
+
+this is why we should exclude the node_module folder from our source code 
+the way we can exclude this from our source code or repositry is by 
+using a .gitignore if we are using git ignore.
