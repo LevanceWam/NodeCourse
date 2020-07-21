@@ -1,0 +1,26 @@
+this is the notes for updating a published package 
+
+For this part we are going to be updating publishing package folder
+this is because all the login info is typed into the terminal for it 
+and instead of redoing all of it it will be simpler this way.
+
+So first in the index.js in the NodePackageManager/publishingPackages/lion-lib
+we are going to add a new function multiply
+
+if we try to 'npm publish'
+we will get an error this is because we already have the package published version 1 already
+so depending on the kind of change we made we need to update the version number
+
+in this case we added a new feature that wasn't a major change that doesn't break the app
+we also didn't do any patches so this isn't a patch 
+this is a minor update 
+
+now we can go to the package.json and update the number or we can do it in terminal
+this is some of the things we can type:
+npm version major, to update the major version
+npm version minor, to update the minor version
+npm version patch, to update the patch version
+
+so lets update the minor it'll bump our version to 1.1.0
+then we publish it using 
+npm publish
