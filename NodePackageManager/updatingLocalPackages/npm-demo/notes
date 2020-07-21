@@ -1,0 +1,56 @@
+This is the notes for updating local packages
+
+in the real world as we build our applications there might be newer versions of the dependencies that we 
+have installed we want to find out what packages have been outdated
+and what are the new versions 
+
+To find this information out we run this in terminal:
+'npm outdated'
+
+with this npm looks at the versions of our dependencies and compares them with what we have in npm registry
+
+lets take a look at the mongoose we currently have installed 
+right now we are running:
+
+mongoose 2.4.2 and the version we want or npm tells us we want is 2.9.10
+the reason why is because of the caret we have in front of the version number
+in package.json because as long as the major version is 2 that means that we can use that release can be used in this application
+
+so the latest 2 version is 2.9.10 and thats why we see it in the wanted section
+
+following that we have the latest copy now in this case the latest version has a different major release
+so at the time of taking these notes we have version 5.9.25
+but we are using version 2 
+
+now if we want to update the outdated packages
+we would type this into the terminal:
+'npm update'
+
+however this only works for updating minor and patched releases
+so when it updates it will go to the wanted version 
+
+this is because we want to avoid updating to any major breaking changes because this might break our application
+
+if we wanted to update the dependencies to their very latest version we can't do that with npm update
+
+for that we are going to need a different command line tool
+to do this we would type:
+sudo npm i -g npm-check-updates
+
+now if we run:
+npm-check-updates 
+we will see all of the outdated packages and their new versions 
+so in this case we have mongoose 2.9.10 but the latest release is 5.9.25
+
+if we look in terminal after running the command towards the bottom we will see 
+
+ncu (which means npm-check-updates) with -u to upgrade package.json
+
+now we are going to run ncu -u in terminal
+now that we ran the command the dependency is not installed yet all we did was update the package.json
+
+we can confirm in the package.json that the dependency was updated
+after we check then we run
+npm i
+
+now if we run npm outdated nothing will show because everything is up to date
