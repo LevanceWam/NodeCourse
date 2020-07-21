@@ -1,0 +1,48 @@
+These are notes for publishing a package
+
+Let's try and publish a package to npm registry
+
+first we need to intialize the folder with npm so we woill type
+'npm init --yes'
+this will give us a default/basic package.json
+
+create a index.js because this is the entry point to our package
+in the index.js we can export one or more functions
+lets start by exporting a really simple function
+
+go back in the terminal 
+At this point if we do not have an account on npmjs we need to go create one
+we can do that by running this command:
+'npm adduser'
+
+if we already have an account do this:
+'npm login'
+
+either way we'll get 3 questions
+username
+password
+email
+
+next to publish this package this is what we type in terminal
+'npm publish'
+
+when we try to push this we get an error because we do not have the correct permissions to modify this package
+to solve this issue 
+we have to go to the package.json and put in a unqiue name for the package
+so simply add something or change the name 
+
+then back in terminal run:
+npm publish
+
+now that it is up on npmjs.com we can use it in other node applications
+
+we are gona make a new directory and download the package and use it 
+
+in the new directory (mine is name test) run these commands:
+npm init --yes 
+npm install wamlion-lib
+
+if we go into the node_modules and look at the package.json we'll see that there
+is more metadata than we provided npm adds its own dependencies after we publish it 
+
+now lets create a file name index.js in the test folder and require the module of our package
