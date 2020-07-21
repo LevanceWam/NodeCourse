@@ -1,0 +1,21 @@
+this is the notes for listing the installed packages
+
+Remember there is a chance when we are restoring our dependencies from the package.json 
+that the version of a dependency that is inside of the node_modules folder is higher than the 
+one we have in the package.json
+
+there is 2 way we can check
+
+One way is to look at the package.json file and look at version 
+then we would go into the node_modules folder and click on the dependency scroll to the bottom and see the version that is listed
+
+The other way is using the terminal
+
+so if we want to see all of the dependencies and their versions we would type 
+npm list
+this will return a tree diagram of all the dependencies we have and their version
+
+Now if we are interested in the dependencies we installed we would type
+npm list --depth=0
+
+this will return the dependecies we installed for our application

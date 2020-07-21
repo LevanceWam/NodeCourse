@@ -1,0 +1,8 @@
+this is the notes for installing specific versions of a package
+
+sometimes for our projects we do not need the latest version of a dependency
+we just need a specific one to do this we would type this in terminal
+
+npm i nameOfPackage@version#
+
+We can check the package.json to confirm that the version is saved

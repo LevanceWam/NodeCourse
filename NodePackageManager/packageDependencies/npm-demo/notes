@@ -1,0 +1,30 @@
+These are notes for the section package dependencies 
+
+We start off with an exercise to download 'mongoose' to our project
+we do that by running this command: 
+npm i mongoose
+
+then we were tasked to install it and inspect it.
+
+the first thing that we notice is in the package.json in the dependencies we have 2 of them now
+
+we see that mongoose is running at version: ^5.9.24
+
+if we go in the terminal and run this command:ls node_modules
+after we run the command we acquire folders that we didn't download
+
+these folders are other node packages that mongoose is dependent on
+
+In previous versions of npm these packages would have been put in a node_module folder inside of folder named after 
+the dependency that we installed. This created a mess because if we downloaded another dependency
+and it had the same package as one we already had we would have multiple of the same dependency
+the previous way also created a deeply nested stucture and on windows espically there is a limitation on the number of characters we can have in a path
+
+npm has changed this behavior in recent versions now all dependencies and their dependencies are stored in the node_module folder 
+the expection here is that if a dependency needed a certain version of 
+a package it would save that version locally with that package
+
+so for example:
+If underscore needed async version 1 and mongoose needed version 2 
+since we installed underscore first, mongoose will download async version 2 locally inside of installed
+node_module folder.

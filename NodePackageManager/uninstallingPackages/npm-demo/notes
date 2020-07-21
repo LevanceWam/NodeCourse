@@ -1,0 +1,10 @@
+this is notes on how to uninstall a package 
+
+sometimes in the real world we want to uninstall a package 
+this maybe because we may no longer require it if this is the case
+in terminal we would run:
+
+npm uninstall nameOfPackage or npm un nameOfPackage
+
+so if we look at the package.json the package will not be there and 
+it will not be in the node_modules folder either 

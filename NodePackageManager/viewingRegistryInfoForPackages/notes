@@ -1,0 +1,19 @@
+notes for viewing registry info for a package
+
+to learn more about our packages we go to npmjs.org
+
+we can search upa dependency and see what dependencies it needs
+but there is a faster way to do this 
+
+in terminal if we type:
+npm view nameOfPackage 
+
+this will return the package.json file for the package
+
+we can also target a specific property in the package.json
+like this:
+
+npm view nameOfPackage dependencies
+npm view nameOfPackage version
+
+and so on

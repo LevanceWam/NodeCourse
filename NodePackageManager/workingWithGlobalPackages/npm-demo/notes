@@ -1,0 +1,14 @@
+this is notes for working with global packages
+
+all of the packages we installed are all ones that we can use in projects 
+
+but we also have some that can be used from the command line globally 
+some examlples we have are 
+npm and angular cli 
+
+these command line tools are not specific to one project they can be used anywhere
+
+Tip: 
+we can check out which of our global commands are outdated by typing this in terminal
+
+npm -g outdated 
