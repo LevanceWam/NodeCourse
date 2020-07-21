@@ -1,0 +1,29 @@
+notes for Devdependecies
+
+so far all of the dependecies we installed are application dependecies like 
+mongoose and underscore our applications need these in order to function properly but sometimes
+we use dependecies that are only used during development 
+
+For example:
+We have tools for running a unit test, tools for doing static analysis on our code 
+we have tools for bundling our JS code and so on
+
+those dependecies are development dependecies and they should nor go in a production enviroment where we deploy our
+application 
+
+so lets learn how to install this dependecy called jshint which is a static analysis tool for JS code 
+it basically analyzes our JS code and looks for potential problems or syntactical error
+
+let's go into terminal and type 
+npm install jshint --save-dev
+
+inorder to specify that this is a development dependecy we add the flags
+--save-dev
+
+lets take a look at our package.json
+we can see that jshint is under a different property called devDependecies
+this tells node that this is a development dependecy and it should not go in the production enviroment
+
+if we look in the node_modules folder jshint is in there so all of the dependencies whether they are 
+application dependencies or development dependencies the are stored in the node_modules folder
+they are segregated in the package.json
