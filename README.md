@@ -53,6 +53,7 @@ node nameOfFile.js
 <h2>Table of Contents</h2>
 <li><a href='#section1'>Node Module System</a></li>
 <li><a href='#section2'>Node Package Manager</a></li>
+<li><a href='#section3'>Building Restful Api with Express</a></li>
 
 
 
@@ -188,3 +189,5 @@ npm install NameOfPackage --save-dev
  ```
 
 <a href="#home">Top</a>
+
+<h2 id=section1>Building Restful Api with Express</h2>
