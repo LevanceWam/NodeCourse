@@ -139,12 +139,17 @@ npm i nameOfPackage
 
 <h5>Patch</h5>
 
-<p>The third number '6' is what we call the patch version/release this is used for bug fixes. So if in the future the developers of mongoose find a bug in the current version they will fix the bug and release a new version and that version would be 4.13.7, So when ever a bug is fixed they will increase the patch version</p>
+<p>The third number '6' is what we call the patch version/release this is used for bug fixes. So if in the future the developers of mongoose find a bug in the current version they will fix the bug and release a new version and that version would be 4.13.7, So when ever a bug is fixed they will increase the patch version.</p>
 
-<p>We have 2 characters that are very important in semantic versioning caret '^' and tilda '~'. The Caret character tells npm that we're interested in any version of a package as long as the major version nmber matches the one we have so if there is a newer minor or patch version available it will be interested in that package as well. Another syntax that does the same thing without the caret character is like this 4.x this is equal or the same to ^4.13.6. Next is Tilda, Tilda tells npm we are interested in any version as long as the major version and the minor version matches what we have installed the alternative syntax to specify this version is like this 4.13.x so if there is a newer patch release we will be interested in this version as well. The caret and tilda characters help us kep the applications up to date with the latest releases of these dependencies </p>
+<p>We have 2 characters that are very important in semantic versioning caret '^' and tilda '~'. The Caret character tells npm that we're interested in any version of a package as long as the major version nmber matches the one we have so if there is a newer minor or patch version available it will be interested in that package as well. Another syntax that does the same thing without the caret character is like this 4.x this is equal or the same to ^4.13.6. Next is Tilda, Tilda tells npm we are interested in any version as long as the major version and the minor version matches what we have installed the alternative syntax to specify this version is like this 4.13.x so if there is a newer patch release we will be interested in this version as well. The caret and tilda characters help us kep the applications up to date with the latest releases of these dependencies.</p>
 
-<p></p>
+<p>However, this can sometimes cause an issue in the real world. For example lets say mongoose releases a version ~4.13.7 they fixed a bug but they may break something else this can interfere with our application. In that case  we want to make sure that we are using the exact same version. So if someone checks out this code from the repo in the future we want to make sure that we have the exact same version of mongoose that we used on day one. To do this all we have to do is remove the caret or tilda character like this: 4.13.6, So the next time we install we get the exact version.</p>
 
+<h4>Node_Modules Folder</h4>
+
+<p>Our node_modules folder in real life projects overtime will gain a lot of folders and files over time. When pushing our code to a repositry we want to avoid sending this up because everytime someone looks at our code or pulls it they are going to get those files. This is where our dependencies come to help us out. So if we look inside of our package.json we will see that our dependencies are stored here with npm along with the dependencies we can restore the versions of the dependencies on any machine. If someone wanted to download the application or if we deleted the node_modules folder all we have to do to get them back is to run npm install. It will look at our dependencies and install everything.</p>
+
+<p>This means we need to include a .gitignore in our project that way we don't send up all of the node_modules up.</p>
 
 
 <a href="#home">Top</a>
