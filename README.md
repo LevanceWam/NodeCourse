@@ -121,7 +121,30 @@ npm i nameOfPackage
 
 <p>If we go on npmjs.com we can search and find the package that is best for our project. Once we find the package we would click on it and it will show us the correct way to install it. Along with the documenation and source site.</p>
 
-<h4>Updating Packages</h4>
+<p>All the installed packages and their dependencies are stored under node_modules folders. This folder should be excluded from the source control.</p>
+
+<p>After installing packages we need to be able to use them. Some packages are able to be used in files. Others can be used in terminal, so when installing a package please read the documentation to properly learn how to use them.</p>
+
+<h4>SemVer</h4>
+
+<p>Node packages follow semantic versioning: major.minor.patch. Example: "mongoose": "^4.13.6".</p>
+
+<h5>Major</h5>
+
+<p>The first number '4' is what we call the major version. The major version is when we add a new feature that can potentially break the exisiting applications that depend upon mongoose then they will increase the major version to 5.0.0. The minor and the patch are set to 0 because in this version no new minor or patch updates have been added or found.</p>
+
+<h5>Minor</h5>
+
+<p>The second number '13' is what we call the minor version. The minor version is used for adding minor features that won't the existing API so if the mongoose team add a new feature with out breaking the exisiting API they would increase the minor version to 4.14.0. 0 beacuse in this version they haven't found a bug yet so that version could be unstable and as they find and fix the bugs they will increase the patch version.</p>
+
+<h5>Patch</h5>
+
+<p>The third number '6' is what we call the patch version/release this is used for bug fixes. So if in the future the developers of mongoose find a bug in the current version they will fix the bug and release a new version and that version would be 4.13.7, So when ever a bug is fixed they will increase the patch version</p>
+
+<p>We have 2 characters that are very important in semantic versioning caret '^' and tilda '~'. The Caret character tells npm that we're interested in any version of a package as long as the major version nmber matches the one we have so if there is a newer minor or patch version available it will be interested in that package as well. Another syntax that does the same thing without the caret character is like this 4.x this is equal or the same to ^4.13.6. Next is Tilda, Tilda tells npm we are interested in any version as long as the major version and the minor version matches what we have installed the alternative syntax to specify this version is like this 4.13.x so if there is a newer patch release we will be interested in this version as well. The caret and tilda characters help us kep the applications up to date with the latest releases of these dependencies </p>
+
+<p></p>
+
 
 
 <a href="#home">Top</a>
