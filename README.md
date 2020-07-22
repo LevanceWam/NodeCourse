@@ -151,5 +151,40 @@ npm i nameOfPackage
 
 <p>This means we need to include a .gitignore in our project that way we don't send up all of the node_modules up.</p>
 
+<h4>DevDependencies</h4>
+
+<p>Dependencies that are only used for developments. These dependecies are development dependecies and they should not go in a production enviroment where we deploy our application. We have tools for running a unit test, tools for doing static analysis on our code we have tools for bundling our JS code and so on. </p>
+
+```
+<!-- To save a dev dependency -->
+npm install NameOfPackage --save-dev
+```
+
+<h4>Useful npm Commands</h4>
+
+```
+ <!-- Install a package -->
+ npm i NameOfPackage
+ 
+ <!-- Install a specific version of a package  -->
+ npm i NameOfPackage@version
+ 
+ <!-- Install a package as a development dependency -->
+ npm i NameOfPackage —save-dev
+ 
+ <!-- Uninstall a package -->
+ npm un NameOfPackage
+ 
+ <!-- List installed packages  -->
+ npm list —depth=0
+ 
+ <!-- View outdated packages -->
+ npm outdated
+ 
+ <!-- Update packages  -->
+ npm update 
+ 
+ -To install/uninstall packages globally, use -g flag. 
+ ```
 
 <a href="#home">Top</a>
