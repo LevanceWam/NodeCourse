@@ -1,0 +1,23 @@
+This is the notes for nodemon
+
+Up until this point we whenever we make a change we have to save 
+and go into terminal and start up the server 
+
+this is tedious prodecure especially if we have to make plenty of changes
+
+there is a better way to handle this 
+we need to install the node package nodemon
+this is short for node monitor
+
+in terminal we type:
+sudo npm i -g nodemon
+
+now instead of running:
+node nameOfPackage 
+we will run:
+nodemon nameOfPackage
+
+As we can see nodemon is watching all the files in this
+folder any files with any extensions
+
+So with any simple change and a save to the file nodemon will restart the server
