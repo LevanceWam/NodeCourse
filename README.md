@@ -194,6 +194,10 @@ npm install NameOfPackage --save-dev
 
 <h4>Express</h4>
 
+```
+ npm install express
+```
+
 <p>Express is a lightweight framework for building web applications</p>
 
 <h4>RESTful Services</h4>
