@@ -221,4 +221,22 @@ npm install NameOfPackage --save-dev
  <li>DELETE // for deleting data</li>
 </ul>
 
+<p>Let's Explore each of these using our customer example.</p>
+
 <h5>GET</h5>
+
+<p>To get a list of all the customers we should send a http GET request to our address (GET /api/customers) note: the full name customer here. It indicates a list of customers. So when we send an http get request to this endpoint, our service will send us something like an array of customer objects. If we want a single customer, we should include the ID of the customer like this: (GET /api/customers/1) then the server will respond with the customer object.</p>
+
+<h5>UPDATE</h5>
+
+<p>To update a customer we should send a http put request like this: (PUT /api/customers/1). Note again here we are specifying the ID of the customer to the data. But also we should note that the customer object in the body of the request. So this is a complete representation of the customer object with updated properties. They send this to the server and the server updates the customer with a given ID according to these values.</p>
+
+<h5>DELETE</h5>
+
+<p>To delete a customer, we should send an http delete request to this endpoint: (DELETE /api/customers/1). Here we don't need to include the customer object in the body of the request, because all we need to delete the customer is the ID.</p>
+
+<h5>POST</h5>
+
+<p>To create a customer we need to send a http post request to this endpoint: (POST /api/customers). Note that since we are adding a new customer we are not dealing with a specific customer, So we don't have an ID in the address we are woring with a collection of customers, so we are posting a new customer to this collection. This is why we should include the customer object in the body of the request. The server gets this object and creates the customer for us.</p>
+
+<p>This is the RESTful convention, we expose our resources such as customer using a simple,meaningful address and support various operations around them, such as creating or updating them using standard http methods.</p>
