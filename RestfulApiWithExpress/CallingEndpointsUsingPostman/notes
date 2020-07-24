@@ -1,0 +1,33 @@
+This is the notes for CallingEndpointsUsingPostman
+
+To call http services we use a chrome extension called postman
+inside of postman we can create a new http request
+In the url we change to the post command and then type in the url
+http://localhost:3000/api/courses
+
+now we need to set the body for this request 
+for the list we select raw then json instead of text
+with this we can put a json object in the body of the request
+
+type this in the body (while the port is listening)
+
+{
+    "name":"course4"
+}
+
+then we hit the send button
+if we scroll down the status of the request is 200
+which means the request was handled successfully
+now we have 4 courses in our array
+
+this is how we test http services using postman
+
+now with our current express-demo implementation we have 
+assumed that there is an object with the same name property
+in the body of the request.
+
+What if the client forgets to send this property or sends an invalid name?
+
+perhaps the name is too short
+
+that is where input validation comes into the picture and thats is what we are going to learn next
