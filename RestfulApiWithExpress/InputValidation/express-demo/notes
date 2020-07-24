@@ -1,0 +1,47 @@
+This is the notes for InputValidation
+
+We are going to learn input validation
+So for best secruity practices we should never
+ever ever trust what the client sends us. we should always validat the input
+
+So in this particular example, because we are dealing with a simple object with only one 
+property that is name we can write some validation logic like this
+ (go to code line 24)
+
+ if the req.body doesn't exist or the name lenght is less then 3 
+ we are going to return the error to the client the RESTful convention is 
+ to return a response with the http status code of 400 this means bad request
+
+to do this:
+ (go to code line 26)
+
+ so this is the basic idea of how this should work
+
+ In a real world application it's more likely that we'll be working with a complex object something more complex than this course object
+ we don't want to write a complex validation logic like this in the beginning of your route handler
+ so let's introduce a node package that makes it really easy validate the input 
+
+on google search for npm joi
+https://www.npmjs.com/package/joi
+
+lets look at a way to replace the current validation logic we have with joi
+
+First let's install joi
+'npm i joi'
+at the top of the file we need to load the module 
+ (go to code line 1)
+this module returns a class so we need to make sure we captialize the variable we put it in
+Also as a best practice make sure all of the require calls are at the top of the file 
+this way we can easily see what are the dependencies on this module 
+so the index module we are using is dependent upon 2 modules one is joi and the other is express
+
+
+ Now back in the POST route handler
+ with joi we first need to define a schema
+ A schema defines the shape of our objects. what properties do we have in the object
+ what is the type of each property, do we have a email, do we have a string 
+ what are the minimum or maximum numbers of characters do we have a number what range should that number be 
+ this is the job of the schema
+
+ so first we need to define the schema 
+ (go to code line 25)
