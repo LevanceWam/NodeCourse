@@ -1,0 +1,37 @@
+this is the notes for environmet variables 
+
+One thing we need to improve that we have been doing so far is that 
+we have been hard coding the value for the ports
+
+we have been using 3000 as the arbitary number 
+
+while this may work on our development machine it is 
+unlikely that it will work for the production environment
+this is because when we deploy this application to a hoisting environment
+the port is dynamically assigned by the hosting enviroment 
+so we can not rely on 3000 to be available 
+
+the way to fix this is by using an enviroment variable
+so typically in hosting enviroments for node applications 
+we have this environment variable called ports
+
+An environment variable is basically a variable that is part of the environment
+in which a process runs. It's value is set from outside this application
+
+so in our application we need to read the value of this port environment variable
+we do that by using the process object (go to index.js)
+
+// After running nodemon
+
+So on the current machine we can see that we don't have an environment variable called port
+this is why 3000 is being used as the port for the web server
+
+lets try and set a environment variable 
+in terminal for Mac type:
+
+export PORT=5000 the reason why it is called PORT is becasue it is the name of our enviroment variable 
+
+
+
+
+
