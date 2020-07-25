@@ -1,5 +1,5 @@
 {
-  "name": "express-demo",
+  "name": "genre-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "joi": "^17.1.1"
-  },
-  "devDependencies": {
-    "jshint": "^2.11.1"
+    "joi": "^13.1.0"
   }
 }
