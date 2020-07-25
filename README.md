@@ -244,3 +244,24 @@ npm install NameOfPackage --save-dev
 <p>To create a customer we need to send a http post request to this endpoint: (POST /api/customers). Note that since we are adding a new customer we are not dealing with a specific customer, So we don't have an ID in the address we are woring with a collection of customers, so we are posting a new customer to this collection. This is why we should include the customer object in the body of the request. The server gets this object and creates the customer for us.</p>
 
 <p>This is the RESTful convention, we expose our resources such as customer using a simple,meaningful address and support various operations around them, such as creating or updating them using standard http methods.</p>
+
+<h4>Nodemon</h4>
+
+```
+sudo npm i -g nodemon
+
+<!-- Run a app with nodemon -->
+nodemon nameOfPackage
+```
+
+<p>We use Nodemon to watch for changes in files and automatically restart the node process. This allows us to stop the tediuos process of having to start and close the server with node. </p>
+
+<h4>Environment Variables </h4>
+
+<p>An environment variable is basically a variable that is part of the environment in which a process runs. It's value is set from outside this application. We can use environment variables to store various settings for an application. To read an environment variable, we use process.env.</p>
+
+```
+const port = process.env.PORT || 3000;
+app.listen(port);
+```
+<a href="#home">Top</a>
