@@ -1,0 +1,30 @@
+Notes for handling HTTP put Request
+
+Let'ssee how to update the course
+
+we use the PUT method for updating resources 
+the route we are using to update is:
+'/api/courses/:id'
+this is because we are dealing with a specific route 
+(go to the put route)
+
+What we need to implement:
+first we need to look up the course by id // line 45 in code 
+if the course doesn't exist we need to return 404 (means resource not found) // line 46 in code
+
+otherwise we need to validate the course to make sure it's in good shape // line 50 in code
+if invalid return a 400 error which means bad request // line 54 in code
+for this part we will come back and edit it to work better
+
+update course // line 60 in code 
+return the updated course // line  61 in code
+
+this is the logic we need to implement
+
+so for lines 45 and 46 we duplicated the validation code we are going to
+take this logic and extract them into seperate functions that we can reuse both in this route handler
+
+the reason for this is because since we have a simple schema. What if we had a complex object with quite a few properties 
+then our validation would be dupilcated in 2 different routes
+
+lets go to line 64 and fix it now 

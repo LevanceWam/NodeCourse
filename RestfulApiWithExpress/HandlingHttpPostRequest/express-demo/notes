@@ -1,0 +1,46 @@
+This is the notes for handling HTTP POST request
+
+Let's learn how to respond to http POST request
+We are going to use HTTP POST request to create a new course 
+(go to code line 24)
+
+In the POST route handler we need to read the course object that should be in the body of the request
+we are going to use these request to create a new course object and then
+add the course object to our course array.
+
+so back in the code we are going to create a new course object
+(go to code line 26)
+
+NOTE: Because we aren't working in a database we need to manually assign a id
+in the future when we work with databases the id will be assigned by the database 
+
+(back to code line 32)
+
+next is name property
+we need to read this from the body of the request
+here we are assuming that here in the body we have an object and that object has a name property
+in order for this line to work we need to enable parsing of json objects in the body of the request 
+because by default it is not enabled by express
+
+so back at the top of the page line 3 we call express.json
+(back to code line 3)
+
+this looks a little strange but later in the section we are going to explore express.json in detail 
+basicsally what we are doing is adding a piece of middleware so when call express.json 
+the method returns a piece of middleware and then we call app.use to 
+use the middleware in the reproccessing pipeline
+
+Again we will look at this letter in the section
+
+(back to code line 34)
+
+by convention when we post an object to the server 
+when the server is creating the new object or a new resource
+we should return that object in the body of the response
+(back to code line 37)
+
+The reason for this is because we are assigning this id on the server. So we need to return this course object to the client
+because chances are the client needs to know the id if this new object or new resource 
+so this is how we handle http post request
+
+in the next lecture we are going to test the endpoint 

@@ -53,6 +53,7 @@ node nameOfFile.js
 <h2>Table of Contents</h2>
 <li><a href='#section1'>Node Module System</a></li>
 <li><a href='#section2'>Node Package Manager</a></li>
+<li><a href='#section3'>Building RESTful API's with Express</a></li>
 
 
 
@@ -188,3 +189,58 @@ npm install NameOfPackage --save-dev
  ```
 
 <a href="#home">Top</a>
+
+<h2 id=section3>Building RESTful API's with Express</h2>
+
+<h4>Express</h4>
+
+```
+ npm install express
+```
+
+<p>Express is a lightweight framework for building web applications</p>
+
+<h4>RESTful Services</h4>
+
+<p>RESTful services also called RESTful API's</p>
+
+<h4>Client Server Architecture</h4>
+
+<p>Most applications we use these days follow this architecture. The app itself is the client or the front-end part. Under the hood it needs to talk to the server or the backend to get or save the data. This communication happens using the http protocol. The same protocol that powers our app. So on the server we expose a bunch of services that are accessible via the http protocol. The client can then directly call these services by sending http request.</p>
+
+<p> Now this is where REST comes in. REST Is short for Represential State Transfer. This was introduced by a PhD student as part of his thesis. But theory aside REST is basically a convention for building these http services. So we use simple http protocol prinicples to provide support to Create, Read, Update, and Delete data. We refer to these operation all together as CRUD.</p>
+
+<p> Here's a Real world example let's say we have a company vidly for renting out movies. We have a client app where we manage the lists of our customers. On the server we should expose a service and an endpoint like this: vidly.com/api/customers. So the client can send http request to this endpoint to talk to our service. There are somethings we need to know about the endpoint.</p>
+
+ <p> First, the address can start with http, or https. It depends on the application and it's requirements. If we wanted the data to be exchanged on a secure channel, we would use https. After that we have the domain of the application. Next we have /api this is not compulsory, but you see a lot of companies follow this convention to expose their RESTful services. They include the word API somewhere in the address. It can be after the domain or it can be subdomain like api.vidly.com. After that we have /customers that refers to the collection of customers in our application. In the REST world we refer to this part as a resource. We can expose our resources such as customers, movies, rentals and other endpoints So this is the endpoint to work with the customers such as updating a customer this would be done by sending an http request to this endpoint.</p>
+
+ <p>The type of http request determines the kind of operation. so every http request has what we call a verb or a method that determines its type of intention.</p>
+
+ <p>Here are the standard http methods: </p>
+
+<ul>
+ <li>GET // Gets data</li>
+ <li>POST // Creating data</li>
+ <li>PUT // For updating data</li>
+ <li>DELETE // for deleting data</li>
+</ul>
+
+<p>Let's Explore each of these using our customer example.</p>
+
+<h5>GET</h5>
+
+<p>To get a list of all the customers we should send a http GET request to our address (GET /api/customers) note: the full name customer here. It indicates a list of customers. So when we send an http get request to this endpoint, our service will send us something like an array of customer objects. If we want a single customer, we should include the ID of the customer like this: (GET /api/customers/1) then the server will respond with the customer object.</p>
+
+<h5>UPDATE</h5>
+
+<p>To update a customer we should send a http put request like this: (PUT /api/customers/1). Note again here we are specifying the ID of the customer to the data. But also we should note that the customer object in the body of the request. So this is a complete representation of the customer object with updated properties. They send this to the server and the server updates the customer with a given ID according to these values.</p>
+
+<h5>DELETE</h5>
+
+<p>To delete a customer, we should send an http delete request to this endpoint: (DELETE /api/customers/1). Here we don't need to include the customer object in the body of the request, because all we need to delete the customer is the ID.</p>
+
+<h5>POST</h5>
+
+<p>To create a customer we need to send a http post request to this endpoint: (POST /api/customers). Note that since we are adding a new customer we are not dealing with a specific customer, So we don't have an ID in the address we are woring with a collection of customers, so we are posting a new customer to this collection. This is why we should include the customer object in the body of the request. The server gets this object and creates the customer for us.</p>
+
+<p>This is the RESTful convention, we expose our resources such as customer using a simple,meaningful address and support various operations around them, such as creating or updating them using standard http methods.</p>

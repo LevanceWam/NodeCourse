@@ -1,0 +1,14 @@
+This is the order we need to view the folders
+
+IntroducingExpress
+BuildingFirstWebServer
+Nodemon
+Environment Variables
+RouteParameters
+HandlingHttpGetRequest
+HandlingHttpPostRequest
+CallingEndpointsUsingPostman
+InputValidation
+handlingHttpPutRequests
+handlingHTTPDeleteRequest
+ProjectBuildTheGenresAPI

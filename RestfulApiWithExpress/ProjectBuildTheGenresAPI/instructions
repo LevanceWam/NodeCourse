@@ -1,0 +1,11 @@
+Time for a exercise!
+
+Create a service for managing a list of Genre so each movie 
+has a Genre like action, horror and etc
+
+we should have a endpoint for getting all the genres
+we should be able to create update and delete genres 
+
+lets practice everything we learned in this section
+
+** IMPORTANT ** We have to be running joi version 13.1.0 in order for our implementation of the validator to work

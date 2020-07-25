@@ -1,0 +1,29 @@
+Notes for HandlingHttpDeleteRequest
+
+Lets learn how to respond to HTTP DELETE
+How to implement delete:
+(go to code line 59)
+
+Look up the course // line 60 in code
+if it doesn't exist return 404 // line 61 in code
+
+delete it // lines 63 and 64 
+we use the findIndex of to find the index of the course in the array
+then we use the splice method to delete it 
+
+//return the same course (by convention) // line 65
+
+Fixing bugs:
+Before we go any further there are a couple of small bugs in  the code 
+if we look in the handlers responding to put request for the PUT endpoint 
+
+if we don't have a course with a given id we return a 404 to the client 
+but at this point we should exit the handler otherwise the rest of the code will be executed
+
+the proper way to implement the handler is like this in line 48 in the code  
+we return the response and exit the function
+
+the previous files all have this tiny bug but since these are all the same just expanded this will be the one 
+I reference
+
+I can see all of the returns I added to the code.

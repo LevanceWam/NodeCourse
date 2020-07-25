@@ -1,0 +1,43 @@
+This is notes for Route Parameters
+
+So far we have a route to get a list of courses
+so now let's try to create a route and get a single course 
+
+Remember earlier in the section  we talked about RESTful services
+in order to get a single course we have to include the id in the url
+
+so the endpoint should look like this (/api/courses/1)
+(go to code)
+
+so back in the browser if we type (/api/courses/1)
+we have successfully read the value of this parameter
+
+It is possible to have multiple parameters in a route
+
+For Example:
+
+We're building a service for powering a blog 
+so we can have a route like this 
+(/api/posts/:year/:month) now we have 2 Parameters
+with these we can get all the posts for the given month and in the given year
+
+now we can read the parameters like before 
+we can set req.params to:
+req.param.year or req.param.month
+
+lets take a look at just the req.params object (back to code)
+
+with express we can also get boolean string parameters
+these are parameters that we add in the url after question mark
+
+For example:
+we can get all the posts in january 2018 and sort them by name 
+so it would look like this:
+
+/api/posts/2018/:1?sortBy=name)
+
+this is a query string parameter we use query string parameter to 
+provide additional data for our backend services so we use route parameter for essential or required values 
+where as we use query string parameters for anything that is optional
+
+Let's look at how to read query parameters(back to code)

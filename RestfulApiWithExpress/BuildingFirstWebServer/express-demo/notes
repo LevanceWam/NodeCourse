@@ -1,0 +1,20 @@
+this is the notes for building first web server
+
+The object that is returned from the express() is called object app
+so we store it in a constant called app
+
+// the constant app is used to represent our application
+
+the app object has a bunch of useful methods
+
+we have methods like:
+app.get();
+app.post();
+app.delete();
+app.update();
+
+So of we wanted to handle a post request and endpoint we would use 
+app.post
+
+if we want to learn about all the properties in req then we should look at the documentation on express
+at expressjs.com in the api reference section 

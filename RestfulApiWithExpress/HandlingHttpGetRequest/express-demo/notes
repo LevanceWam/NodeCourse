@@ -1,0 +1,9 @@
+This is notes for handling HTTP GET request
+
+let's implement a new endpoint to get a single course from the server
+we are going to define an array called courses
+(go to code line 4)
+
+since we have 2 endpoints one to get all of the courses and the other to get a single course 
+in the first we will return the course array  so itll be changed from 
+res.send([1,2,3]) to res.send(courses) (back to code on line 23)
