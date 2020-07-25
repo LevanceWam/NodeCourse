@@ -17,19 +17,16 @@ const courses = [{
     }
 ];
 
-app.get('/', (req, res) => res.send('NANI!'));
+app.get('/', (req, res) => res.send('hi'));
 
 app.get('/api/courses', (req, res) => res.send(courses));
 
 app.post('/api/courses', (req, res) => {
     const {
         error
-    } = validateCourse(req.body); // result.error 
+    } = validateCourse(req.body);
 
-    if (error) {
-        res.status(400).send(error.details[0].message);
-        return;
-    }
+    if (error) return res.status(400).send(error.details[0].message);
 
     const course = {
         id: courses.length + 1,
@@ -40,22 +37,26 @@ app.post('/api/courses', (req, res) => {
 });
 
 app.put('/api/courses/:id', (req, res) => {
-    // go to notes line 11
-    const course = courses.find(course => course.id === parseInt(req.params.id));
-    if (!course) res.status(404).send('ID is non-existent');
-
-    // this is called object destructing 
-    // with object destructing when declaring a variable or constant we use {} and then add the property of the object
     const {
         error
-    } = validateCourse(req.body); // result.error 
+    } = validateCourse(req.body);
 
-    if (error) {
-        res.status(400).send(error.details[0].message);
-        return;
-    }
+    if (error) return res.status(400).send(error.details[0].message);
+
+
+    const course = courses.find(course => course.id === parseInt(req.params.id));
+    if (!course) return res.status(404).send('Incorrect ID');
 
     course.name = req.body.name;
+    res.send(course);
+});
+
+app.delete('/api/courses/:id', (req, res) => {
+    const course = courses.find(course => course.id === parseInt(req.params.id));
+    if (!course) return res.status(404).send('Incorrect ID');
+
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
     res.send(course);
 });
 
@@ -63,15 +64,15 @@ function validateCourse(course) {
     const schema = {
         name: Joi.string().min(3).required()
     };
-    // instead of validating req.body lets validate the agrument being passed through the method
+
     return Joi.validate(course, schema);
 }
 
 app.get('/api/courses/:id', (req, res) => {
     const course = courses.find(course => course.id === parseInt(req.params.id));
-    if (!course) res.status(404).send('ID does not exist');
+    if (!course) return res.status(404).send('Incorrect ID');
     res.send(course);
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`))
+app.listen(port, () => console.log(`listening to port ${port}....`))

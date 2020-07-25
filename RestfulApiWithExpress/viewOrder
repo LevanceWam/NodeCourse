@@ -10,3 +10,4 @@ HandlingHttpPostRequest
 CallingEndpointsUsingPostman
 InputValidation
 handlingHttpPutRequests
+handlingHTTPDeleteRequest
