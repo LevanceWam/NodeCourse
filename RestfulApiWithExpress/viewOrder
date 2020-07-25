@@ -9,3 +9,4 @@ HandlingHttpGetRequest
 HandlingHttpPostRequest
 CallingEndpointsUsingPostman
 InputValidation
+handlingHttpPutRequests
