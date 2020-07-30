@@ -1,0 +1,41 @@
+This is the notes for Enviroments
+
+In the future when we are dealing with more complex applications 
+we need to know what environment our code is running on
+is it the development enviroment or a production enviroment 
+depending on the enviroment we want to disable or enable certian features
+
+for example:
+Lets say we want to enable logging http request in the development enviroment on a development machine
+but not in production
+
+Lets see how to do that: (go to line 8 in code)
+remember the (process) object
+This a global object in Node that gives us access to the current process
+the (process) object has a property call (env) which gives us the envirnoment variables 
+we have a standard envirnoment variable called NODE_ENV
+this variable returns the envirnoment for the Node application
+if it is not set well get undefined 
+
+We can set it from the outside we can set it to testing, development, staging, or production
+
+we do have another way to get the current envirnoment and that is for the app object
+the (app) object has a method called get that we use to get various setting about an app
+one of these setting is env (line 9 in code)
+this method internally uses this enviroment variable to detect the current environment
+
+However,
+if the envirnoment is not set this will return development by default
+in the terminal we will see that for this project the enviroment variable is not set it is undefined 
+but the app says development by default
+
+in this demo we want to enable logging of http request only on the development machine 
+to do this (go to line 19 in code) and comment out lines 8 and 9 we do not need them anymore 
+if we look inside of terminal we the result we were looking for 
+
+Now we need to stop the process and set it to production 
+once we do this the if statement we declared on line 19 will not run 
+
+In terminal type export NODE_ENV=production
+
+
