@@ -16,3 +16,9 @@ to install we run npm i helmet
 The other third party middleware we'll be using is called morgan 
 morgan is used to log http request
 npm i morgan
+morgan is a function we can specify various formats depending on the argument we put in
+(go to code line 14
+
+we can look at the documentation for more agruments
+now everytime we send a request to the server it will be logged 
+when we look inside of the terminal we will see morgan logged it for us 
