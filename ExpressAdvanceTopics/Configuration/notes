@@ -1,0 +1,89 @@
+this is the notes for Configuration
+
+One topic that goes hand and hand with enviroments is the storing of Configuration settings for the app
+and overriding those setting in each enviroment 
+
+for example in a development enviroment we aew going to use different databases for main server 
+so for this lecture we are going to learn how to store the configuration settings and override them in each enviroment
+
+Heads up there are plenty of packages for node configuration
+one of the most popular is rc 
+
+but for this lesson we will be using config
+lets install the package:
+npm i config
+
+in the project create a folder name config
+in the new folder create a file called default.json we will use this to define the default configuration settings
+so in this file we can have a json object but define the default configuration settings 
+for example (go to default.json)
+we have a setting here defined name for the name of our app
+
+Now lets add another file development.json
+here we can define settings specifically to the development enviroment
+Now we can override the settings we have in default.json not only that
+we can add additional settings 
+(go to development.json)
+noticed that we overrided the name and added more properties 
+these properties can also be complex objects 
+(development.json line 3)
+
+Now lets create another file called production
+
+now lets go to index.js and load the config module (line 1 in index.js)
+with this we can easily get various setting for our applications
+(go to line 17 index.js)
+
+when we use config object  we use it with the method get
+to get the configuration property
+to get the mail host property we have to use dot notation
+
+now we have to put the machine in its proper enviroment to see different messages
+the way to do this is:
+export NODE_ENV=development
+export NODE_ENV=production
+
+with this node package we can easily store the configuration settings for our app
+However,
+we should not store the application secrets in the configuration files 
+for example we should not store the password to the database or the mail server
+so the best way to deal with these secrets is by storing them in enviroment variables
+lets see how this work in terminal
+
+We are going to define the enviroment variable for storing the password of a mail server
+type this: export password=1234
+to prevent this from clashing with another enviroment variable we should prefix it
+with the name of our applications
+so we would do this: export NameOfProject_password=1234
+
+so in development enviroment we manually set this enviroment variable and also in the production envirnoment 
+we'll most likely have  a configuration panel for storing our
+enviroment variables so we store all of these passwords and secrets in our enviroment variable and then read them using our  
+config module
+
+Back in the configuration folder add the file custom-environment-variables.json
+Spelling is very important on this be careful
+in this file we define the mapping of configuration settings to envirnoment variables
+(go to the custom-environment-variables.json)
+
+copy and paste everything from development.json
+so in the mail property inside of that we are going to add a new property name password 
+we are going to map it to the envirnoment variable password we created 
+
+we no longer need host and name properties because it we are not going to map this to an environment variable the values are defined in
+the other configuration files 
+
+now lets head to index.js
+(go to line 20 index.js)
+so this configuration object looks at various sources to find the value for this configuration the source 
+can be a configuration file, json file, it can be an environment variable, it can also be a command line arguement 
+
+If we go into the terminal and start it 
+we will see that our password is read from the envirnoment variable and not a file 
+
+In the future We need to go and study what more can the config module can do at:
+https://www.npmjs.com/package/config
+
+
+
+
