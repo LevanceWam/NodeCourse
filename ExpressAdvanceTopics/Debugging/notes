@@ -1,0 +1,65 @@
+This is the notes for Debugging 
+
+Console.log is JS oldest friend we use it for debugging 
+the problem with this approach however is that sometimes when we are done with them 
+we delete them or comment them out 
+
+But sometime later we might need them so we have to write the code again or move the comment 
+this is tedious, but there is a better way to do this 
+
+a better way to log messages for the purpose of debugging is to use the debugging package in node 
+we are going to replace all the console.log statements that are being called to debug a function
+then we can use a environment variable to enable or disable Debugging
+
+this way we don't have to come back to our code and modify the code 
+we do not need to delete the console log or debug statements 
+we dont have to comment them out we can control them from the outside 
+using environment variables
+
+but the most important part is that we can determine the level of debugging info we want to see 
+
+Let's work on learning how to use a debug package
+in terminal type this command:
+npm i debug
+
+(code line 1)
+Lets load the debug module 
+when we load the debug module it returns a function
+so we call this function and give it an argument and this argument
+is an arbtiraty namespace that we define for debugging 
+
+for example we can define a namespace like app:startup
+now when we call the function with this argument
+we get a function for writing debugging messages 
+Potentially we have another debugger for debugging database related messages]
+
+Now on line 9 in our code we are going to change the console log statement 
+with a call to startup debugger function
+line 13 is for if we had database code to debug
+
+Now we are going to go to the terminal and use a environment variable to determine what kind 
+of debugging info we're going to see in the terminal
+
+in terminal type:
+export DEBUG=appstartup
+
+this means we're going to only see debugging messages that are a part of startup 
+now if we run the application in the terminal by using
+nodemon nameOfFile.js we'll see the message 
+
+If we want to set it to where we don't see anything we type This
+export DEBUG=
+no debugger will show in the terminal
+
+If we want to see for multiple namespaces do this 
+export DEBUG=appstartup, app:db
+or use this wildcard to get all of the debuggers
+export DEBUG=app:*
+
+here is a shortcut to run the db without having to set it 
+DEBUG=app:db nodemon nameOfFile.js
+
+
+
+
+
