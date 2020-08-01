@@ -1,0 +1,8 @@
+This is the notes for database integration
+
+We have a seperate section on this topic with more detail this is just a intro
+we are just going to explore the database options we have with node and express
+
+If we go to this address: 
+http://expressjs.com/en/guide/database-integration.html
+we will see database drivers availiable for us to use 
