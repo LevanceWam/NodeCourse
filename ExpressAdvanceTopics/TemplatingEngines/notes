@@ -1,0 +1,43 @@
+This is the notes for templating engines
+
+All of the endpoints we did so far we returned json objects in response
+However sometimes we need to return html markup to the client
+this is where we use a templating engine
+
+there are various templating engines for express apps
+On of the popular ones is pug which use to be jade, mustache, ejs 
+wach engine has a different syntax for generating dynamic html and returning it to the client 
+
+so for this lecture we are going to learn how to use pug to return dynamic html to the client 
+
+first install pug
+'npm i pug'
+
+(go to line 11 in code)
+we need to set the engine for the application
+when we set this  express will internally load this module 
+so we don't have to require it 
+
+
+(go to line 12 in code)
+This is another setting that is not compulsory, it is optional
+only if we want to override the path to the templates 
+this means we need to put all the views or templates inside of a folder called views which should be 
+in the root of the application
+remember this is an optional setting thats the default value we do not have to set that
+
+lets add a new folder called views inside of the folder create a file called index.pug
+with pug we can define a template using syntax like (go to line 1 in index.pug)
+
+Looking at this pug has a cleaner syntax than regular html we don't have the opening and closing elements 
+
+lets look at how we can convert this to regular html and return to the client  
+
+in index.js we set a route to the root of the application (line 48)
+this is a simple message to the client now we can replace this with a html markup and return it to the client 
+so instead of send we use render()
+for the first argument we need to give the name of the file we are using which in this case is (index) for index.pug
+for the second argument we pass a object 
+this object includes all the values for the parameters that we have defined in the template
+
+now start the project in terminal to start it up
