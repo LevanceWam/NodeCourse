@@ -1,0 +1,8 @@
+This is the instructions for the exercise 
+
+For this exercise we need to:
+Create routes folder 
+create file named genres.js
+move all of the routing code into genres.js
+export the router 
+import it into index.js
