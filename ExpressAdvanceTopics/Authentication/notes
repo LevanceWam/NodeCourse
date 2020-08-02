@@ -1,0 +1,5 @@
+This is the notes for authentication
+
+authentication is outside the scope of express because
+express is a minimal lightweight framework and it doesn't have
+a option on authentication 

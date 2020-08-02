@@ -54,8 +54,7 @@ node nameOfFile.js
 <li><a href='#section1'>Node Module System</a></li>
 <li><a href='#section2'>Node Package Manager</a></li>
 <li><a href='#section3'>Building RESTful API's with Express</a></li>
-
-
+<li><a href='#section4'>Express Advance Modules</a></li>
 
 <h2 id=section1>Node Module System</h2>
 
@@ -82,6 +81,7 @@ module.exports.sayHello = sayHello;
 ```
 const logger = require(‘./logger’);
 ```
+
 <a href="#home">Top</a>
 
 <h2 id=section2>Node Package Manager</h2>
@@ -166,27 +166,27 @@ npm install NameOfPackage --save-dev
 ```
  <!-- Install a package -->
  npm i NameOfPackage
- 
+
  <!-- Install a specific version of a package  -->
  npm i NameOfPackage@version
- 
+
  <!-- Install a package as a development dependency -->
  npm i NameOfPackage —save-dev
- 
+
  <!-- Uninstall a package -->
  npm un NameOfPackage
- 
+
  <!-- List installed packages  -->
  npm list —depth=0
- 
+
  <!-- View outdated packages -->
  npm outdated
- 
+
  <!-- Update packages  -->
- npm update 
- 
- -To install/uninstall packages globally, use -g flag. 
- ```
+ npm update
+
+ -To install/uninstall packages globally, use -g flag.
+```
 
 <a href="#home">Top</a>
 
@@ -264,4 +264,7 @@ nodemon nameOfPackage
 const port = process.env.PORT || 3000;
 app.listen(port);
 ```
+
 <a href="#home">Top</a>
+
+<h2 id=section4>Express Advance Topics</h2>

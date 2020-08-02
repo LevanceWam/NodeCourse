@@ -1,0 +1,24 @@
+this is the notes for third party middleware 
+
+Let's look at some third party middleware for express
+First we will head over to expressjs.com
+on the top under resources go to middleware here 
+
+Note: 
+We should not try to use every middleware function that is there 
+every function that is listed will impact the performance of our app 
+so if we don't need it don't use it it'll slow down the request processing 
+
+In this case the middleware that is considered best practice is helmet
+it helps secure our application it helps secure the app by setting various http headers
+to install we run npm i helmet
+
+The other third party middleware we'll be using is called morgan 
+morgan is used to log http request
+npm i morgan
+morgan is a function we can specify various formats depending on the argument we put in
+(go to code line 14
+
+we can look at the documentation for more agruments
+now everytime we send a request to the server it will be logged 
+when we look inside of the terminal we will see morgan logged it for us 

@@ -1,0 +1,58 @@
+This is notes for StructuringExpressApplications 
+
+Throughout this lecture we have been adding to our index.js file and it has been
+accumulate a lot of code.
+
+in a real world application we do not want to have all of this code in one file 
+
+lets structure our application properly 
+first thing we want to do is move all of the code
+with the courses api and move them to a seperate file 
+to make it simple every logical part of our app for every api endpoint we want it to have a seperate file or modules 
+
+so all the routes working with courses should be in courses.js
+now lets create the folder route and create a file named courses.js
+now inside of courses.js we are going to paste any code with routes for courses 
+
+Now our code in index.js is a lot more shorter lets keep refactoring 
+
+now back in courses.js we need to load the express module 
+Up until this point we have been assigning the express function to an object name app
+with what we are doing in the courses.js file this will no longer be the case because it will not work
+when we seperate the routes in a seperate module 
+
+So this way of writing it:
+const app = express(); will not work because we moved the routes to their own file 
+
+In order to fix this we need to use a router 
+express has a method called router that returns a router object
+and in the courses.js file we are going to rename our constant variable app to router 
+
+It should look like this:
+const router = express.Router()
+
+finally in courses.js at the bottom we need to export the router 
+
+Now we need to load the module inside of index.js
+(line 7 in index.js)
+
+Next we call app.use 
+(line 21 in index.js)
+Here we are supplying 2 arguments the first argument is a path
+second argument is the router object that we imported
+
+Basically here we are telling express that for any route that starts with 
+/api/courses use this router object
+
+Now we can go back to courses.js and make it shorter
+in the courses.js file we see that all of our routes have been declared with /api/courses
+we do not want to repeat this here anymore because in index.js we told express that any routes
+that start with /api/courses should be handled by the courses' router object 
+
+so now we go into courses.js and make the nessacry changes needed
+(look at the routes in courses.js)
+
+quick exercise take the last route on index.js and refactor it to the homepage and put it in a seperate file 
+
+
+now we need to take logger.js and put it in a folder called middleware

@@ -1,0 +1,48 @@
+This is the notes for built in middlewares 
+
+Remember in express we have a few built in middleware functions 
+one of them is express.json() it parses the body of the request and if there is a json object it will 
+populate req.body property
+
+We have another similar function that is called url encoded
+this is a method we call express.urlencoded (go to code line 8)
+this is a middleware function this middleware function parses incoming request with url encoded payloads
+That is a request with a body like this key=value&key=value
+
+this is more of an traditional approach its not something that is used very often these days 
+Basically if we have an html form with input fields and post that form to the server the body of our request will 
+look like this key=value&key=value
+
+so this is where we would have a url encoded payload in the body of our request 
+now this middleware parses this body and populates req.body like a json object
+
+lets see how that works 
+So in postman we are going to send a post request to http://localhost:3000/api/courses
+previously we had to pass a json object in the body
+
+Remember in postman click Body then select raw and then application json when we wanted to post a new course 
+
+However this time around we are going to use form urlencoded
+now we can pass key value pairs in the body of the request and they will be concatenated when the request is sent to the server 
+so what we want to do is set the key = name and the value to what ever is going in the value like course4
+when we hit send it will successfully add a new course to the server 
+
+so our middleware function was able to read the request with url encoded payload
+
+if we look in the terminal we get a warning
+body-parser deprecated undefined extended, provide extended option
+(go to code line 8)
+With what we added to line 8 & 9 we can now pass arrays and complex objects using the encoded format 
+
+The last built in middleware we have in express is static and we use that to serve the static class
+Let's see how that works:
+(code line 11)
+In the static method we pass an argument and that is the name of the folder 
+for this example we'll use a folder named public
+this is where we're going to put all our static assets like css, images, and so on 
+inside of the folder create a folder name public and give it a readme file
+
+now with the middleware function we can go to the browser and headover to http://localhost:3000/readme.txt and it will show 
+with this middleware we can serve static content 
+also note that we don't have public in the url 
+this means that static content are served from the root of the site 

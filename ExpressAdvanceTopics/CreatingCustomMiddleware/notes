@@ -1,0 +1,39 @@
+This is the notes for creating custom middleware
+
+Let's create our custom middleware function
+on line 5 we are going to adding a json middleware function
+
+after that we are going call (go to code line 7)
+
+we called app.use again to install a middleware function in a request function pipeline
+(back to line 7 code)
+
+so inside of of app.use we call a function with the parameters of req, res, and next
+next is a reference to the next middleware function in the pipeline
+so what we are going to do is pass a simple function like console.log and have it print out logging 
+we are going to pretend like this middleware function is logging every request
+then we call next to pass control to the next middleware function in the pipeline 
+
+If we do not do this,because we are not terminating the request response cycle our request will end up
+hanging.
+So if we send even a simple http request we won't get a repsonse it'll be loading. 
+this indicates that the middleware function was executed successfully but since we didn't 
+pass control to another middleware function to terminate the response cycle our request is just hanging 
+
+We can also make middleware functions for performing authentications (back to code line 12)
+
+What we need to pay attention to here is that our middleware functions are called in sequence
+first the logging middleware was called then middleware function for authenticating the user 
+Then finally the route handler which is another middleware function
+
+now when it comes to clean coding we want to put each of the middleware functions inside of their own file or module
+
+so go and create a file name logger.js and authentication.js and put the code inside of the functions inside of those files 
+
+we then want to give the function a name and then export the function out to be used in index.js
+once exported go to the top of the index.js and import the 2 modules 
+
+now let's finally explain what app.use(express.json()) does
+So when we call express.json it returns a middleware function with 3 parameters req, res and next
+this middleware function parses the request body and if there is a json object it will set request.body and 
+it will pass control to the next middleware function 
