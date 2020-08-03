@@ -268,3 +268,18 @@ app.listen(port);
 <a href="#home">Top</a>
 
 <h2 id=section4>Express Advance Topics</h2>
+
+<h4>Middleware</h4>
+
+<p>One of the core concepts in express. A middleware function is a function that takes a request object and either terminates the request/response cycle or passes control to another middleware function. </p>
+
+<p>These are some of the built-in middleware functions for express:</p>
+
+<ul>
+ <li>json()</li>
+ <li>urlencoded()</li>
+ <li>static()</li>
+ <li>We can also create custom middleware</li>
+</ul>
+
+<a href="#home">Top</a>
