@@ -1,0 +1,46 @@
+This is the notes for Synchronous vs Asynchronous Code
+
+Before we learn how to access a database in node we need to have a 
+good understanding of Asynchronous programming 
+
+So first we need need to make a new folder name async-demo and npm init it 
+
+create a index.js in async-demo
+in this file we are going to write a few console.logs statements
+
+the 2 statements we have on lines 1 and 2 are examples of Synchronous or blocking programming
+when the first line executes the program is blocking and the second line has to wait until the first line finishes execution
+
+In contrast we have Asynchronous or non-blocking program
+lets go to line 3 and lets see and example of an Asynchronous programming
+
+we are going to use setTimeout on line 2 and move one of the console logs below it 
+it takes 2 arguments the first is a function and a amount of seconds for the second agrument 
+after the seconds run out the code in the block will be executed
+
+Let's run the file in terminal to see the results
+so type
+node index.js
+once we do that we see that in the console 
+that the 2 console.log statements show up first immediately then then we wait the 2 seconds
+
+so when we call setTimeout this function will schedule a task to be performed in the future 
+it doesn't wait and it doesn't block it just schedules a task and the control is returned 
+
+so bascially it allows the 2 console statements to go then executes its self
+
+One thing that is need to made clear is that Asynchronous does not mean concurrent or multithread
+in this programming we have a single thread so our single at first executes the first line 
+then schedules the function to be called in 2 seconds then it will display the message in the console
+after that it will be free
+
+We go on to talk about the restuarant metaphor that can be found on the readme
+
+Why do we need to know this?
+because in Node programs whenever we are dealing with an operation that involves disk or network access'
+we are dealing with Asynchronous code 
+so it is very important to understand how Asynchronous code behaves and more importantly we need to 
+know how to write Asynchronous code in a clean and maintainable way
+
+
+
