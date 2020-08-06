@@ -72,3 +72,7 @@ that operation can complete successfully or it can fail if it completes successf
 we say the promise is resolved or fulfilled
 
 if it fails the state of the promise will go from pending to rejected
+
+Take away: 
+Anywhere that we have an asynchronous function that takes a call back we should modify the function to return a promise
+
