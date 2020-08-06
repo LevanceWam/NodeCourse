@@ -2,7 +2,7 @@ console.log('Before');
 getUser(1, (user) => {
     getRepo(user.githubUsername, (repo) => {
         getCommits(repo, (commits) => {
-
+            // callback hell
         });
     });
 });
