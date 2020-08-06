@@ -1,0 +1,17 @@
+This is the notes for callback hell
+
+What we need to note in our code is that on (line 2 in the code)
+is a nest of stuctures so we have getUser and were we are nesting 
+we then go to gitRepo
+
+In a real world application maybe we want to do something after we get the list of repos for the user 
+perhaps we want to go to the first repository and get all of the commits in that 
+repository
+
+With callbacks our code will end up looking like (go to code line 4)
+
+If we were to write the sychronous version of this code it is a lot easier to read 
+than the nest of callbacks
+
+This nest of callbacks is called callback hell or christmas tree problem
+in the next lecture we are going to look at how to solve the problem
