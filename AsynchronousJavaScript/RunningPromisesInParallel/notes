@@ -53,3 +53,5 @@ we dont want to wait we just want to do something as soon as the operation compl
 we would use Promise.race (line 26)
 so when we run it all of the asynchronous operations started but our Promise.race was resolved as soon as the 
 first asynchronous operation was fulfilled
+
+so the value that was returned was the one the came back first not an array
