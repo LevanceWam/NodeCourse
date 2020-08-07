@@ -1,0 +1,17 @@
+This is the notes for consuming promises
+
+lets rewrite our asynchronous code using promises
+(in code start on line 11 to see the difference)
+
+from (line 12 )
+So we have our then statement that accepts the result 
+we can now chain then to what we got from the user function (line 13)
+if this function returns a value we'll wrap that value inside a promise this means if
+line 13 returns a value we're going to have another promise then that promise is returned 
+
+this is the beauty of using promises
+promises expose the then method we can chain them to implex the complex
+asynchronous operation
+
+Now as best practices when we are working with promises we need to catch any errors
+(line 15)

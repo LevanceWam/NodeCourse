@@ -5,3 +5,4 @@ CallbackHell
 NamedFunctionsToRescue
 Promises
 ReplacingCallbacksWithPromise
+ConsumingPromises
