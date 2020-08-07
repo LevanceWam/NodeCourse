@@ -1,0 +1,55 @@
+This is the notes for running promises in parallel
+
+Now sometimes we are going to want to run a few asynchronous operations in parallel 
+and when they all complete we want to do something after
+
+for example:
+ we may want to call different apis like facebook and twitter and
+when both of the asynchronous operations are ready then we want to return something to the client 
+
+So lets try and simulate this 
+lets start by creating 2 new promises
+(lines 1 and 8)
+
+now we want to kickoff both of the async operations and when they both complete
+we are going to do something else after
+
+(line 15 in code)
+we are going to call Promise.all 
+all() is a method that is available on the Promise class not the object
+we give it an array of promises 
+with this method we return a promise that will resolve when all of the promises in the array have beeen resolved
+
+now we can take the promise and call the (then()) method
+we take the result and display it on the console
+
+in terminal we can run node promise-api.js to see the results
+
+When we run it both the asynchronous operations kick off at the same time and we get the result
+of the array and the 2 numbers 
+
+Somethings we need to clarify about what just happened
+
+first we do not have real concurrency we do not have multi threading we are dealing with one thread
+but the single thread is kicking off multiple async operations 
+almost at the same time, its not exactly the same time 
+
+it starts our first asynchronous operation the thread is released so immedialety after it starts
+the second asynchronous operations we are not waiting for the result of the first 
+asynchronous operations to be ready in order to kick off the second one 
+So in our previous lectures when we had everything go after one after another  this is 
+completely different from that because these started around the same time
+
+The second thing is when we get the result the result will be available as a array
+so if anyone of these promises is rejected the final promise that final promise that is returned 
+from the Promise.all() is considered rejected
+(In the code we made a p3 to simulate this)
+
+last thing,
+so sometimes we want to kickoff multiple asynchronous operations at the same time
+but what if we wanted to do something as soon as one of the operations complete
+we dont want to wait we just want to do something as soon as the operation completes
+
+we would use Promise.race (line 26)
+so when we run it all of the asynchronous operations started but our Promise.race was resolved as soon as the 
+first asynchronous operation was fulfilled
