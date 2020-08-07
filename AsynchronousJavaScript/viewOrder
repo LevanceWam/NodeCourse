@@ -6,3 +6,7 @@ NamedFunctionsToRescue
 Promises
 ReplacingCallbacksWithPromise
 ConsumingPromises
+CreatingSettledPromises
+RunningPromisesInParallel
+AsyncAndAwait
+Exercise
