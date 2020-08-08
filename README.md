@@ -286,3 +286,11 @@ app.listen(port);
 <a href="#home">Top</a>
 
 <h2 id=section5>Asynchronous JavaScript</h2>
+
+<h4>Asynchronous Code vs Synchronous code </h4>
+
+<p>Asynchronous programming is a means of parallel programming in which a unit of work runs separately from the main application thread and notifies the calling thread of its completion, failure or progress. Asynchronous code doesn't have to wait – your program can continue to run. You do this to keep your site or app responsive, reducing waiting time for the user.</p>
+
+<p>Synchronous operations in JavaScript entails having each step of an operation waits for the previous step to execute completely. This means no matter how long a previous process takes, subsquent process won't kick off until the former is completed. Synchronous code is executed in sequence – each statement waits for the previous statement to finish before executing.</p>
+
+<h4>Promises</h4>
