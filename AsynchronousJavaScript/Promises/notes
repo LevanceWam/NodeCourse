@@ -42,7 +42,7 @@ so we can call resolve and pass a value here (line 4 in code)
 so this would be a result of our asynchronous operation
 we would then use the result to send the value to the consumer of this promise object
 
-Now if domething goes wrong we want to return an error
+Now if something goes wrong we want to return an error
 so instead of resolve we pass reject and here we can pass an error message 
 
 as a best pratice it is better to pass an error object instead of a simple string 
