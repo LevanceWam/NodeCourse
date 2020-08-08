@@ -310,3 +310,9 @@ which basically means the operation completed successfully so we will get a valu
 <a href="#home">Top</a>
 
 <h2 id=section6>CRUD Operation Using Mongoose</h2>
+
+<h4>MongoDB</h4>
+
+<p>In this section we are going to be using MongoDB. MongoDB is basically what we call a document or NoSQL database. It is different from traditional relational databases like SQL Server, MySQL, and etc. In MongoDB we do not have the concept of tables, schemas, views, records, and columns it's different. Unlike relational databases where we design our database ahead of time. In Mongo there is no such thing as schema or design. We simply store json objects in MongoDB.</p>
+
+<p>So if we were to have an array of objects. We can simply store all of those objects in a collection in MongoDB. This also means when we are querying our data, we can get json objects out of MongoDB and return the objects back to the client.</p>
