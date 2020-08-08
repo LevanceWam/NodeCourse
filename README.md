@@ -298,6 +298,10 @@ app.listen(port);
 <p>A promise is an object that holds the eventual result of an asynchronous operation. So when the operation completes it can either result in a value or a error. A promise basically promises that it will give us the result of a asynchronous operation. The promise object can be in one of 3 states, Initially when we create a promise it will be in a pending state at this point we can pick up some asynchronous operation. When the results are ready the promise can be either fulfilled/resolved
 which basically means the operation completed successfully so we will get a value. Otherwise if something went wrong during the execution of the asynchronous operation our promise will be in the rejected state in this case we are going to have an error.</p>
 
-<p><strong>Note:</strong> as a best pratice it is better to pass an error object instead of a simple string. This is important becaue this will return a </p>
+<p><strong>Note:</strong> as a best pratice it is better to pass an error object instead of a simple string. This is because it will include a callstack that is more useful than a simple string.</p>
 
+<h4>Async and Await</h4>
 
+<p>Async and Await helps us write code asynchronous code like synchronous code. Async and Await are syntical sugars interally we are using promises our code still runs asynchronously but it looks and reads synchronously. </p>
+
+<a href="#home">Top</a>
