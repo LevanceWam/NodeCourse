@@ -1,0 +1,78 @@
+This is the notes for Promises
+Now we are going to take a look at JS Promises which are extremely powerful when it comes to dealing 
+with asynchronous code
+
+A promise is an object that holds the eventual result of an asynchronous operation
+so when the operation completes it can either result in a value or a error
+a promise basically promises that it will give us the result of a asynchronous operation
+
+This object can be in one of the 3 states
+Initially when we create a promise it will be in a pending state
+at this point we can pick up some asynchronous operation
+
+When the results ae ready the promise can be either fulfilled/resolved
+which basically means the operation completed successfully so we will get a value
+
+Otherwise if something went wrong during the execution of the asynchronous operation our 
+promise will be in the rejected state in this case we are going to have an error
+
+so lets see them in action
+in the same project we are going to create a new file called promises.js 
+we will use this file for working with promises
+Once we have a better understanding of promises we will modify the code in index.js
+
+in promises.js lets create our first promise (on line 2)
+
+so we start by creating a new promise object
+so we set it to a new promise now this construct function takes an argument 
+this argument is a function with 2 parameters (line 2 in promises.js)
+
+so when creating a new promise we should pass a function with 2 parameter resolve and reject
+at this point we are going to kick off some async work
+we can call a database start up a web server or start a timer  any kind of asynchronous operation
+so remember at the end of the operation we either get a value or error
+if there is a value we want to return this to the consumer of this promise
+
+so somewhere in the code we are going this promise beacuse the promise object promises us that its going to give us 
+the result of an asynchronous operation so we need to send this result to the consumer of this promise
+the way we do this is by using the resolve and reject parameters
+
+these 2 are basically functions 
+so we can call resolve and pass a value here (line 4 in code)
+so this would be a result of our asynchronous operation
+we would then use the result to send the value to the consumer of this promise object
+
+Now if domething goes wrong we want to return an error
+so instead of resolve we pass reject and here we can pass an error message 
+
+as a best pratice it is better to pass an error object instead of a simple string 
+
+*so as an example in the real world if our resolve is the one that gets returned instead of a 
+1 we would return data from a database*
+
+now we need to consume this promise so somewhere in the code we 
+we get our promise object (line 9) we notice on the intellisense we have 2 methods then and catch
+catch is for the errors
+and then is for getting the result for our asynchronous operation
+
+so we are calling the then method (line 10) and as a agrument we pass a function
+this function takes a result in this example result is 1 that we are resolving
+now lets console log it 
+
+we will make it more of a real world problem by putting it in a settimeout
+
+Now if something goes wring in the code this is where reject comes in (line 5)
+Now we will be using catch we are going to chain it to the (then method)
+we are going to display the error message on the console (line 11 )
+
+Quick Recap:
+A promise is an object that holds the eventual result of an asynchronous operation
+When we create it, It is in a pending state at this point it kicks of an asynchronous operation
+that operation can complete successfully or it can fail if it completes successfully 
+we say the promise is resolved or fulfilled
+
+if it fails the state of the promise will go from pending to rejected
+
+Take away: 
+Anywhere that we have an asynchronous function that takes a call back we should modify the function to return a promise
+

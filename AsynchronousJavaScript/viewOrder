@@ -1,0 +1,12 @@
+SynchronousVsAsynchronousCode
+PatternsForDealingWithAsynchronousCode
+Callbacks
+CallbackHell
+NamedFunctionsToRescue
+Promises
+ReplacingCallbacksWithPromise
+ConsumingPromises
+CreatingSettledPromises
+RunningPromisesInParallel
+AsyncAndAwait
+Exercise

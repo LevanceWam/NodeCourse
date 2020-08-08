@@ -1,0 +1,15 @@
+This is the notes for Replacing Callbacks with functions
+
+To solve our Callback hell problem we need to modify our asynchronous functions to return a promise 
+
+we are going to modify getUser function to return a promise 
+(go to line 12 in code)
+we are going to move the setTimeout inside of the promise
+next we are going to remove our callback parameter 
+then (on line 16) change callback to resolve
+
+Quick exercise do this for the other 2 functions 
+now that we completed the exercise 
+
+none of the functions use a Callback
+now in the next lecture we are going to consume these promises

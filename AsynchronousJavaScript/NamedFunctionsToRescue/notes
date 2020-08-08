@@ -1,0 +1,42 @@
+This is the notes for named functions to the rescue 
+
+Now we are going to use a simple solution to fix the callback hell we discovered in the last lecture
+
+so we want to get rid of the callback hell inside of our getUser function on line 2 we want
+to get rid of the nested structure the technique we are going to use is to replace
+an anonymous function with a name function 
+
+Here is what we mean by that:
+if we look at the second agrument in the getCommit function this is what we call a anonymous function
+a function that does not have a name (basically all of the arrow functions we have written to this point)
+
+So we are going to take our anonymous function and replace it with a named one and with this we can flatten the stucture of this code
+
+So we will start at the deepest level which is the getCommits
+
+(On line 11) we are going to create a function. this is what we'll use to replace the anonymous function
+Now this function gets an array of commits we are going to display the commits on the console
+This function that we made gets an array of commits and simply does a console log
+
+now if we look at the signature of the function
+it takes an array of commits then there is the body of the function
+
+This is similar to waht we have (on line 4 in the code)
+Now where the callback is on (line 4) we are going to put the refernce to the function 
+we are not calling the function we are only passing the reference to the function
+
+Now as a exercise we are going to try to do this 2 times for the GetRepo and getUser function calls
+
+// Exercise Solution
+
+On the call to get the repos we have another anonymous
+the anonymous function takes an array of repositories and then gets the commits for the repositories
+
+so we create a function call getCommits (line 9)
+now we can replace the anonymous function that was on line 3 and make a reference to the function instead
+
+One more time for the last anonymous function
+this anonymous function takes a user object and then gets the repos for that user so we create another function called displayRepos
+
+Although this approach isnt ideal it is better than having to deal with callback hell
+in the next lecture we will look at a better way to deal with asynchronous code by using promises

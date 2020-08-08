@@ -1,0 +1,27 @@
+this is the notes for CreatingSettledPromises
+
+Upto this point we have seen a decent bit of promise in the section 
+in this lecture we are going to explore the API of promise objects in JS in more details
+
+So lets create a file called promise-api.js 
+This file will be for practice 
+
+Sometimes we want to make a promise that is already resolve this is particulary useful when writing unit test 
+when we want to simulate a scenario where an asynchronous operation like calling a web service
+completes successfully in our unit test we want to create a promise
+that is already resolve
+
+(go to code line 2)
+if that is what we need we can call the promise call in JS it has a static method called resolve
+this will return a promise that is already resolved 
+
+We can optionally pass a value like 1 or a user object and we get the promise this promise is 
+already resolve so now we can call the then method on the object (line 3)
+
+We can also do this with a promise that is already rejected
+so instead of calling resolve set it to reject
+(go to line 7)
+
+then we need to call catch
+remember it is better to call a error when ever we want to reject a promise 
+because its better to use a native error object because it will include a callstack

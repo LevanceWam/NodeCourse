@@ -1,0 +1,39 @@
+This is the notes for Patterns For Dealing With Asynchronous Code
+
+Let's try to make this program more real.
+lets take our setTimeout function and move it into a function
+(go to code line 2)
+then we are going to call the function get the user object and store it inside of a variable
+
+now on line 6 we are going to create the function getUser 
+inside of the function we need to return a user object 
+under the console log we are going to return a object 
+
+(go to line 9 in code)
+the object has a id property and a github username property
+
+now if we go back to line 2 where our user object and we log it on the console 
+we notice that we can not get the user object like this it will not work and if we 
+look at it on the console the function returns undefined 
+
+the reason for this is because the functin we passed to setTimeout is executed 2 seconds after 
+so what we are returning from this function will not be availiable when we call getUser 
+because this function is calling setTimeout to schecdule the a task for the future 
+
+in order to get the value we have to return the value outside of the setTimeout function
+look to line 15 to see our example 
+it will then be availiable will hold the value that we return 
+
+but this isnt what we want because when accessing a database the result is not 
+availiable immediately it might take a few seconds maybe more
+
+This is why we had to set setTimeout to simulate a long running operation  in this case we're 
+reading something from the database and at this point the result the result will be ready
+
+So the big question here is how can we access the user object in the main program
+there are 3 Patterns to deal with Asynchronous code:
+
+callbacks
+promises
+async/ wait // this is syntacial sugar for promises 
+kind of like ES6 classes to prototypes 

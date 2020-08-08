@@ -1,0 +1,71 @@
+This is the notes for Async and Await
+
+So back to our index.js we are going to make our code even simplier 
+in javascript we have this new feature called async and await
+
+Async and Await helps us write code asynchronous code like synchronous code 
+Lets take a look at what we mean by that
+
+(go to code line 21)
+we are going to rewrite the code where we was using promises and use async and await
+
+First we call a getUser with a value remember this function returns a promise
+now anytime were calling a function that returns a promise
+we can await the results of that function and then get the actual
+result just by calling a synchronous function
+so we can take the result and store it in a user object
+
+(go to code line 22)
+Similarly now that we have a user object we can call get repo to get the repos for this user 
+we can pass the agruments that we need and we can await the results and then store them in repos
+
+(go to line 23)
+Now that we got the repos we can call getCommits pass the first repository amd since we are still returning sa promise we can await it 
+and get the commits and store them in this constant commits 
+
+finally we console.log commits
+
+So with the await operator we can write asynchronous code that looks like synchronous code 
+
+Lets talk about async now
+so  when ever we use the await operator in a function we need 
+to decorate that function with a async modifier
+
+in the current example we have written (line 21) outside of the function 
+now this is a requirement by javascript engine that whenever we use await 
+we should have a function that is decorated with async and we will find out why this is in a little bit
+
+so we need to define a function on (line 19)
+we then need to take all the code dealing with await and move it inside of the function
+after that we need to decorate the function with the async operator
+finally we call the function (line 29)
+
+if we look at the return type of this function its returning a promise of void
+that means the promise that once fulfilled doesnt result in a value its void
+basically this is telling us that async and await are built on top
+of promises they are syntical sugars in the language that allow us to create asynchronous code that
+looks synchronous
+
+when js engine converts this code it converts it into something like the promise based approach
+so even though the code looks synchronous it doesnt execute synchronously
+
+so when we are awaiting the results of the function we are not really 
+waiting or blocking in a synchronous fashion 
+
+so in terms of code execution when js engine executes line 21
+it is going to release our thread and make it availiabe to do other work
+
+One more time:
+Async and Await are syntical sugars interally we are using promises our code still runs 
+asynchronously but it looks and reads synchronously
+
+Last thing before we go
+in the promise approach we have a catch method to get any errors
+when we use async and await we do not have this 
+the way we get errors is by using a try catch block
+
+so in the displayCommit function wrap all of the asynchronous code in a try block
+then we add a catch block that gets a err object so if anything goes wrong this block will run
+
+
+

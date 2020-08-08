@@ -1,0 +1,31 @@
+This is the notes for callbacks
+
+We are going to learn how to use a callback to get a user object
+
+first inside of the getUser function we need to add another parameter 
+and we are going to call it callback (go to line 9 in code )
+A callbacknis a function that we are going to call when the result of a 
+asynchronous operation is ready.
+
+In this case and point the result is ready, so we are going to call this function back 
+with the user object that we created (lines 13 and 14 in code)
+so we simply call this callback (line 12 in code ) and give it the user object
+
+back to line 42 in the code we do not need the variable anymore this is because we are not getting a return value
+Now the getUser function needs a second argument we are going to pass a function that will be called with this argument
+the function takes a user and now we have access to the user object we have read from the database 
+we can display it on the console like this (line 43 in code)
+
+so we can now pass the function in the second agrument the function takes a user because we are taking a user object
+
+Lets do a exercise:
+In this program lets imagine once we read a user object from the database we are going to look
+at the githubusername property and we are going to call the github api
+to get the list of repositories from that user 
+
+Our job is to convert the function on line 48 to a asynchronous function and call in in the asynchronous function
+getUser once we have the user object we need to get the repositories
+when we convert the function make sure it takes 2 seconds to complete and that we are using a callback to get the results 
+and display all of the results in the console
+
+So at the bottom of the file this is the old code that was at the top of the file and the beginning of the exercise 
