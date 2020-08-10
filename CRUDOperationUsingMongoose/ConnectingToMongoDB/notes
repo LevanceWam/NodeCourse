@@ -1,0 +1,35 @@
+Create a new folder mongo-demo
+initalize npm in folder (create default package.json)
+download mongoose package from npm:
+npm i mongoose
+
+Mongoose gives us a simple api to work with a mongo DB database
+now we need to create our index.js
+
+Now inside of index.js we need to connect to MongoDB 
+so we need to load the mongoose module 
+(go to line 1)
+
+mongoose has a method called connect() used to connect to MongoDB (line 3)
+inside of thre connect method we need to provide this string ('mongodb://localhost)
+this references the MongoDB that we have installed on our local machine 
+
+when it comes to the point where we need to deploy the application to a production environment we will use a different 
+string
+
+NOTE: For this example we are not going to be building our connection in a config file because it is not that complex
+But we need to remember in a real world setting we need to do this 
+
+Now we need to add the name of the database we are going to use  (line 3) 
+for this example it will be playground
+
+We don't need to create the database if we dont have it already
+when we write something to the database MongoDB will automatically create this database for us
+
+The mongoose connection returns a promise so we can go and use the 
+then() to define some code when we connect to the database 
+
+If something goes wrong we can use the catch() to return a error
+
+finally we run the program by running it in terminal 
+nodemon nameOfFile.js 
