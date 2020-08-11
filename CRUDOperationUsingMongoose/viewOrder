@@ -1,1 +1,16 @@
 ConnectingToMongoDB
+Schemas
+Models 
+SavingADocument
+QueryingDocuments
+ComparsionQueryOperators
+LogicalQueryOperators
+RegularExpressions
+Counting
+Pagination
+Exercise1
+Exercise2
+Exercise3
+UpdatingADocumentQueryFirst
+UpdatingADocumentUpdateFirst
+RemovingDocuments
