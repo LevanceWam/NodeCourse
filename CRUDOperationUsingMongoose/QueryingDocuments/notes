@@ -1,0 +1,33 @@
+This is the notes for Querying Documents
+
+We are going to learn how to retrieve documents from the mongoDB 
+first we are going to make another async function called getCourses
+
+for this example we are going to chance the createCourse function to getCourse function
+
+lets start workingnin the new function
+Our course class that we defined has a bunch of methods for querying document we have to get a list of documents
+
+With the find method this method returns a document query object (line 33 code)
+this document query object is kind of like a promise
+we can await it and get the result
+using this method we get all of the documents out of the database
+
+we can also pass a filter
+inside of the method, so as the first argument in the find method 
+we pass an object and in this object we add one or more key value pairs for filtering 
+this is how we retrieve our Documents
+
+We can also sort our documents , we can set limits on the number of documents that are returned 
+we can also select specific properties in documents
+
+So if we get to a point where we have 50 properties we dont have to return all of them we can choose what we want 
+
+So remember tht find returns a document query object (line 34 - 36)
+so here we can customiz3 the query we can apply a limit()(line 37)
+
+we can sort()(line 38) the documents
+we pass object as the first argument and in the object we add one or more key value pairs for sorting
+
+We also have a select() with this we can select the properties we want to be returned 
+so in our example we are selecting the name and the tags 
