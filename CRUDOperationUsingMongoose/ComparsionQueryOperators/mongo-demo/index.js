@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/playground')
-    .then(() => console.log('Connected to the Database'))
+mongoose.connect("mongodb://localhost/playground")
+    .then(console.log('Connected to the database'))
     .catch(err => console.error('Could not connect to MongoDB', err));
 
 const courseSchema = new mongoose.Schema({
@@ -30,19 +30,16 @@ async function createCourse() {
 }
 
 async function getCourse() {
-    const courses = await Course
-        .find({ // this return all of the courses if no arguments are in the method
-            author: 'vance'
-        })
-        .limit(10)
-        .sort({ // here we are sorting by acsending order. -1 will give us decsending
-            name: 1
+    const course = await Course
+        .find()
+        .limit(8)
+        .sort({
+            name: -1
         })
         .select({
             name: 1,
             tags: 1
         });
-    console.log(courses);
 }
 
 getCourse();
