@@ -1,1 +1,6 @@
 This is the notes for ComparsionQueryOperators 
+The topic for this lecture is comparsion operators 
+
+In mongodb we have a lot of operators for comparing
+since mongoose is built on top of mongodb driver all of these operators are availiable 
+in mongoose

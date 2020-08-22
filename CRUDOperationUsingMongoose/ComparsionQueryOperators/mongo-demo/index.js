@@ -30,7 +30,7 @@ async function createCourse() {
 }
 
 async function getCourse() {
-    const course = await Course
+    const courses = await Course
         .find()
         .limit(8)
         .sort({
@@ -40,6 +40,7 @@ async function getCourse() {
             name: 1,
             tags: 1
         });
+    console.log(courses);
 }
 
 getCourse();
