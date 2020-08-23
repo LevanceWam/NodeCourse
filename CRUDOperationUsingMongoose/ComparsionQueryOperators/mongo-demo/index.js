@@ -31,7 +31,17 @@ async function createCourse() {
 
 async function getCourse() {
     const courses = await Course
-        .find()
+        // .find({
+        //     price: {
+        //         $gte: 10,
+        //         $lte: 20
+        //     }
+        // })
+        .find({
+            price: {
+                $in: [10, 15, 20]
+            }
+        })
         .limit(8)
         .sort({
             name: -1

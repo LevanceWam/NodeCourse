@@ -4,3 +4,13 @@ The topic for this lecture is comparsion operators
 In mongodb we have a lot of operators for comparing
 since mongoose is built on top of mongodb driver all of these operators are availiable 
 in mongoose
+
+Here are all of the comparsion operators in Mongodb:
+eq = equal
+ne = not equal
+gt = greater than
+gte = greater than or equal too
+lt = less than 
+lte = less than or equal too
+in
+nin = not in 
