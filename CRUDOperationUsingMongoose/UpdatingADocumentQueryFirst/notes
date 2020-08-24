@@ -1,0 +1,18 @@
+This is the notes for updatingAdocument
+
+We are going to learn how to update documents in a MongoDB database
+
+We start off by creating a new function called updateCourse
+
+there are 2 ways to update a document the first approach is called 
+Query first
+So we would find the document using: 
+findById
+modify its properties 
+save the document 
+
+The second approach is called update first
+// update directly
+// optionally get the updated document
+
+For this example we will use the first approach then the second
