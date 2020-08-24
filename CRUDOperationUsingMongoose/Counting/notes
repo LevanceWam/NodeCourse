@@ -1,0 +1,6 @@
+This is the notes for counting
+
+instead of using the select method like we have been using before 
+we remove that and use the count method (.count())
+
+This will return the number of documents that match the filters we already defined
