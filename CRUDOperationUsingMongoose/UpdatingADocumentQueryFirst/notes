@@ -11,6 +11,9 @@ findById
 modify its properties 
 save the document 
 
+This approach is useful if we recieve input from the client and we need to make sure it is a valid operation 
+ 
+
 The second approach is called update first
 // update directly
 // optionally get the updated document
