@@ -3,9 +3,9 @@ This is the notes for Querying Documents
 We are going to learn how to retrieve documents from the mongoDB 
 first we are going to make another async function called getCourses
 
-for this example we are going to chance the createCourse function to getCourse function
+for this example we are going to change the createCourse function to getCourse function
 
-lets start workingnin the new function
+lets start workingn in the new function
 Our course class that we defined has a bunch of methods for querying document we have to get a list of documents
 
 With the find method this method returns a document query object (line 33 code)
