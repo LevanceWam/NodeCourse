@@ -1,0 +1,11 @@
+this is the notes for regularExpressions
+
+When we want more control over filtering our strings we need to use 
+regular expressions 
+
+lets say we want to get courses who's author starts with vance 
+to do this 
+we passs a object in the find method and the value author
+instead of using a string we pass a regular expression (please look at the find method in code)
+
+we add a i to make it case insensitive so we can type it however we want 
