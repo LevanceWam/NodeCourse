@@ -57,6 +57,7 @@ node nameOfFile.js
 <li><a href='#section4'>Express Advance Modules</a></li>
 <li><a href='#section5'>Asynchronous JavaScript</a></li>
 <li><a href='#section6'>CRUD Operation Using Mongoose</a></li>
+<li><a href='#section7'>Mongo - Data Validation</a></li>
 
 <h2 id=section1>Node Module System</h2>
 
@@ -346,3 +347,6 @@ brew services start mongodb-community@4.4
 
 brew services stop mongodb-community@4.4
 ```
+<a href="#home">Top</a>
+
+<h2 id=section7>Mongo - Data Validation</h2>
