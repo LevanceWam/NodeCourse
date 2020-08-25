@@ -1,0 +1,40 @@
+this is the notes for validation
+
+Looking at the courseSchema we have defined by default all of the properties we defined are optional
+so if we where to save a blank course it would work
+
+MongoDb doesn't care if we have a course that has a name or any other properties 
+
+so lets try using some validation
+first up Require
+
+first we choose a property and pass an object 
+we set the type and pass required: true
+
+Now if we try to save a property with out a value we will get an expection
+
+when we look inside of the terminal we see that we got a rejection
+this is because this is a promise and since we didn't set up a .catch() to catch any potential errors this is what we get
+So remember when dealing with async and await we have to use a try and catch block
+
+Now that we have a try and catch block we now if we save and something is empty we get back a expection message
+this also means that mongoose will not allow us to save the course to the database
+the validation automatically kicks in at the time we try to save the course to the database
+
+One important thing to know is that the validation that we have implemented on the name property is only 
+meaningful in mongoose MongoDB doesn't care about our properties
+
+**Note** earlier when we were using express we were using Joi
+now we might be asking ourselves which one we need to use and the answer 
+is both
+
+these kind of validations compliment eachother we use joi in our restful 
+apis
+we use them as a first attack to make sure the data the client is sending is valid data
+but we will also need mongoose to make sure that the data we save in the right shape
+
+this is because it is possible that a client might send us a valid course 
+in the body of the request but when we create the course object
+in our http service perhaps we may forget to set the name property to what we get from
+req.body.name so by enforcing validation in mongoose we can ensure that programming errors won't give us
+invalid documents
