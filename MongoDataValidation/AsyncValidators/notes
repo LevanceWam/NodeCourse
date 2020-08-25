@@ -1,0 +1,20 @@
+This is the notes for async validators
+
+In this lecture we are going to be looking at async validators
+This will be useful when are trying to get rid of something from the database or
+remote http service since we won't have the answer right away we'll make it
+asynchronous
+
+So we will learn how to convert a synchronous validator to a asynchronous one 
+
+so inside of the validate property object we are going to pass
+a new property called isAsync and set it to true 
+then inside of the function we need to add a callback
+now when the result is ready we will call the callback and get the results
+
+now in the real world our result will be something that we get calculated from the file system,
+database, or a removed service.
+
+In short Async validators are easy all we need to do is:
+set the Async property
+pass a callback function
