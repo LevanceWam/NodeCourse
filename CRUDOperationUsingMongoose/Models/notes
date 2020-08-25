@@ -1,0 +1,37 @@
+This is the notes for Models
+
+We now have our schema that defines the shape of course documents
+in MongoDB database
+
+Now we need to compile the schema into a model 
+(line 18 code)
+THe mongoose object has a method called model
+it takes 2 arguments the first argument is the singular name of the collection that this model is for
+The second argument is the schema that defines the shape of the document in the collection
+
+With this we get a course class in the application so we set it in a new const (line 18)
+Remember this is a class so we usr the pascal naming convention
+
+we can now create an object based on the class (line 19)
+on (line 22) when we are setting the tags property
+This is something interesting about mongo or NoSQL databases in general is that 
+a document in mongoDB can be a complex object. so our tags property is an array of strings 
+we don't have something like this in relational databases  
+the row in relational database has simple attributes 
+if we tried to structure the same model we have here in a relational database we would need 3 tables
+for the courses tags and a intermediary table called course tags
+this is because we have a many to mant relationship between courses and tags 
+
+In MongoDB or NoSQL databases in general we do not have that structure we dont have to define tables 
+we dont have to script them we simply create the objects and store them in the database this is why we call them schema less 
+they don't have a schema 
+
+going on to the date property since we defined it to have a default value we don't have to set it 
+
+
+Quick recap:
+Once we have the schema we need to compile that into a model which gives us a class
+next create a object based on the class the object maps to a document in mongoDB database
+
+
+

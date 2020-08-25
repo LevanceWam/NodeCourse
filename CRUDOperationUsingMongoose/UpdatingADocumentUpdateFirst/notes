@@ -1,0 +1,13 @@
+this is the notes for UpdatingADocumentUpdateFirst
+
+When we use this second approach we do this when we aren't 
+recieving a input from the client 
+
+when we want to update a document or multiple documents in the database
+
+first change instead of using findById we use the update method 
+
+Note*: look up mongodb update operators to find all of the useful update operators 
+https://docs.mongodb.com/manual/reference/operator/update/
+
+Download this video to study with a lot of info was covered

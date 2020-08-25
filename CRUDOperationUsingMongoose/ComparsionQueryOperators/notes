@@ -1,0 +1,34 @@
+This is the notes for ComparsionQueryOperators 
+The topic for this lecture is comparsion operators 
+
+In mongodb we have a lot of operators for comparing
+since mongoose is built on top of mongodb driver all of these operators are availiable 
+in mongoose
+
+Here are all of the comparsion operators in Mongodb:
+eq = equal
+ne = not equal
+gt = greater than
+gte = greater than or equal too
+lt = less than 
+lte = less than or equal too
+in
+nin = not in 
+
+so in this example we want to pretend that in this we have a price value
+so we want to get all of the course that is ten dollars
+we would call the find method and pass our object for filtering and set the price to 10 dollars
+
+if we wanted to get the courses over 10 dollars we can not do it with the current implementation we have going on Here
+so in order to express the concept greater than 10 we have to pass an object
+the object is a container for key object pairs 
+
+We use the $ to indicate an operator so now we can use the comparsion operators
+
+Lets take it a step further if we wanted to get the course that are between 10 and 20 dollars
+to do this just add another operator to it (Commented out code)
+
+another example would be to get the courses that are either 10, 15, or 20 dollars
+so where we would normally add the price we pass an object and use the operators $in
+we need to express our query where courses are 10, 15 or 20 dollars 
+one way to deal with this is to use an array to express multiple values 

@@ -1,0 +1,12 @@
+This is the notes for LogicalQueryOperators
+
+We have 2 logical query operators:
+or 
+and
+
+What if we wanted to get the courses published by an author or get the courses that are published
+This is where the or operator comes into play 
+
+the and operator works just like the find method with all the filters we have inside of in it 
+
+I think these 2 operators work just like we use them for if statements (||, &&)

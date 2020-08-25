@@ -1,0 +1,19 @@
+This is the notes for saving a document 
+
+Our course object has a method called save(). we are dealing with a asynchronous operation
+its gonna take some time to save the course to the database, because we are dealing with the file system the 
+result of this operation will be ready in the future
+
+our method returns a promise we can await the results 
+the result is an actual course object that is saved in the database 
+
+When MongoDB saves the course it is going to give it a unqiue id
+
+Remember since we are using await we have to have it inside of a async function
+
+So when we run the program (node nameOfPackage.js)
+
+the course we saved is now in the document we made in MongoDB compass
+
+this is the beauty of MongoDB or NoSQL database unlike relational database we didnt have 
+to scrape that table we simply created a document and stored it in our MongoDB database

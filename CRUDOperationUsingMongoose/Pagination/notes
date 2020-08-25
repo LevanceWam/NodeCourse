@@ -1,0 +1,19 @@
+This is the notes for pagination
+
+earlier we learned about the limit method
+A method that goes hand and hand with it is the skip method
+
+we use the skip method to implement pagination
+
+first we define 2 constants pageNumber and pageSize for the sake of this example this is hard coded for simplicity
+we do not do this in the real world for this method
+
+in order to implement pagination we need to escape all the document in the 
+previous page 
+
+the formula to write this is in the code inside of the skip method 
+
+in that code we are assuming page numeber starts from 1
+we aslo change the limit to page size
+
+now we get the documents from a given page

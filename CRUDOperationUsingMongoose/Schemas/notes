@@ -1,0 +1,48 @@
+This is the notes for schemas
+
+Now we need to learn how to build a schema
+A schema is used to define the shape of documents within
+a collection in MongoDB
+
+What does this mean? 
+If we go to MongoDB Compass we created a database called playground and a collection called courses
+A collection in MongoDB is like a table in a relational database 
+
+In the collection we have 3 documents
+A document in MongoDB is similar to a row in a relational database
+In relational databases we have tables and rows 
+In MongoDB we have Collections and documents
+if we look inside of some of the documents we see a lot of json objects
+
+in Mongoose we have somethong called schema it is not a part of MongoDB it is 
+specific to Mongoose
+We use a schema in Mongoose to define the shape of documents in a MongoDb collection
+we use it to define what are the properties we have in the document 
+
+
+Lets go create a schema
+(Line 7 in code)
+When we are creating an instance of this class we pass an object 
+and in this object we specify the key value pairs that we should have in course documents
+
+so for example we have a property name we set its key value to a string we do the same for the author property
+Now when we are setting the tag we are going to use an array with strings
+When this is stored each object in the array will be a key value pair
+the key will be the index and the value will be the string
+
+We are going to add a date property with  the type date
+we can also give date a default value 
+
+So instead of just adding the date type we can make the date property a object that
+has a type property called date and also has a property called default and set it to Date.now
+now that we have this we do not have to specify a date when creating a course object
+Date.now will be used as the default value for this property
+
+Here is the list of types we can use in creating a schema:
+String 
+Number 
+Date
+Buffer (used to store binary data);
+Boolean
+ObjectID (used for assigning unit identifers)
+Array

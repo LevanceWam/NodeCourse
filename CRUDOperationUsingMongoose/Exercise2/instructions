@@ -1,0 +1,16 @@
+This is the instructions for Exercise 2
+
+For this Exercise we need to 
+1. get all the published frontend and backend courses
+2. sort them by price from most expensive to least
+3. pick only the name and author
+4. display
+
+*Note:
+We also could've used the in operator to accomplish what we did in this exercise instead 
+of using the or operator like this :
+
+.find({
+            isPublished: true,
+            tags: { $in: ['frontend', 'backend']}
+        })

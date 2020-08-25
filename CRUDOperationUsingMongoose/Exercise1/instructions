@@ -1,0 +1,11 @@
+First we need to download the files provided files and 
+run the command in the exercise.txt to move all of the information inside of the 
+exercise-data.json file 
+
+When that is completed we should see a new database called mongo-exercises with the collection called courses
+
+After that we need to write a program that allows us:
+1. to get all the published backend courses
+2. sort them by their name
+3. pick them by their name and author
+4. display them
