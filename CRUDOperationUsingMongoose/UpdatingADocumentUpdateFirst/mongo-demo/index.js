@@ -57,6 +57,8 @@ async function updateCourse(id) {
             author: 'Vance',
             isPublished: false
         }
+    }, {
+        new: true
     });
     console.log(result);
 }
