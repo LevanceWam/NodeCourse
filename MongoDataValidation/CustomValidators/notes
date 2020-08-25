@@ -1,0 +1,26 @@
+This is the notes for CustomValidators
+
+At some point the built in validators we have in mongoose
+will not be able to do the things that we need
+
+For example
+lets say that we wanted to enforce the rule with our tags (with the way it is now a string array)
+that every course should have at least one tag or atleast one string in the array
+the required property can not help us here because if we pass it blank this is acceptable in mongoose point of view 
+
+This is where we would need a custom validator
+so lets start off by working inside of the tags property
+
+Once we pass the object and set the type to array
+we are going to add a property called validate this is where our custom validator goes in
+we pass an object and in this object we set the property validator which we set to a function
+the function takes a value (which is v) and inside of the function we add the custom validation logic 
+
+We can aslo set a custom message when it fails 
+the validate object has another property called message
+
+now if we where to leave it empty or skip the tag property at all it will validate and show us an error message 
+(The reason why the validation goes off if we skip the tag is because mongoose will make it a empty array and our logic calls for length greater than 0)
+
+now if we pass it as null it will give us a validation message but not the kind that we want so we have to tweak the logic inside of the validator to fix that 
+Now  we have it to where if v has a value and is greater than 0 we won't see the validation message
