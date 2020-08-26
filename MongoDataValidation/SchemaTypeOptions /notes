@@ -1,0 +1,26 @@
+This is the notes for SchemaTypeOptions
+
+When we are defining a schema we know that we can set the 
+type of property directly on the property or pass an object
+
+We are going to take a look at some more properties that we have with the 
+schema type object
+
+For Strings we have 3 more properties we can use:
+lowercase // this converts everything in the catergory property to lowercase
+uppercase // converts everything in the catergory property to uppercase
+trim // if there is any padding around the string this property removes them
+These 3 properties are availiable when using the string type
+
+We still have a couple more properties in the schema type object and these properties can be used when defining any property 
+no matter the type
+
+Lets take a lot at our price property
+lets say that we always want to round the value of the price 
+we can define a custom getter and setter 
+
+The setter is called when we set the value of a property like in the createCourse
+The getter is called when we read the value of a property
+
+So if we get a course and the value was saved before we made the getter and the setter 
+the getter will round it for us
