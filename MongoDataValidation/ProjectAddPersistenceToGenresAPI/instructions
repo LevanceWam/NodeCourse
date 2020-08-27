@@ -1,0 +1,4 @@
+This is the instruction for ProjectPersistenceYoGenresAPI
+for this project we need to:
+Take out the array we have 
+in the route handler put the correct mongodb and mongoose code to get it working 
