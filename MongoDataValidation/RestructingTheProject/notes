@@ -1,1 +1,34 @@
 This is notes for RestructingTheProject
+
+If we take a look at our video app structure we can see that we 
+have our customer model then our routes handlers and finally our validate function
+
+since this is a simple application this is not that big of a project and we do not have much to work on from our model
+
+But in the real world the current models we are working in are going to be more complex 
+so the code in the module will grow
+
+This is something we need to work on, we need to keep the application maintainable
+to do this we need to make sure that each module is responible for one thing 
+
+this is known as single responibility
+Basically anything that is in the routes folder should just be dealing with just that routes 
+and anything that has to do with the models should work on the models 
+
+so for this lecture we need to extract our customer object and the validate function that uses Joi and put them in a new folder called models 
+inside of the models folder we created the customer.js file and 
+moved the customer model and the validate function here 
+
+now that we removed these two from the routes we need to export the customer class and the validate function so we can connect it to the routes
+
+now when we go back into the routes we need to load the two properties that we are exporting from models/customer.js
+those being the Customer class and validate 
+
+The best way to load them and have your code look clean is to use object destructing 
+now instead of loading 1 object and having to go in the code and type something like Customer.customer or Customer.validate 
+we can destructure the object into 2 constants or variables 
+
+now if we look at our code it is a lot shorter than when we first started
+
+Now as another exercise we need to restructure the genre routes by 
+getting rid of the Genre class and the validate function and move it into the models folder

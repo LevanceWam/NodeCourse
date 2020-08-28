@@ -30,5 +30,6 @@ function validateCustomer(customer) {
     return Joi.validate(customer, schema);
 }
 
+// remember that exports is a reference to module.exports
 exports.Customer = Customer;
 exports.validate = validateCustomer;
