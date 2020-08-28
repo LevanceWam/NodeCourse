@@ -350,3 +350,20 @@ brew services stop mongodb-community@4.4
 <a href="#home">Top</a>
 
 <h2 id=section7>Mongo - Data Validation</h2>
+
+<h4>SchemaType</h4>
+
+<p>Objects that define the validation requirements for the given property.</p>
+
+<h4>Validation with Mongoose</h4>
+
+<p>Validation logic is executed by mongoose before saving the document to the database. We can also use the valiate() to save manually.</p>
+
+<h4>Built-in Validators</h4>
+
+<ul>
+ <li>Strings: minlength, maxlength, match, enum </li>
+ <li>Numbers: min, max</li>
+ <li>Dates: min, max</li>
+ <li>All types: required</li>
+</ul>
