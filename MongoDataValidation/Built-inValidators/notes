@@ -1,0 +1,35 @@
+This is the notes for Built-inValidators
+
+With our required property we can set to a boolean or make it a function that returns a boolean
+this is useful for if we want to make a property required or not
+
+so as an example lets try to make price required if the course is published 
+
+on the price property we pass an object 
+set the type and then pass the require property
+inside of it we pass a function 
+this is were we return the boolean
+we use this here to reference the course object
+
+Now if isPublished is true then price will be required
+
+*important* 
+We can not replace the function we have here with a arrow function this is because 
+they do not have their own this 
+they use the this value of the in closing execution
+that means the validation will not work
+
+Now depending on the properties we have. we have additional built in validators
+for example Strings have:
+min length // how many characters to have atleasr
+max length // maximum amount
+match // we can pass regular expression here 
+enum // to set an array of valid strings
+
+Number: 
+min 
+max
+
+Date:
+min 
+max
