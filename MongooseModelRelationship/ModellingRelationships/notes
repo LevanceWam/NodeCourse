@@ -1,0 +1,75 @@
+This is the notes for ModellingRelationships
+
+In all of the examples we have worked in so far they 
+have been single self contained documents.
+
+but in the real world the entities and concepts that we 
+work with may have some assocation 
+
+For example a course object/document
+this course will have a author but the author is more than a string, name 
+we might have a collection of authors where we store author documents and in each author document
+we could have a name, website and etc
+
+so we are going to learn in this lecture how to work with related objects 
+We have 2 approaches 
+References (normalization)
+Embedded Documents (Denormalization)
+
+With the References approach: 
+we should have seperate collection for storing our authors
+then we would go and create another collection where we would store the course object
+so inside of the course object we set the authore property to the author object ID 
+this is called a reference 
+
+Lets clarify some things:
+In relational databases we have a concept of relationship that enforces data integrity 
+but in mongodb or NOSQL databases we don't have a relationship
+
+so even though we set up a refernce between our author and course object there is
+no assocation or relationship between these 2 
+we can set the id to invalid id and mongo would not care
+
+Now onto Embedded documents
+So instead of having seperat collection of authors
+we can embed the author document inside of the course document
+now we are embedding a document inside of another document this is 
+what we call Denormalization
+
+Each approach has its strengths and depending on the app or querying requirement is how we'll know which one we need to use 
+basically we need to do a trade-off between:
+query performance vs  consistency
+
+So for example 
+if we wanted to change the name of our when we make that update all of the courses that has its ID will notice the change
+thus making it to where we can change it one time at one place
+this is an example of consistency
+
+However,
+everytime we want to query a course we need to do an extra query to load the related author
+now sometimes that extra query may not be a big deal
+but in certian situations we want our querys run as fast as possible 
+This is when we use the second approach
+with this approach we can load a course object and its author using a single query 
+we dont need a second one because the author is inside of the course object 
+
+But,
+with this approach if we wanted to change the name of the author chances are that 
+multiple course documents need to be updated and if our updated operations doesn't complete successfully 
+it is possible that we will have some course documents that are not updated 
+this will give us inconsistently 
+
+Now,
+We have a 3rd approach called the hybrid approach
+now imagine of the author object had 50 properties 
+we don't want to duplicate all of them inside of every course
+
+so we can have a seperate collection of authors and instead of making a reference inside of the course 
+we can embed a author document inside of the course document 
+but not the complete representation of the author document 
+we can choose what properties that we want on the inside
+
+with this approach we can quickly read a course object along with its author so we can optimize our query performence
+and we dont have to store all of its properties inside of a course
+
+This approach is useful if we have a snapshot of our data at a point in time 
