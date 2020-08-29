@@ -5,7 +5,8 @@ const genre = require('./routes/genres');
 const home = require('./routes/home');
 const customer = require('./routes/customers');
 
-mongoose.connect('mongodb://localhost/wamVid');
+mongoose.connect('mongodb://localhost/wamVid')
+    .then(() => console.log('connected to mongo'));
 
 app.use(express.json());
 app.use('/', home);
