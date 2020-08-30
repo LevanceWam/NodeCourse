@@ -1,0 +1,16 @@
+this is the notes for UsingAnArrayOfSubDocuments
+
+In this lecture we are going to learn how to change the subdocument of author
+to an array of subdocuments
+
+first we are going to rename the property to authors
+then we want to change the property into a array of properties
+then in createCourse we also need to do the same so change the parameter to authors
+
+now when we run the function on the second argument we pass an Array and the 2 author objects
+make sure to go and delete the database again before we run the program
+
+then in terminal we will see our new document with the authors we set to an array with 2 objects
+
+lets try to add an author to the array now
+also lets try to remove one 

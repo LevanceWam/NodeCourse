@@ -1,3 +1,5 @@
 ModellingRelationships
 ReferencingDocuments
 Population
+EmbeddingDocuments
+UsingAnArrayOfSubDocuments
