@@ -11,7 +11,6 @@ const {
 const mongoose = require('mongoose');
 const Fawn = require('fawn');
 const express = require('express');
-const fawn = require('fawn');
 const router = express.Router();
 
 Fawn.init(mongoose);
