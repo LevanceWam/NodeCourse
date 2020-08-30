@@ -1,0 +1,8 @@
+This is the instructions for ProjectBuildTheMoviesAPI
+
+We are going to build an API to handle a list of movies 
+This is the shape of our movie object:
+Title(required)
+genre (hybrid embedded object)
+numberInStock
+DailyRentalRate
