@@ -1,0 +1,49 @@
+This is the notes for EmbeddingDocuments
+
+In this lecture we are going to be looking at the EmbeddingDocuments technique
+
+so first we are going to add a author property
+so in the population.js we had to add the author property and add the schemaType ObjectId to reference the author property
+
+Well, when we are embedding a document all we have to do is 
+set the type of the property to the authorSchema thats it
+
+so before we run the createCourse function we need to delete the playground database again
+now when we run the EmbeddingDocuments file in terminal we get a new course document 
+we can see that author is a object with the id and the name 
+
+This is what we call a embedded or sub document these subdocuments are like normal Documents
+so some of the features on a normal document are available in sub documents
+we can implement validation and etc
+
+However, 
+the subdocuments can not be saved on their own 
+they can only be saved in the context of their parent
+
+lets try to change the name of the author 
+the first way we did it was by query first now lets try it with update first
+
+first we get rid of the findById method and use the update method
+Now since we are using doing update first we have to use the 
+set operator and here we need to pass one or more key value pairs 
+to access a nest of a property we need to use dot notation 
+
+since we are using the update method there is no need for us to 
+modify the object in memory and save it explicity
+we are updating it directly to the database
+
+now if we run it in terminal we can go and check in the database and see the changes
+
+If we want to remove a subdocument we would use the unset operator
+Lets try it out
+
+in terminal we run the file and see the changes
+
+As mentioned earlier the subdocuments are similar to normal
+documents  so we can enforce validation like every course should have an author
+
+to do this we would go to the course model and on the author property pass an object/ schemaType object 
+set the type to authorSchema and required to true
+
+If we want to make a specific property in the author subdocument required 
+apply the validation on the author subdocument (where we define the schema shape) itself
