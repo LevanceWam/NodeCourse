@@ -1,0 +1,81 @@
+This is the notes for transactions
+
+In some relational databases we have the concept of transactions
+
+transactions:
+A group of operations that should be performed as a unit
+so either all of the operations complete and change the state of the database 
+or if something fails in the middle all of these operations that have been applied will be rolled 
+back and the database will go back into the intial state
+
+In MongoDB:
+We do not have transactions as we have in relational databases
+But instead we have a technique called two phase commit although it is beyond the scope of the lecture 
+we have some links to look into if we choose to expand our knowledge
+https://www.docs4dev.com/docs/en/mongodb/v3.6/reference/tutorial-perform-two-phase-commits.html
+
+(Note from me MongoDB seems to have transactions now link below):
+https://docs.mongodb.com/manual/core/transactions/
+
+For this lecture we are going to use a npm package that gives us the concept of transactions 
+but internally implements this transaction using two phase comm
+download the package fawn
+
+npm i fawn
+
+inside of routes/rental.js
+load the module at the top
+
+fawn is a class
+
+we need to call its init method and pass the mongoose object
+
+Now we need to go to the rental object inside of the post method 
+we aren't going to need to create and update the movie explicitly 
+we are going to make a task object like a transaction
+
+First we need to new up the Fawn class and call the method task
+with method we can chain the operations we want to happen 
+all of these operations will be treated like a unit 
+
+So we are going to want to save the new rental to the rental collection 
+this is were we call the .save() we pass the name of the collection (plural name) and then the rental object we want to save 
+
+next we want to update the movies collection so we are going to use the update method 
+we are going to pass a query object to determine the movie or movies that needs to be updated 
+we pass the movie id as the next argument and finally the 3rd argument is the update object 
+using the increment operator we set the value of this to an object 
+So this is where we put the numberInStock and we decrement it by 1
+
+Finally we have to call the run method .run()
+if we don't then none of the operations will be performed 
+
+Now just in case something goes wrong or breaks we need to put this in a try catch block
+that way if something fails the database will go back to the way it was and we can alert the user with a 500 status error
+this means there was an internal issue
+In a realworld app we are going to want to log this expection so we can see what went wrong
+
+Now lets run it in the terminal
+
+So lets take a look at something interesting 
+so in our rental object we created we are only setting the customer and movie objects
+then in the try block we create our task and run it and send the rental object to the client 
+so notice we didn't set the id or the dateOut properties
+but we got them anyway
+
+MongoDB has nothing to do with this because it does not have these default values 
+it was because we defined them in the mongoose schema 
+
+so when a rental object is created mongoose knows the schema for the object
+it looks at the various properties and sets the default values
+same is true for the id's 
+
+So in short MongoDB does not set this the properties is set before we save the document to the database
+
+Final note in our list of collections there is a collection that we did not 
+create this collection was made by the fawn library uses the collection to perform the 
+2 phase commits
+
+so when the task is ran it add a new document to the collection which represents
+our transactions then it will execute the operations independently 
+when the operation is complete it will delete the document from the collection
