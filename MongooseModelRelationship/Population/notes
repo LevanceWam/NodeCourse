@@ -1,0 +1,32 @@
+this is the notes for Population
+
+Lets comment out the create course function and run the get course function 
+now that we know it works we need are going to add the author property to the select method
+
+In terminal we notice that when the objects are printed for the author property the id is shown
+in a real world application we want to load the author document and display the name 
+
+This is where the populate method comes in 
+after the find method we call the populate methis and as a first argument 
+we need to specify a path to the given property
+so in this case the property is author
+
+Mongoose knows that since we referenced the author object in the course object 
+when we go to populate it it'll query the author collection in mongodb
+test it in the terminal and we see the author object
+
+In a real world application an author would have mutiple properties 
+maybe when showing the properties off in terminal we dont want al of the properties
+well as a second argument we can specify which properties we want
+
+now when we run the application we get the author id and name
+lets try to exclude the id property now 
+
+by the way it is possible to populate mutiple properties 
+just add another populate and a property we want \
+
+One quick note
+Remember in mongo we don't have relationships for data integrity in the database
+so if we go in and change a document into a invalid document mongodb will not care 
+and if we run it in terminal the property we changed will come back as null 
+so if we want to see it use the author id as an example 
