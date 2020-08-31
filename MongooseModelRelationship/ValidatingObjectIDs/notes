@@ -1,0 +1,27 @@
+This is notes for ValidatingObjectIDs
+
+In postman we try to send a invalid object Id to our rental
+in the terminal we got a Promise rejection because we sent the 
+wrong id to a model
+
+The problem we are facing is that in postman when we sent the request 
+we are not getting a response back we are there just waiting
+the request is hanging we didn't handle the situation properly 
+
+What we should get is a 400 error a bad request 
+
+So what we could to do is create a if statement for both the customer and movie id
+that way if the id is invalid we can send status 400 and a error message
+But this is bad implementation a bad approach to this problem this is because we 
+had already defined our validate function to validate our request.
+
+So the logic we created to handle these errors should be in the validate function
+
+now to extended our validation is a little bit complex and we do not need to repeat this everytime we have a validate function
+Lucky for use there is a npm package for joi that we can download that handles ObjectIDs
+
+'npm i joi-objectid'
+
+this module returns a function we need to call the function and pass a reference to the joi module
+remember the result of this module is a function so we can set Joi.objectId to the function
+(I believe we just made a method on the Joi object that wasnt their already)

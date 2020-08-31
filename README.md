@@ -58,6 +58,7 @@ node nameOfFile.js
 <li><a href='#section5'>Asynchronous JavaScript</a></li>
 <li><a href='#section6'>CRUD Operation Using Mongoose</a></li>
 <li><a href='#section7'>Mongo - Data Validation</a></li>
+<li><a href='#section8'>Mongoose - Modeling Relationships between Connected Data</a></li>
 
 <h2 id=section1>Node Module System</h2>
 
@@ -367,3 +368,7 @@ brew services stop mongodb-community@4.4
  <li>Dates: min, max</li>
  <li>All types: required</li>
 </ul>
+
+<a href="#home">Top</a>
+
+<h2 id=section8>Mongoose - Modeling Relationships between Connected Data</h2> 

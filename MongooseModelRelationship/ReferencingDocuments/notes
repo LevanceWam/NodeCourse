@@ -1,0 +1,24 @@
+This is the notes for ReferencingDocuments
+
+In this lecture we are going to learn how to reference the author document inside of the course document 
+
+first we had to get rid of the playground database we already had becasue we are going to start from scratch
+then we are going to run the program in terminal to start up our new database and collection 
+
+Once we have our author object we are going to take its id and place it in the createCourse function
+by doing this the course object that is being created will reference the author object we created
+
+So we run the create a course and see that the objectID and course were created 
+but we didn't get a course property
+this is because when we defined this course model we only added a name property so 
+when saving the course the only property we have defined in the model will be persisted in the database
+
+lets add the author property to the course model
+
+so inside of the course model add the author property and pass a object 
+inside of the object we need to pass the schemaType for the objectId 
+then we set the property called ref and add the target of the collection which is author in this case 
+
+So for the author property we are storing an objectID that references a author object
+
+Remeber mongo does not care about relationships so we can add a invalid ref and mongo would not care 

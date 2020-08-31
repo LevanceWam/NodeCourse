@@ -1,0 +1,20 @@
+This is the notes for objectId
+we are going to take a look at objectIDs in MongoDB
+
+So we notice that when save a document we get a ID property with a long string 
+like this:
+_id: 5573363746596036fuw49
+we have 24 characters and every 2 represents a byte
+
+we have 12 bytes to uniquely identify a document in MongoDb
+first 4 bytes represents the time stamp 
+becauseof this we dont have to create a propery or document like created at
+because the timestamp is in the objectId
+
+12 bytes
+    4 bytes: timestamp when it was created we can extract this 
+    3 bytes: machine indetifier
+    2 bytes: process identifier
+    3 bytes: counter 
+
+Look at our video notes

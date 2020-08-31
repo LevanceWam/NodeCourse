@@ -1,0 +1,12 @@
+this is the notes for ProjectBuildTheRentalsAPI
+
+Time to take the this app to the next level 
+we need to implement a API that manages the rentals 
+
+we should be able :
+to create a new rental 
+// POST api/rentals
+
+
+//get the list of rental
+Get /api/rental
