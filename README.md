@@ -59,6 +59,7 @@ node nameOfFile.js
 <li><a href='#section6'>CRUD Operation Using Mongoose</a></li>
 <li><a href='#section7'>Mongo - Data Validation</a></li>
 <li><a href='#section8'>Mongoose - Modeling Relationships between Connected Data</a></li>
+<li><a href='#section9'>Authentication and Authorization</a></li>
 
 <h2 id=section1>Node Module System</h2>
 
@@ -391,3 +392,7 @@ brew services stop mongodb-community@4.4
  <li>2 bytes: process identifier</li>
  <li>3 byes: counter</li>
 </ul>
+
+<a href="#home">Top</a>
+
+<h2 id=section9>Authentication and Authorization</h2>
