@@ -1,0 +1,23 @@
+For this section we are going to be focusing on 
+the Authentication and Authorization of the vidly app
+
+Authentication:
+is the process of identifying if the user is who thet claim they are 
+this is why we login in we save our username and password to the server 
+and the server authenticates us 
+
+Authorization:
+is determinating if we have the right permissions to perform the given operation
+
+as added sercuity we want to make sure admin users can delete data
+
+
+we are going to have to add 2 new endpoints 2 the app:
+// Register: POST /api/users
+// Login: POST /api/logins
+
+exercise lets implement the the register api to register new users
+for each user they need:
+name
+email // set unique property to true this will prevent 2 of the same emails 
+password
