@@ -1,0 +1,19 @@
+This is the notes for JSONWebTokens
+
+We are going to modify our response for when we authenticate the user 
+instead of sending true we are going to send a JSON Web Token
+
+JSONWebToken:
+is basically a long string that identifies a user 
+Think of it as a drivers license or passport
+
+So when the user logs on to the server we generate the web Token
+which is like a license or passport and give it to the client and then tell them hey
+next time you want to comeback here and call our API endpoint we need yoo 
+to show us your passport this is our id
+
+So on the client we need to store the JSONWebToken which is a string  so we can send it back so we can send
+it back to the server for future api calls the client can be a web or mobile application
+if it is a web app that is being built with angular or react we can use local storage 
+this is a special storage that is availiable in every browser
+if we are using mobile app there is something similar depending on what platform is bei
