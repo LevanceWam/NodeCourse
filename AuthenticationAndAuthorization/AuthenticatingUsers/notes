@@ -1,0 +1,30 @@
+This is the notes for authenticating users
+
+first lets create our auth module in the routes folder
+then add the routes for it in the index.js
+
+Now in auth.js in the routes folder
+we need to make a validate function that checks for the email and password of a user 
+so we need to get rid of the one we are loading from the user module and define a new validate in the file at the bottom
+
+in the validate function for the schema object we only need to validate the email and the password 
+we also should change the parameter to req 
+this is done
+
+next we need to make sure that we do have a user with a given email
+we will try to load the user if the user does not exist we send a 400 error that say invalid email or password
+note we didn't send a 404 because we do not want to tell the user why the authentication failed 
+we do not want to tell if the email is incorrect or the password 
+we do not want to say we don't have a user with the given email
+we tell them it is a bad request it doesnt have the right data  to be process
+
+Next up we need to validate the password with bcrypt
+the bcrypt object has a method called .compare() we use this to compare plain text with the hash password
+the plain text password can be found in the req.body.password and the hash can be found in the user.password
+
+Since we have a salt bcrypt is going to get that salt and rehash the plain text password that was typed in if they are equal
+then this will return true
+we are going to await the promise and store the result 
+if the password is not valid we will return a 400 error with our vague message 
+
+finally if everything checks out we will return true because this is a valid login
