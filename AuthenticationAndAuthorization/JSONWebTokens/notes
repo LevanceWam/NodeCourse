@@ -16,4 +16,31 @@ So on the client we need to store the JSONWebToken which is a string  so we can 
 it back to the server for future api calls the client can be a web or mobile application
 if it is a web app that is being built with angular or react we can use local storage 
 this is a special storage that is availiable in every browser
-if we are using mobile app there is something similar depending on what platform is bei
+if we are using mobile app there is something similar depending on what platform is being used
+
+lets look and see some examples of JSONWebToken
+head to: 
+https://jwt.io/
+
+on the website we see a example of a encoded JSONWebToken
+the token is broken up into 3 parts 
+
+Header:
+The header has 2 properties  the alg(algorithm) this determones the algorithm used for encoding the tokem
+then the type is jwt for JSONWebToken 
+we don't have to worry about the header this is the standard
+
+What matters most is the second part the Payload
+Payload:
+This is a json object with 3 properties 
+sub: which is like a user.id
+name 
+admin
+the payload includes public properties about the user
+We are allowed to chose what properties are inhere
+
+The 3rd part is a digital signature 
+this is created based off of the content of the JSONWebToken along with a 
+secret or private key
+the secret/private key is only availiable on the server
+hackers can not generate a digital signature because they need the secret/private key 
