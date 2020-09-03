@@ -1,0 +1,22 @@
+This is the notes for Generating Authentication Tokens 
+
+in the terminal lets download jsonwebtoken
+npm i jsonwebtoken
+
+in auth.js before we send the response we need to create a jsonwebtoken
+after we load the module we are going before the response
+and call the .sign() method 
+
+Here we are going to pass a payload this can be string or a object
+the properties that we put in this object is entirely up to us 
+
+as the second argument we are going to pass the secret or private key
+remember this is used to create the private signature 
+
+FOR NOW we are going to hard code the private key later we will learn how to put it in a enviroment variable 
+
+when we call the sign method we get a token as the result 
+we'll store it in a constant called token then we are going to
+place it in our response
+
+now we can go test it in postman and take the jsonwebtoken and go to jwt.io to decode it and see if it matches 
