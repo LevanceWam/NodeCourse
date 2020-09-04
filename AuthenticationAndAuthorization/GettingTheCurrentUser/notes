@@ -1,0 +1,7 @@
+This is the notes for GettingTheCurrentUser
+
+In a lot of applications there are times where we need information on the currently logged in user
+we are going to add a api endpoint that gets the current user 
+
+so we need to head to routes/users.js and add a get route
+look for the video download
