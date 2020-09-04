@@ -1,0 +1,48 @@
+This is the notes for StoringSecretsInEnviromentVariables
+
+remember earlier when we were using the node package called config 
+we use config to store the configuration settings of our application in json files 
+or enviroment variables 
+
+in routes/auth.js we are going to move our secret string from our code and into the config
+this is because we do not want our secrets visible to anyone who has the source code 
+
+so first we install config 
+npm i config
+
+then we are going to want to create a folder called config and a configuration file called default.json
+we add a simple json object we can have several setting in here if we want 
+the one we are going to use is jwtkeyprivate 
+in this file we are going to set this to an empty string the actual value will not be here
+so we're just defining a template for all of the settings in the application
+
+Now we create another file custom-enviroment-variables.json 
+in this file we are going to specify the mapping between the application settings and the envirnoment variables 
+this will be the stucture of the application setting object now we want to map this setting to enviroment variable 
+called jwtprivatekey now inside of this we wan to make sure to prefix the private key 
+with the name of application this way we don't end up giving this applications setting to another application
+
+back to auth 
+we load the config module and then
+where we where passing the secret string we replace that with
+config.get() and the name of the application setting 
+
+the actual secret will be in the envirnoment settings 
+
+another change we need to go make is in index.js when the app starts we want to make sure that the 
+environment variable is set otherwise we need to terminate the application because then our authentication location endpoint  will not function
+properly
+
+now if we run this in terminal after adding the if statement for the config
+we will get an error this is because we didnt set the variable key
+
+so lets set the envirnoment variable for this so we can have the application running 
+in terminal we set the envirnoment by typing (for mac):
+
+export wamVid_jwtPrivateKey=someText
+then run the application
+
+
+NOTE: Please triple check that custom-environment-variable is spelled correctly I spent a good 10 mins trying to debug the problem
+
+
