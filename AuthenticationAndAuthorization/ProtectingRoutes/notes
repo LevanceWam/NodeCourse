@@ -1,0 +1,20 @@
+this is the notes for ProtectingRoutes
+
+Now that we have a middleware function and we can go to index.js and 
+we can add it to the list of middleware functiions and it will executed
+before every route handler but we don't want to do this because not all of the api endpoints should be protected 
+
+some of the api endpoints should be public like registering a user or logging in
+What we want to do is apply this middleware function selectively to certain endpoints 
+
+lets go to routes/genres.js
+in the post route handler
+the first argument is the route 
+the second is optionally middleware 
+the third will be the actual route handler 
+
+first we need to load the middleware 
+finally we pass our middleware function as the second argument to be executed 
+before the other middleware function which is the route handler in this case
+
+as a exercise add the middle to functions that modify data
