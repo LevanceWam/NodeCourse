@@ -1,0 +1,43 @@
+This is the notes for EncapsulatingLogicInMongooseModels
+
+There is a issue in our current implementation
+it's how we generate the jwt 
+suppose we want to add more properties to the payload/.sign()
+with the current implementation everytime we want to change the payload
+we have to remember to go to another module to make the same exact change 
+then in the long run we are going to forgt about these requirements 
+
+This lecture we are going to focus on encapsulating the logic in a single place
+
+In OOP we have a principle called information Expert principle
+This means an object that has enough information and is a expert in a given area
+that object should be response for making decisions and performing task
+Example think of a chef he does the cooking in a restuarant because he has the knowlegde of cooking 
+so if chef is an object then we give the act of cooking to the chef
+
+so lets apply this principle to the code:
+so as part of creating the jwt what do we need in the payload
+maybe an id, username. tomorrow we might need the email
+so we should encapsulate the jwt in the user object 
+the user object should be responsible for generating the jwt
+
+so we need to go to the user model and create a method that generates a jwt
+we need to extract the definition of the schema and put it in a new constant 
+because we are going to work with it seperately 
+
+now that we defined the new schema constant userSchema
+we have a property called methods this will return an object we can add additional key value pairs to the object 
+so we can add a key the named generateAuthToken (we can name this whatever we want) and set this to a function
+when we do this the our user ibject will have a method called generateAuthToken
+in the function we can add parameters so we call the method we would pass arguments
+but we don't need to do that right now
+
+now all we have to do is move our old jwt function inside of generateAuthToken function 
+after that in the payload we need the id of the user how would we get that this method is apart of the user object
+inorder to reference itself we need to use the keyword (this)
+Remember because we are using (this) we can not use a arrow function because arrow functions dont have their own this 
+(this) in a arrow function references the calling function
+now we return the token in generateAuthToken
+
+now we need to add this generateAuthToken in routes/users
+now lets test it and see if it works
