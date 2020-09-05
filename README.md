@@ -60,6 +60,7 @@ node nameOfFile.js
 <li><a href='#section7'>Mongo - Data Validation</a></li>
 <li><a href='#section8'>Mongoose - Modeling Relationships between Connected Data</a></li>
 <li><a href='#section9'>Authentication and Authorization</a></li>
+<li><a href='#section10'>Handling and Logging Errors</a></li>
 
 <h2 id=section1>Node Module System</h2>
 
@@ -412,3 +413,5 @@ brew services stop mongodb-community@4.4
 <p>Never store private keys and other secrets in your codebase. Store them in environment variables. Use the config package to read application settings stored in environment variables</p>
 
 <a href="#home">Top</a>
+
+<h2 id=section10>Handling and Logging Errors</h2> 
