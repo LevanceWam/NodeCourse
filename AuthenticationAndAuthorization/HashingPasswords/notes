@@ -32,7 +32,7 @@ but this method has a overload that returns a promise
 so we can await it instead and get the salt
 so we need to make sure that we wrap the the constants inside of a async function
 
-so when wee run this in terminal we can see that in the salted password we can see the number of rounds we chose
+so when we run this in terminal we can see that in the salted password we can see the number of rounds we chose
 we have a long random string that is included as part of hashing our passwords and with this everytime we hash our passwords with a new salt we get a different password
 
 Now that we got the salt we can use it with a hash
