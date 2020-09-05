@@ -1,0 +1,43 @@
+This is the notes for UsingLodash
+
+In the user post method we need to modify the response to the client 
+we have 2 options:
+
+1. is to return a custom object 
+ res.send({
+        name: user.name,
+        email: user.email
+    });
+
+This way we can exclude the password and the version properties
+
+Approach 1 works really well but we are going to use a cool library that gives us a lot of utility functions
+for working with objects
+
+Say hello to lodash
+https://lodash.com/
+
+Its like a update version of underscore
+first we need to install lodash 
+npm i lodash
+
+by convention we loaded lodash in the constant _ we can name it whatever we want but it is shorter and clean
+
+so lets take a look at the utility method pick
+
+with this method we pass the an object (User object for this example)
+Then we pass an array of properties that we want to pick
+this will return a new object with the properties we chose 
+Now instead of typing out the first approach we can use the pick method 
+
+Since we are using lodash we dont have to write out all of the user properties in the user object we are creating
+We can use the pick method and passs req.body as the object and chose the properties like we did before 
+
+Lets test it in the terminal and postman 
+
+Now that we finished testing and everything is working 
+We notice that we have been putting really simple passwords 
+if we wanted to enforce password complexity we can use the npm package that is built on top of joi called joi-password-complexity
+https://www.npmjs.com/package/joi-password-complexity
+
+we are not going to use it in this project 

@@ -1,0 +1,39 @@
+This is the notes for SettingResponseHeaders
+
+So far the current application we are allowing the user to login
+when they log in we generate a jsonwebtoken and return it in the body of the response
+
+Time to go to the next level
+lets imagine that when we use the registers we want to assume they are logged in so they dont have to log in seperately 
+We want to assume the position that the people using this app work for the product that we are selling 
+we dont have to verify the users email address
+so the first day the join they create a account and boom they are logged in
+
+in route/users post method
+now in the res.send we are sending the user info if we try to add the jwt it would get a little messy 
+also this is not a property of the user 
+
+So a better approach would be to return the jwt in the http header
+just like we got headers in the request we have headers in the response object
+
+so before we send the response to the client we want to load the jwt 
+
+first we need to load the modules jwt and config 
+we need to be able to create a jwt for the user 
+
+then we want to place the header method right after res so like 
+res.header.send
+with this method we can define a header
+
+now if we are defining a custom header we should prefix it with a x- then we can name it what we want but it is better to give it a abritary name
+the first argument is the name of the header and the second is the value 
+which will be our token
+
+now with this simple change we set the header and then sent the response to the client 
+
+now we run the app in terminal and then go to postman
+we want to create a new user and then look in the headers tab
+we have the header we defined and its value is the jsonwebtoken
+
+so in the client app when we register the user we can read the header and store the jsonwebtoken on the client 
+next lecture we'll make a api call and send it to the server

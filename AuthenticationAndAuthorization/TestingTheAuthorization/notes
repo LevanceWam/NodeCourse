@@ -1,0 +1,7 @@
+this is the notes for TestingTheAuthorization
+
+we should test if the delete route handler works now that we added middleware to it
+we should test:
+without logging in
+logged in as a non admin
+as a admin

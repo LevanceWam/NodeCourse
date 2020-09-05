@@ -1,0 +1,50 @@
+This is the notes for AuthorizationMiddleware
+
+At the beginning of this project we wanted authenticated users to be the only ones
+to modify data
+
+lets see how we can do that in routes/genre.js 
+the post method isn't something everyone should use 
+to enforce this we should have our endpoints called by a authenticated users
+we should have some logic that reads the request header 
+we can put that logic in a middleware function and put it in areas that meets it critiera
+
+So we need to create a new folder called middleware
+here we will build all of our middleware functions 
+make a file name auth.js
+
+Now we need to make a function called auth and give it the 3 parameters req, res and next
+we use this to pass control to the next middleware function in the custom pipeline
+if we need a refresher go review express advance topic folder on middleware 
+
+in the function we should implement the logic we thought of earlier
+this logic is the one we use to read the request handlers this way if the user isn't authenticated the can't modify data
+
+in the event we dont get a token we will return a 401 response this helps the client understand figure out why they can not access the resource
+
+now if there is a token we need to verify that it is valid 
+so we need to load the jwt module and config 
+
+now with jwt we can call the method verify as the first argument we pass a token amd the second 
+agrument is the private key to decode it since the private key is in the environment variable we need to 
+use config to get it 
+
+now that thats all set up the verify method verifies our web token if it is valid it will decode it and return a decode payload 
+if not it will throw an expection so we need to place it in a try catch block
+if the client can not access the a given api point it it looks at the error message and realizes we sent a invalid token 
+
+back to the payload 
+we can put the payload in the request 
+we take the req object and add the user property to it then we set it to decoding 
+
+earlier we only put the id of the user in the payload (look at generateAuthToken function in model/users this = user because we are referencing the user object)
+so when we decode the jwt that object from the generateAuthToken is what we are getting 
+and we are putting this in the request as a user objext
+
+In the route handlers we can now access req.user._id and more
+
+Now that we set req.user to decode we need to pass control to the next middleware function
+in the request processing pipeline in this case this is the route handler so we call next()
+
+now all we need to do is export the function 
+

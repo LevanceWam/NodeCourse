@@ -1,0 +1,11 @@
+This is the notes for RegisterUser
+
+We have started on the users.js file in the routes folder
+we are pretty much implementing the same modules like we do for the other 
+routes that we have 
+
+we are using the genres.js file as a template
+
+New Stuff:
+We want to make sure that the user is not already register
+so we search the user by one of its properties in this case the email

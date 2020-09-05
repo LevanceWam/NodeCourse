@@ -1,0 +1,13 @@
+This is the notes for LoggingOutUsers
+
+In our routes/auth.js module we defined a route for authenticating users 
+but what about logging out users would we need a seperate route for this?
+
+The answer is no
+this is because we are not storing the token on the server 
+so we don't need a seperate route handler to delete the token 
+so technically we need to implement the logging out feature on the client not on the server 
+
+When the user wants to log out we simply delete the token from the client 
+
+NOTE do not store token in database. Unless you are a "professional"

@@ -1,0 +1,48 @@
+This is the notes for hashingpasswords
+
+Lets learn how to hash passwords 
+First we are going to need a popular library called bcrypt
+'npm i bcrypt'
+
+We are going to create a little playground for us to understand how to hash our
+password then put it inside of our project 
+
+To hash a password we need a salt
+What is a salt? 
+Well lets imagine we make a password of 1234 when it is hash we might get a string like this 1234
+this hashing algorithm is one way  so if we have abcd we can not decrypt this and get the 1234 we defined 
+So from a secruity point of view this is great if a hacker gets into our database they can not decrypt the hashed passwords
+but they can get a list of popular passwords and find out which one when hashed matches to the users password
+
+This is the reason why we need a salt 
+A salt is basically a random string that is added before or after the password 
+so the resulting hash password is different eachtime based on the salt we used 
+
+Lets test it out bcrypt has a method called .genSalt (it has a async and a sync version)
+remember we want to use the async version because Node applications have a single thread and we do not want to keep that single thread busy 
+because then we won't be able to server other clients 
+
+when we call genSalt as an argument we pass the number of rounds we want it to run the algorithm to generate the salt the higher the number 
+the longer it is going to take to generate the salt ans also the salt will be more complex and harder to break
+The default value is 10 so we are going to use that
+
+since this is a async method we can pass a callback function and most of the documentation and other tutorials do This
+
+but this method has a overload that returns a promise 
+so we can await it instead and get the salt
+so we need to make sure that we wrap the the constants inside of a async function
+
+so when wee run this in terminal we can see that in the salted password we can see the number of rounds we chose
+we have a long random string that is included as part of hashing our passwords and with this everytime we hash our passwords with a new salt we get a different password
+
+Now that we got the salt we can use it with a hash
+bcrypt also has a method called .hash we can pass our password for example 1234 then the salt as a second argument
+
+We are going to await the results so we can get the hashed password 
+
+now in the routes we want to take the salt and hash and put them in the routes/users
+
+inside of the hashed constant we are going to put the user.password and add it with the salt
+we then reset it so we put user.password in the front of the await 
+then we save the user into the database
+
