@@ -1,0 +1,44 @@
+This is the notes for RolebasedAuthorization
+
+Time to take the application to the next level again 
+lets imagine certian operations such as deleting data can only be performed by admin
+we are going to take a dive into RolebasedAuthorization
+
+First we head to model/user.js 
+we are going to add another property to see if a given user is a admin
+
+next we are going to the users document in compass to make a admin
+
+Now the next time they log in we want to add the new property to the jwt payload
+so nect time we send the jwt to the server we can extract the 
+property directly from the token we dont have to get the id or check
+
+back in the user model when we generate the authentication token we want to add
+the new property in the payload 
+
+next we need to build a middleware function to see if the current user is a admin or not 
+we need to create a new file in the middleware folder called admin.js
+
+inside of the middleware function we are assuming this middleware function is executed after our authorization middleware function (sets: req.user)
+we can access that in this function so if the user is not a admin return status 403 Forbidden
+
+A lot of developers get 401 and 403 status wrong 
+401 Unauthorized
+403 Forbidden
+
+We use Unauthorized when a user tries to access a protected resource but they dont supply a valid json web token
+so we give them a chance to retry and send a valid jwt 
+
+If they send a valid jwt and they are still not allowed to access the target resource that is when we use 403 for Forbidden
+
+if the user is an admin then we just go to the next middleware function which is the route handler
+
+In routes/genre.js we want to go to the delete route handler and as a second agrument we want to pass an array that contains 
+auth and admin
+
+the middleware functions will be executed in sequence 
+First auth if the client send a valid jwt 
+then we will get the second middleware function if the user is a admin 
+then the 3rd midldleware function will execute
+
+after we load the middleware function at the top we will go to test it in the next lecture
