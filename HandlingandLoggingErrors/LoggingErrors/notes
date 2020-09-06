@@ -1,0 +1,64 @@
+this is the notes for LoggingErrors
+
+Back in middleware/error.js
+every enterpise application needs to be able to log expections that are thrown in the application
+so later we can look at the log and see what we can improve on
+
+Lets look at the popular logging library called winston 
+https://www.npmjs.com/package/winston
+npm i winston
+it is a popular and feature rich library
+
+Now in index.js we need to configure winston
+so we are going to load it at the top
+
+winston is the default logger that is exported from the winston module
+we can make one manually but this default logger is sufficant 
+we would make on if we had a complex application or if we need multiple to do the same thing
+
+the logger object has something we would call a transport 
+transport:
+is essentially a store device ofr our longs so winston comes with a core transports
+they are
+console: for logging messsages on the console 
+file
+http for filing a http endpoint for login messages 
+there are plugins for winston and other npm modules for login messages 
+in 
+MongoDB
+CouchDB
+Redis
+Loggly a very popular log analysis and montioring service for enterpise applications
+
+so the default logger exported winston comes with one transport and that is to log messages in the console 
+but we are also going to try another transport for log in messages in a file 
+
+so in index.js we are going to call winston.add
+this is how we are going to log to a file 
+
+now back in middleware/error.js
+when we get an expection we use winston to log it
+lets load the module and call winston.log to log the error 
+
+For the first argument the logging level this determines the importance of the logging messages
+we have:
+error (the most important log message)
+warn 
+info (for storing information in the log like connected to MongDB basically info about our app)
+verbose 
+debug (for writting debugging information)
+silly
+
+now we have 2 ways we can get the error message 
+one by setting the logging level like this 
+
+winston.log('error',err.message)
+
+or we can use one of the helper methods so instead of log we use error
+we can also store metadata if we want too with the second argument 
+so we can pass the error object and every property we have in this error object will also be stored in the log 
+
+we can simulate a error by using throw new Error('some message') in one of the routes 
+lets test in terminal
+
+if successful we should get a new file we defined in index.js 
