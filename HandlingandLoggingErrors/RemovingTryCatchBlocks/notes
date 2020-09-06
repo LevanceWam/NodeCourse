@@ -1,0 +1,70 @@
+This is the notes for RemovingTryCatchBlocks
+
+In the get route handler for routes/genres.js we have a trycatch block 
+the problem with this implementation is that we have to repeat it
+every route handler and it is adding a lot if extra noise to the code 
+and it is distracting us from the actual logic that belongs to the route handler 
+So we should move this high level code somewhere esle to a single function 
+
+so lets start by making a function called asyncMiddleware 
+in this function we are going to make a trycatch block template 
+that can be used for multiple route handlers
+
+So in the try block we are going to execute some code tht will vary from handler to handler 
+in the catch block we have it take an expection and inside of the block we call next() with the expection be passed in it 
+
+Now this is the template we want to have in every route handler 
+the part that is different is the try block so if we pass a the route handler as a argument then call it within the try block 
+now we no longer need the try block and the catch block along with the next parameter in the get route handler 
+
+Now looking at our anonymous get function we know it is a async function and we want to pass it as a argument to the new asyncMiddleware function
+since the handler is async in the template we have to await it and since we have to use await we need to but async in front of the function keyword 
+
+now as a second argument in the get method/routeHandler we want to call asyncMiddleware and pass our original anonymous async function as the handler agrument 
+
+there is a tiny issue here though in the try block the handler we are calling needs 2 agruments
+the req and res
+the problem here is that in the asyncMiddleware function nowhere have we defined req, res, and expection the only parameter we have that 
+is making reference to another is handler to the handler function 
+
+how do we get access to these 3 objects
+but before that we need to tackle that we have an even deeper issue 
+in the current implementation we are calling asyncMiddleware function and passing the handler as a agrument we are
+calling the function in the get method 
+
+However when defining a express route we are not going to call our middleware or route handler function
+we simply pass a reference to the function
+
+it is the express framework that calls our function and passes our agruments at run time 
+so the issue here is we aren't passing a reference to function that takes these 3 parameters
+so we need to make a small change in asyncMiddleware function we can keep everything that 
+we define so far as is but when we call this function we can return a route handler function that looks like the route handler we have defined so far 
+in other words asyncMiddleware will be like a factory function 
+we call it and we get a new function that function is a route handler that express can call and pass the agrument at runtime 
+
+At the top of asyncMiddleware function block we want to return a route handler that gives us req, res and next and
+inside we want to put the trycatch block
+with this we have access to the objects at run time 
+express is going to pass this for us so we can move this code inside the body if this function and then we can simply pass the agruments here
+
+now in this function we are awaiting the call to the handler so we need to mark the calling function that we are returning as async 
+we no longer need the keyword async in front of the word function
+this is because in asyncMiddleware function nowhere are we awaiting a promise we are returning a async function
+
+Now with the new implementationwe moved the trycatch block to a single place 
+now we dont have to repeat it this means the code in our route handlers will be more focused
+and we can actually see the logic that belongs to the route handler 
+
+The way we achieved this was by defining our asyncMiddleware function that takes a handler 
+so we call this async middleware function here and pass our original route handler here so we are passing a function reference 
+we call that handler 
+
+Now when we call that function we return a standard express route handler this route handler is as async function 
+with 3 parameters in the body of this function we have a trycatch block
+in the try block we call the handler that we pass as an agrument 
+
+Now we dont want our asyncMiddleware function hanging in the genres module so 
+lets move it to a new file called async in the middleware folder 
+
+then we want to export the function
+then load the module on the top of the genres.js and apply it to all of the routes 
