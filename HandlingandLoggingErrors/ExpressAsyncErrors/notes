@@ -1,0 +1,26 @@
+This is the notes for ExpressAsyncErrors
+
+While our async function in middleware/async solved the problem of repetitive trycatch blocks 
+the issue we have is we have to rememeber to call it everytime 
+it also makes our code a little noisy
+
+So lets learn a different approach we are going to use a npm module and this module will monkey patch
+our route handler at runtime so when we send a request to an endpoint the module will wrap
+our route handler code inside something our route handler template 
+
+in terminal we want to install:
+npm i express-async-errors
+
+we need to load this module when the application starts so in idex.js 
+load it at the top
+we do not need to store it inside of a variable 
+
+now back in routes/genres.js
+we can get rid of asyncMiddle function and revert it back to the way we had our route handler originally 
+then we can remove the require statement that loaded the async module from middleware folder
+
+now lets test everything in terminal to make sure that everything is working correctly 
+
+So we tested it ansd this verifies that the new module that we installed 
+properly moved control from our route handler or error handler function
+this module makes it easy for handling async errors
