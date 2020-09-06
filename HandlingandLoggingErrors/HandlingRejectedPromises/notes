@@ -1,0 +1,27 @@
+This is the notes for HandlingRejectedPromises
+
+Lets learn how to handle the UnhandledPromiseRejection
+
+This basically means that we are using a promise 
+which means we are dealing with async code and we did not handle the rejection properly
+
+so lets head to routes/genres.js
+and use the get route handler as an example 
+
+we can see on our route handlers that we have a promise that is returned we are awaiting it 
+but no where in the code do we have a try catch block to handle rejection promises
+
+this implementation is the same as using a promise and only calling the then method and not the catch method
+to handle rejection 
+
+so we need to put our code in a try catch block
+so we but the code we originally had in the try block and 
+for the catch we want to send a 500 status error
+
+The 500 status error tells us that we had a internal error something failed
+and that is what we we'll send as the error message
+now we would normally want to log this but we will learn how to do this later
+
+Now in terminal we need to check if the try catch block works
+
+now in terminal instead of seeing the UnhandledPromiseRejection error we get nothig because we are handling the expection

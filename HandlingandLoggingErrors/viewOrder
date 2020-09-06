@@ -1,1 +1,16 @@
 SectionIntro
+HandlingRejectedPromises
+ExpressErrorMiddleware
+RemovingTryCatchBlocks
+ExpressAsyncErrors
+LoggingErrors
+LoggingToMongoDB
+UncaughtExpections
+UnhandledPromiseRejections
+ErrorHandlingRecap
+ExtractingRoutes
+ExtractingTheDBLogic
+ExtractingTheLoggingLogic
+ExtractingTheConfigLogic
+ExtractTheValidateLogic
+ShowingUnhandledExpectionsOnTheConsole
