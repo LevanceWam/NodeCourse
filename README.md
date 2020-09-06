@@ -402,7 +402,7 @@ brew services stop mongodb-community@4.4
 
 <p><b>Authorization:</b> is the process of determining if the user has permission to perform a given operation.</p>
 
-<h4>Passwords</p>
+<h4>Passwords</h4>
 
 <p><b>Salt:</b> is basically a random string that is added before or after the password. To hash and salt passwords, use bcrypt</p>
 
