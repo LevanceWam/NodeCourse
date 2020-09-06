@@ -1,0 +1,41 @@
+This is the notes for ExpressErrorMiddleware
+
+in routes/genres.js
+In the previous lecture we took the first step to handling errors properly
+But we have another problem in the current implementation
+
+So if we wanted to change the message if we caught an exception everywhere we have a try catch block would need to be changed too
+in a real world situation we would be logging our expection
+But if we wanted to change that we would have to do it in every try catch block also
+
+So we want to move that logic and put it somewhere central so in the future we want to make a change 
+we can do it in one place 
+
+in index.js we are registering our middleware functions in express we have a special middleware 
+called error middleware we register it after all the existing middleware functions
+
+so under all of the middleware we call app.use and define a middleware function 
+but this time we add our fourth argument in the front of req which is error
+inside of this function we add all the logic for handling errors in our application
+
+so we will add the status error from our try block here 
+then in routes/genres.js we need to pass control to the error middleware function 
+so the first thing we need to do is add a new parameter to the get route handler which is next
+
+In the catch block we are going to pass the next function and pass the expection as an argument 
+since we defined the error middleware function after all the other middleware functions next knows to
+go to the error middleware and the expection  that we will pass will be the first argument to the error middleware function
+so now if we want to make changes we make them in the error middleware 
+
+now in the real world the logic for logging the expection might be several lines long and we do not need all of those 
+details in index.js 
+so in index.js we just want to do orchestration we want to do high level arrangement 
+the details should be encapsulated in different modules 
+
+So we are going to move the error middleware function to a seperate file called error.js in the middleware folder
+now we have seperated the details of error handling in a seperate module and this results in better seperation of concerns 
+
+next we load the module in index.js
+the after all the existing middleware functions we want to do app.use and pass a reference to the error function
+
+now in the next lecture we are going to look on how to improve the implementation of the trycatch block in the get route handler 
