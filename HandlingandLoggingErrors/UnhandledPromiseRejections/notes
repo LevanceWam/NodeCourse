@@ -1,0 +1,26 @@
+this is the notes for UnhandledPromiseRejections
+
+Our process object that we are using to catch uncaughtExceptions 
+only works with synchronous code 
+If we were to have to have a promise rejected the code we made will not execute
+
+in this lecture we are going to learn how to handle UnhandledPromiseRejections
+
+The process object has another similar event called UnhandledRejection that we can subcribe to
+so in index.js we can duplicate the code from the uncaughtExceptions and change the event to UnhandledRejection
+Remember that spelling is very important here 
+
+We can simulate a rejected promise to see if the code we wrote works  
+
+Now after we check to see if everything is working currently
+There is one more important thing we need to do 
+
+Whether we are dealing with a rejected promise or uncaughtExceptions as a best practice 
+we should terminate the node process so we should exit here 
+beacuse at that point our process will be in a unclean state 
+
+so as a best practice terminate the process and restart it
+
+we have tools to help us restart the process in production called process manager we'll look at this later 
+so we are going to get rid of the console and then exit the process with a 1
+remember 0 means success and any other than that is failure 
