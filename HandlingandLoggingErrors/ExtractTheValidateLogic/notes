@@ -1,0 +1,10 @@
+this is the notes for ExtractTheValidateLogic
+
+Continued exercise from the previous lecture 
+we moved all of the code that has to relate to validating in 
+startup/validate.js
+
+important note we placed the Joi.objectId inside of our function that we are exporting
+will look into why this was done later 
+
+also in our app.listen we changed from a console log to a winston.info
