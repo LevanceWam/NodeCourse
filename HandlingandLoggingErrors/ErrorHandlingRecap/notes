@@ -1,0 +1,11 @@
+this is notes for ErrorHandlingRecap
+
+Quick rundown abut everything we learned about errorhandling 
+
+In express we have a middleware error function that takes 4 parameters
+error, req, res and next 
+
+this function catches any errors in the request processing pipeline 
+we use a package called winston to catch these errors but winston by default 
+only catches errors in the pipeline will ignore everything else outside the context of express
+ 
