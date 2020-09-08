@@ -1,0 +1,10 @@
+This is the notes for ShowingUnhandledExpectionsOnTheConsole
+
+So we have a tiny little issue with the current application
+If we where to give this to another developer and they are working on a different machine if something 
+were to break they would have no idea what is going on because the app terminates with out telling us what is going on
+
+even though we are using winston to log our errors if we handed this off to a team they would have no idea what is going on 
+
+so in our startup/logging.js we are going to add a new transport log the errors on the console 
+after we add the new transport we will now will get a errors in the console
