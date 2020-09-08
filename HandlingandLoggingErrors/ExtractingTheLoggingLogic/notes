@@ -1,0 +1,14 @@
+This is the notes for ExtractingTheLoggingLogic
+
+Continuing from the prevoius lecture our exercise was to move the 
+code that has to deal with logging errors into its own module
+we did it successfully
+
+so remember we need to make a new file called logging 
+and we need to use module.exports to export our function 
+
+We also need to load the correct modules for logging.js 
+
+After that we need to require the logging.js module in index like we did the others
+
+next exercise is to move the config code into its own module 
