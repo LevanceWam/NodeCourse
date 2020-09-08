@@ -1,0 +1,18 @@
+this is the notes for UncaughtExpections
+
+The error middleware we have here only catches errors that are part of the request processing pipeline this is particular to express
+if any error is thrown outside the context of express the error middleware will not work
+
+so if any error during this current implementation outside of express context nothing happens
+so lets learn how to properly handle unhandled expections in a node processs not tied to express
+
+lets take a look at the process object
+the process object is a event emitter that can emit or publish events and it gives us a method on used to subcribe to an events
+
+in node we have a standard event called UncaughtExpection
+this event is raised when we have an expection in the node process
+but nowhere have we handled that expection using a catch block
+We have to make sure that UncaughtExpection is spelled correctly or it will not work
+
+if there is a UncaughtExpection we want to handle it using the function we defined
+the function takes the expection object and we can log it and then use winston to log it 

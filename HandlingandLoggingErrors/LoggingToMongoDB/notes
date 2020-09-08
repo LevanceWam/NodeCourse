@@ -1,0 +1,25 @@
+this is the notes for LoggingToMongoDB
+(Future me download winston 2.4.0 to get this to work)
+
+lets try to log messages to MongoDB
+We need a new npm package 
+npm i winston-mongodb
+(if we have any issues use version 3.0.0)
+
+back in index.js
+lets load the winston-mongodb package 
+we just need to require it no need to store it 
+under our first winston transport
+
+we need to call winston.add(winston.transports.MongoDB)
+we pass a options object and set the property to db and then set the connection string 
+there are other properties we can use we have to look at the documentation
+
+Now in the real world we are going to want to seperate our log from our operational database 
+this is a decision that varies from one enviroment to another 
+
+now if we get another error we will go automatically to the database 
+it will create a new colletion called log and in this is the message we logged 
+
+in index.js we can also set the level property inside of the transport and when we do this 
+lets say for error we will only get the error messages and if we use info we will gwt the info, error, and warning messages also

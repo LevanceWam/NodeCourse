@@ -1,0 +1,13 @@
+This is the notes for ExtractingTheConfigLogic
+
+So from the previous lecture we have been tasked to move 
+all of the config code over to its new module
+the same way as we did the others
+The code can be found in startup/config.js
+
+now instead of consoling if the jwtPrivateKey is not defined we should throw an exception and 
+let our logging process catch the exception
+Also as a best practice throw a error object instead of strings 
+this is because when we throw a error object the stack trace will be available for us to see later 
+
+next do the same exercise with the validation (joi)

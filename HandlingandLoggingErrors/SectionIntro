@@ -1,0 +1,13 @@
+This is the intro to the section 
+
+So far the wamVid app has been built with the assumption that everything will be perfect 
+but we know in the real world strange things happen 
+
+For example our MongoDB can lose connection ofr what ever reason
+as best practices we should count on these unexpected situations and handle them properly 
+which means we need to send the proper errot message to the client 
+and log the expection on the server
+
+This way we can look at the log later and see some of the issues that are happening frequently and how we can improve them 
+
+

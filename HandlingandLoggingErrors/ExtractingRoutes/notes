@@ -1,0 +1,28 @@
+This is the notes for ExtractingRoutes
+in the index.js
+
+The main issue we have here is the seperation of concerns there are too many things going on 
+this is why we have so many require statements and other code
+
+We shouldn't have so many things going on like this we should only be orcestrate these concerns 
+so the details of setting up these things should be in their own modules
+so lets start on extracting some of this code to there own file 
+
+Lets extract our routes
+So lets create a folder called startup and make a file called routes.js 
+here we are going to export all the code that is for setting up our routes and other middleware 
+
+Looking at our dependencies we have a app object to express all of these route handlers
+so back in index.js
+we want to have a single instance of the app object for the entire application because we dont want to create a new app object in our new module 
+so what we want to do is referece the app object we have here in the index.js
+so over in startup/routes.js we are going to pass app as a argument and 
+when we require startup/routes.js we are going to pass our app object
+
+after that is done we need to move all of the routers from index.js to startup/routes.js
+because nowhere in the index are we referencing them 
+
+NOTE dont forget to fix our routes in startup/routes.js
+
+as a exercise lets try to move all the database intialization code to a different module
+we will attempt it in the next folder 

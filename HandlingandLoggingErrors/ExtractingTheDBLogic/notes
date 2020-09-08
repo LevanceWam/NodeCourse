@@ -1,0 +1,24 @@
+This is the notes for ExtractingTheDBLogic
+
+so in this lecture we are continuing from a previous lecture 
+exercise to move all of the code that has to deal with databases and move it to its own module 
+we successfully accomplished this with some changes
+
+so in startup folder create a file name db.js
+
+The first change we made was to the promise object when we connect to mongo
+instead of logging we connected to MongoDB and catching it we are going to use 
+winston.info to take care of this for us
+
+We are using winston to log this as a information message and if the process fails
+we can log the expection and exit the process upon failure 
+
+finally in index.js we need to load this new module we create 
+so all we need to do is repeat the same process as before like with the routes
+and require it in index.js 
+
+dont forget since we are exporting a function we have to call it like this 
+
+require('./startup/db.js')();
+make sure to add the () at the end to call the function
+in the next lecture we are going to do the same for logging the errors

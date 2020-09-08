@@ -60,6 +60,7 @@ node nameOfFile.js
 <li><a href='#section7'>Mongo - Data Validation</a></li>
 <li><a href='#section8'>Mongoose - Modeling Relationships between Connected Data</a></li>
 <li><a href='#section9'>Authentication and Authorization</a></li>
+<li><a href='#section10'>Handling and Logging Errors</a></li>
 
 <h2 id=section1>Node Module System</h2>
 
@@ -401,7 +402,7 @@ brew services stop mongodb-community@4.4
 
 <p><b>Authorization:</b> is the process of determining if the user has permission to perform a given operation.</p>
 
-<h4>Passwords</p>
+<h4>Passwords</h4>
 
 <p><b>Salt:</b> is basically a random string that is added before or after the password. To hash and salt passwords, use bcrypt</p>
 
@@ -412,3 +413,5 @@ brew services stop mongodb-community@4.4
 <p>Never store private keys and other secrets in your codebase. Store them in environment variables. Use the config package to read application settings stored in environment variables</p>
 
 <a href="#home">Top</a>
+
+<h2 id=section10>Handling and Logging Errors</h2> 
