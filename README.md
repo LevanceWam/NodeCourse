@@ -61,6 +61,8 @@ node nameOfFile.js
 <li><a href='#section8'>Mongoose - Modeling Relationships between Connected Data</a></li>
 <li><a href='#section9'>Authentication and Authorization</a></li>
 <li><a href='#section10'>Handling and Logging Errors</a></li>
+<li><a href='#section11'>Unit Testing</a></li>
+
 
 <h2 id=section1>Node Module System</h2>
 
@@ -421,3 +423,5 @@ brew services stop mongodb-community@4.4
 <p>As a good developer, we should count for these unexpected errors, log them and return a proper error to the client. We can use Express error middleware to catch any unhandled exceptions in the “request processing pipeline”.</p>
 
 <a href="#home">Top</a>
+
+<h2 id=section11>Unit Testing</h2>
