@@ -415,3 +415,9 @@ brew services stop mongodb-community@4.4
 <a href="#home">Top</a>
 
 <h2 id=section10>Handling and Logging Errors</h2> 
+
+<p>Unexpected errors can happen as a result of bugs in our code or issues in the running environment. For example, our MongoDB server may shut down, or a remote HTTP service we call may go down.</p>
+
+<p>As a good developer, we should count for these unexpected errors, log them and return a proper error to the client. We can use Express error middleware to catch any unhandled exceptions in the “request processing pipeline”.</p>
+
+<a href="#home">Top</a>
