@@ -434,4 +434,6 @@ brew services stop mongodb-community@4.4
 
 <h4>Benefits of Automated Testing</h4>
 
-<p></p>
+<p>One benefit with automated test is that we can test more frequently or in a lot of places at the same time in less time. A general benefit that comes with them. The most important benefit is that we can catch bugs before we deploy our application. With test we can reduce the number of bugs and improve the quality of our software.</p>
+
+<p>Another benefit we get from testing is that we can refractor our code with confidence. Refactoring means changing the structure of the code without changing the behavior. One more benefit is that we have more time to focus on the quality of the code. This allows us to check if our code works with different inputs and varying circumstances.</p>
