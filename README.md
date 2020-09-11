@@ -455,3 +455,7 @@ brew services stop mongodb-community@4.4
 <p>The pyramid described about is just a guideline. The ratio between our test should go according to our projects. Unit test are good for conditional statements and loops if we have methods with complex logic and calculations, you should test them with your unit test.</p>
 
 <p>The main takeaway from our pyramid is that we should try to favour unit test to end to end test because they are cheaper and faster to work with. They are very precise and pinpoint exactly where something failed, they give us rapid feedback. Second is  we need to cover our unit test gaps with integration test. and finally use end to end test sparingly only key functions of the application.</p>
+
+<h4>Tooling</h4>
+
+<p>In order to do test we need a testing framework. The test framework gives us a library that includes a bunch of ultility functions that can be used to write test. It also gives us a test runner which is basically a program that runs our test from the command line and this test runner executes our test and gives us a report of how many test pass or failed. Some of the popular frameworks are: Jasmine, Mocha, and Jest. The important thing here is to remember to: focus on the fundamentals not the tooling.</p>
