@@ -425,3 +425,13 @@ brew services stop mongodb-community@4.4
 <a href="#home">Top</a>
 
 <h2 id=section11>Unit Testing</h2>
+
+<h4>What is Automated Testing</h4>
+
+<p>The practice of writing code to test our code and then run those test in an automated fashion. With automated testing our code consist of application code which is also called production code and test code.</p>
+
+<p>With automated testing we takeout the long process of having to go through our application to get to the part we want to test. With automated testing we wite the code and directly call the function with different inputs and verify that the function returns the correct input. We can re-run these test everytime we save, commit and deploy code with this approach we can test all of the execution paths in a function in less than a second.</p>
+
+<h4>Benefits of Automated Testing</h4>
+
+<p></p>
