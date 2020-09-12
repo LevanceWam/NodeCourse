@@ -1,0 +1,24 @@
+This is the notes for GroupingTests
+
+Something very important to remember:
+Test are first-class citizens in your source code
+it is important as the production code 
+
+Lets try to clean up our code and make it more easier to read 
+and more effiencent 
+
+so in jest and jasmine we have a function called describe()
+this is used for grouping a bunch of related test 
+
+so for the first agrument we just put the name like we did for test this lets us know that this 
+group we are testing for is for the absolute function 
+
+Next we are going to take all of the code we defined and place it inside of describe 
+we also have another function called it() we can use it to replace test
+
+Now if we look at the file it reads like english:
+We are describing absolute and it:
+    Should return a positive number if input is positive 
+    and etc
+
+in short always put related test in a describe block
