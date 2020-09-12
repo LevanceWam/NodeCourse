@@ -1,0 +1,34 @@
+This is the notes for WritingYourFirstUnitTest
+
+We have some premade files that we downloaded
+
+Now we need to download jest but it is a little different this time around
+npm i jest --save-dev
+
+this is a development dependencies when we deploy the application we do not want this to be 
+to be on the project it is for development use only
+
+in package.json we are going to make a change to the scripts property here we can 
+we can define tests that we want executed in the command line so for example for the one defined already 
+we can run npm test and it will run
+
+We are going to change the default to jest and run it 
+this gives us the default result because we dont have any test but lets go build some 
+
+first we will dtart with a new folder called tests
+we are going to write test for the lib.js module
+
+in the test folder we need to create a file for the module we are testing
+it naming convention should look like this:
+lib.test.js
+
+Notice that we are writing the name of the file and then the the word test or spec
+needs to follow it to indicate that this is where the test are being executed then js
+
+now to write the test we call the test function this is one of the functions that comes with jest
+this method takes 2 arguments the first agrument is the name of our test this is what we will see on the console
+The second argument is a function that is used to implement the test when we run the test jest will call this function
+so lets pass a empty arrow function for now and test it out in the terminal
+
+when we run the test we get a summary of everything that happened whether we pased or failed 
+and if we so happen to fail in the summary it will give us the exact line where the test failed at
