@@ -1,0 +1,48 @@
+This is the notes for TestingNumbers
+
+For this lecture we are going to work on the lib module 
+we are working with the absolute function specifically 
+the purpose of the function is to return a positive number 
+
+Now how to decide on how many test we need to write 
+a basic guideline is the number of unit tests for a given function
+should be equal to or greater than the number of execution paths that we have 
+
+for the absolute path we have 3 execution pass so with our unit test
+we want to make sure that all of our execution paths are covered making sure to test all the 
+logic throughly
+
+so now we need to go and rename our function in our test file 
+
+we now need to load the lib module into our test and then call the absolute function in the test method
+once we have called the absolute function and passed a number as a argument
+we want to then put the function in a constant for the next step
+
+We need to use another method/utility expression in jest called expect.
+this method will be used to verify that the result is 
+we give the method our result constant and then call another function this function we are going to use is called a matcher function
+in jest/jasmine we have a lot of matcher functions we will look at them later 
+for this function at the moment we want to make sure that the result is equal to the value we gave it
+so we call .toBe() 
+so expect(result).toBe() 
+now lets test this in terminal
+
+list of matcher functions:
+https://jestjs.io/docs/en/using-matchers
+
+we have matchers to look for truthiness like 
+toBeNull 
+toBeUndefined
+toBeTruthy
+toBeFalsy
+
+then we have some for TestingNumbers
+toBe()
+toEqual()
+These 2 are different
+
+Now lets go back and work on the other execution paths
+
+Side note as our test fails we get a sort of guideline as to what the issue is 
+look for these messages to trouble shoot the problem
+Sometimes the problem is in the test sometimes its in the production code.
