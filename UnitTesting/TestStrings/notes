@@ -1,0 +1,27 @@
+This is the notes for TestStrings
+
+Now lets move on to the next function called greet 
+this function takes a name and returns it in a new string 
+
+so lets write a test that checks for this
+
+after we finished writing the test we have an issue with it
+The problem is that it is too specific and can break easily 
+if we were to go back to the greet and modify it the test will fail
+
+So the thing to learn from this is that our test shouldn't be top specific or 
+too general
+
+if it is too specific then it is very easy to break and if it is too general 
+it might not give us the confidence in our code that we need 
+so how can we make the current string test more general 
+
+Well instead of testing for the exact equality we can look for certain patterns 
+we can use a regular expression 
+
+so instead of using the method toBe we can use toMatch and this just looks for the word we defined in the method
+basically it looks to see if thre string contains it 
+And if we don't want to use regular expressions we ca use toContain for the same result using strings
+
+doing this way will help make it a little more general instead of having it the exact wording of the string 
+we look for a certain part and this makes is less specific
