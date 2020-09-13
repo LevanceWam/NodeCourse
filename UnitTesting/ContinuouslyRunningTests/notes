@@ -1,0 +1,10 @@
+This is the notes for ContinuouslyRunningTests
+
+so far everytime we made a change to our test or production code we had to 
+go to the terminal and run npm test this is very tediuos
+
+lets learn how to have jest watch our code for changes and run test on save 
+in package.json we want to head to the script property and 
+add a flag to our test
+
+This flag is called --watchAll
