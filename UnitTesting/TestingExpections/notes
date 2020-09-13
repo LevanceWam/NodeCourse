@@ -1,0 +1,19 @@
+This is the notes for TestingExpections
+
+sometimes our functions can throw expections 
+we are going to look at a function called 
+registerUser that takes a username and if that user name is falsey
+then it will throw an error if not it will return a id and the username 
+
+to begin we see that this function has 2 execution paths
+so we should at least come up with 2 test for this function
+
+for the first test if the username is falsy we het an error here are some of our falsey values
+Null
+NAN
+undefined
+''
+0
+false
+
+any of these will throw an expection
