@@ -1,0 +1,32 @@
+This is the notes for TestingObjects
+
+for this lecture the function we are going to test 
+will return a object with and id and a price 
+
+first we want to create our describe block in lib.test.js
+create our result constant and then write the expect statement 
+
+Now the first expect statement we used the toBe method this will fail because this is object is located in a different 
+location in memory so we are not referencing the same object in memory 
+
+So instead of using the toBe method we are going to use the toEqual() method 
+we just want to check that the object has these properties
+with this we can check for object equality
+run the test in terminal to make sure that it passes
+
+Now when we test objects there are a couple more matchers that we can use 
+one example is toMatchObject
+
+but how are toEqual and toMatchObject different.
+
+with toEqual both the source and the target objects should have exactly 2 properties
+but sometimes when we get objects from somewhere esle it might have more than 50 properties
+we dont want to write all of that out 
+
+but with matcher if we were to add more properties to the object as long as the ones we put in the method exist then 
+the test will pass so we don't have to write out all 50 properties and test for the ones that we want 
+
+we should add another property to the object and test it out
+
+there is one more wat we can use is .toHaveProperty() here we would just pass keyvalue pairs 
+we can use this method to make sure that the property that we are searching for is there
