@@ -1,0 +1,14 @@
+This is the notes for JestMockFunctions
+
+In this lecture we are going to look at an easier way to run our 
+test from the previous lecture 
+
+in jest we have a method for creating mock function
+this is a function with out a implementation a function with no code 
+we can program the mock to return a specific value
+
+We can also program it to return a promise  and reject them also
+but if we reject them we have to put them in a try catch block the rejection would go in the catch vblock
+
+with this we can simply the implementation of our earlier test 
+now we don't have to create everything manually
