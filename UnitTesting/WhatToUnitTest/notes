@@ -1,0 +1,16 @@
+This is the notes for WhatToUnitTest
+
+Now we need to go to our wamVid app and open middleware function and 
+open the admin file 
+in this file we a simple middleware function with 2 execution paths 
+
+however in this function we are working with external properties with a req and res agruments
+so for this function we need to make mock functions with the same interface as the req and res objects in express
+
+as a rule try lets try to unit test functions with little to no dependencies to external resources
+we should also try to avoid doing a lot of mocks if there is too many we might as well do a integration test
+
+so what can we actually unit test? well in model/user.js
+we have a function called generateAuthToken in this method we simply generate a simple json token and return it 
+we can call this method during the unit test get the result and verify if it is a json token
+with this we dont have to create a mock function for this 

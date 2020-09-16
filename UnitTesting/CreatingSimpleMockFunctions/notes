@@ -1,0 +1,37 @@
+This is the notes for CreatingSimpleMockFunctions
+
+All of the functions that we worked with so far didn't have any dependencies on external resources
+
+So in this lecture we are going to look at the applyDiscount function and we are going to use 
+the database object we imported from the db module
+that object gas a method called get customer sync and it takes the id of a customer and returns a 
+customer object 
+
+if the customer has more than 10 points we can apply a 10 percent discount 
+looking at the implementation we are not really getting a customer object from a database 
+so in db.js we are simulating a call from mongodb
+
+so the function we see in lib uses the db.getCustomerSync method to touch an external resource
+
+remember in our unit test we do not want to touch external resources because then it becomes a integration test
+the whole point of unit test is to decouple our code from these resources that might not be avaiiable at the timw of running our test
+so we can quickly and reliably execute our test
+we also dont want to unit test any code that is on a http service because if the service goes down
+then it will make it appear as if our test is failing but in actuality it is not
+
+So we are going to learn how to write a unit test for a function thay directly or indirectly talks about a external resource 
+
+then first step in testing this function is to replace the real implementation of the getCustomerSync method
+with a fake or mock implementation
+the mock implementation looks exactly like the real thing and returns a customer object but the implementation is different
+it doesnt talk to a data base and doesn't talk to a external resource
+
+in the testing file we need a new describe block
+create the it statement 
+then we call the applyDiscount method and set the properties for the order 
+
+since we are going to be making a assertion against total price property we are going to extract this price object 
+into a seperate constant so we can work with it later 
+
+now we need to get the fake implementation this is easy in plain js
+we can set db.getCustomerSync to a new function a function that doesn't talk to a database 

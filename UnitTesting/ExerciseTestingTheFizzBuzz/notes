@@ -1,0 +1,4 @@
+This is the notes for ExerciseTestingTheFizzBuzz
+
+First we need to make a fizz buzz function this is a question that sometimes comes up in coding interviews
+but the twist this time is if the input is not a number we need to throw an error

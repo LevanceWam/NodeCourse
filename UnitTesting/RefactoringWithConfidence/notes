@@ -1,0 +1,10 @@
+this is the notes for RefactoringWithConfidence
+
+One of the benefits of these task is it allows us to Refactor our code with Confidence
+remember that refactoring the code means changing the structure of the code with out 
+changing its external behavior
+
+so in our lib module we covered all of the of the execution paths in the absolute function
+so we can change the implementation and if all of the test pass we can be confident that the code is good
+
+lets test this by changing the implementation in the absolute function 

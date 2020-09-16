@@ -1,0 +1,34 @@
+This is the notes for TestingArrays
+
+Lets look at how to write test for functions that returns arrays 
+
+Please remember in the previous lecture that we don't want to make 
+our test too specific or too general
+
+so lets see the principle in action with arrays
+in our too general section in the file lib.test.js
+
+using the .toBeDefined() method is too general because it doesn't give us any value
+so if we go and create a bug in the function like return 1 it will pass but we won't have the currencies
+
+another general way is too is using .not.toBeNull() it is useless in this situation
+
+Now lets look at some too specific examples 
+in lib.test.js under the too specific comment these are too specific because 
+it is looking for exactly what is in the arrays if we happen to change the array in the 
+future by adding a element or changing the elements it will fail
+
+so when testing for arrays we don't test for the exact location of an element 
+
+so lets look at a proper way to test this
+the proper way to test in an array is to check for the existance of an array regardless of its location
+in the array
+
+now the proper way works but there is a better ideal way to don this to look cleaner and better 
+instead of having 3 insertions we can have one insertion and compare the results
+of this function with an array that includes these elements
+
+so after expect we call the method .toEqual() then we want to pass
+.toEqual(expect.arrayContaining(['EUR']));
+with this we can pass the elements of an array and compare the 2 if the
+ elements match it will pass no matter what order they are in 

@@ -1,0 +1,12 @@
+This is the notes for InteractionTesting
+
+In this lecture we are going to be continuing from the 
+last technique from the  prevoius lecture and see the things that are wrong with
+it and then we are going to use a better mocking technique
+
+This time we are going to use the notify customer function which is similar to the 
+prevoius function we have to use the database object totget the customer from the database
+then we have to use another object to send mail from the mail module 
+
+so in the tests file we want to create the describe block and the it statment 
+inside of the it statement we need to create the mock implementation

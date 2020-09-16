@@ -61,6 +61,8 @@ node nameOfFile.js
 <li><a href='#section8'>Mongoose - Modeling Relationships between Connected Data</a></li>
 <li><a href='#section9'>Authentication and Authorization</a></li>
 <li><a href='#section10'>Handling and Logging Errors</a></li>
+<li><a href='#section11'>Unit Testing</a></li>
+
 
 <h2 id=section1>Node Module System</h2>
 
@@ -421,3 +423,39 @@ brew services stop mongodb-community@4.4
 <p>As a good developer, we should count for these unexpected errors, log them and return a proper error to the client. We can use Express error middleware to catch any unhandled exceptions in the “request processing pipeline”.</p>
 
 <a href="#home">Top</a>
+
+<h2 id=section11>Unit Testing</h2>
+
+<h4>What is Automated Testing</h4>
+
+<p>The practice of writing code to test our code and then run those test in an automated fashion. With automated testing our code consist of application code which is also called production code and test code.</p>
+
+<p>With automated testing we takeout the long process of having to go through our application to get to the part we want to test. With automated testing we wite the code and directly call the function with different inputs and verify that the function returns the correct input. We can re-run these test everytime we save, commit and deploy code with this approach we can test all of the execution paths in a function in less than a second.</p>
+
+<h4>Benefits of Automated Testing</h4>
+
+<p>One benefit with automated test is that we can test more frequently or in a lot of places at the same time in less time. A general benefit that comes with them. The most important benefit is that we can catch bugs before we deploy our application. With test we can reduce the number of bugs and improve the quality of our software.</p>
+
+<p>Another benefit we get from testing is that we can refractor our code with confidence. Refactoring means changing the structure of the code without changing the behavior. One more benefit is that we have more time to focus on the quality of the code. This allows us to check if our code works with different inputs and varying circumstances.</p>
+
+<h4>Types of Testing</h4>
+
+<p>In automated testing we have 3 types of test Unit , Integration, and End-to-end Test. A Unit test tests a unit of an application without its external dependencies such as files, databases, message queues, web services and so on. Unit test exercise our code without any external dependencies they are cheap to write and they execute fast we can run hundreds of them in seconds this way we can verify that eacg building block in our application is working as expected. However since we are not testing with the external dependencies there is not that much confidence in the reliability of the application. This is where integration test come in.</p>
+
+<p>Integration Test,(test a class or a component with its external dependencies). test the application with it's external dependencies. It basically tests the integration of our application code with these concrete dependencies like files, databases and so on. These test longer to execute because they have to write to a database or read from it. This kind od testing gives us more confidence in our code. Traditionally integration test is defined as a test that taked a few units or classes and test their behavior as a whole.</p>
+
+<p>Important thing to note is that if we test classes without the external dependencies it is a unit test. A good amount of people will assume just because we are using classes we are writing a integration test. But remember that integration test uses external dependencies.</p>
+
+<p>The final kind of testing we have is called End-to-end Testing. This drives an application through its user-interface. There are specific tools built for end to end test. One popular one is Selenuim. it allows us to record the interaction of a user with our application. Then play it back to see of the app is giving the right result. These test gives us the greatest amount of confidence about the health of our application but they have 2 big problems. One issue is that they are very slow because the require the launching the app and testing it through the UI. The second issue is that they are very brittle because a small enhancement to the application or a small change in the UI can break the test.</p>
+
+<h4>Test Pyramid</h4>
+
+<p>Now the main question we might ask is what test should we use in our application. The answer all of them. This is what we call a Test Pyramid. This pyramid argues that most of our test should be in a catergory of unit test because these test are fast and easy to write. But since they don't give us a lot of confidence and the health of our application. We should have a bunch of integration test that test the application code with it's external dependencies. These test provide many advantages of End-to-end tests, but without the complexities of dealing with the user interface. Finally we should write a few End-to-end test for the key functions of the applications. We shouldn't test the end cases with the End-to-end tests. Only the happy path and leave the edge cases to the unit test.</p>
+
+<p>The pyramid described about is just a guideline. The ratio between our test should go according to our projects. Unit test are good for conditional statements and loops if we have methods with complex logic and calculations, you should test them with your unit test.</p>
+
+<p>The main takeaway from our pyramid is that we should try to favour unit test to end to end test because they are cheaper and faster to work with. They are very precise and pinpoint exactly where something failed, they give us rapid feedback. Second is  we need to cover our unit test gaps with integration test. and finally use end to end test sparingly only key functions of the application.</p>
+
+<h4>Tooling</h4>
+
+<p>In order to do test we need a testing framework. The test framework gives us a library that includes a bunch of ultility functions that can be used to write test. It also gives us a test runner which is basically a program that runs our test from the command line and this test runner executes our test and gives us a report of how many test pass or failed. Some of the popular frameworks are: Jasmine, Mocha, and Jest. The important thing here is to remember to: focus on the fundamentals not the tooling.</p>
