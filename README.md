@@ -459,3 +459,7 @@ brew services stop mongodb-community@4.4
 <h4>Tooling</h4>
 
 <p>In order to do test we need a testing framework. The test framework gives us a library that includes a bunch of ultility functions that can be used to write test. It also gives us a test runner which is basically a program that runs our test from the command line and this test runner executes our test and gives us a report of how many test pass or failed. Some of the popular frameworks are: Jasmine, Mocha, and Jest. The important thing here is to remember to: focus on the fundamentals not the tooling.</p>
+
+<a href="#home">Top</a>
+
+<h2 id=section11>Integration Testing</h2>
