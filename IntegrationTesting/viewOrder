@@ -1,0 +1,15 @@
+PreparingTheApp
+SettingUpTheTestDB
+YourFirstIntegrationTest
+PopulatingTheTestDB
+TestingRoutesWithParameters
+ValidatingObjectIDs
+RefactoringWithConfidence
+TestingTheAuthorization
+TestingTheInvalidInputs
+TestingTheHappyPath
+WritingCleanTest
+TestingTheAuthMiddleware
+UnitTestingTheAuthMiddleware
+CodeCoverage
+Exercise
