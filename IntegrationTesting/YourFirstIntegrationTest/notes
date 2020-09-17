@@ -1,0 +1,58 @@
+This is the notes for YourFirstIntegrationTest
+
+In order to write intergration test for our express application we need to 
+download a library called superTest with this 
+we can send http request or endpoints just like when we were testing with postman
+
+npm supertest --save-dev
+
+now in index.js 
+when we are listening to the server this method returns a server object
+we should export this server from this module so we can use the server in the test file
+
+so lets put it in a constant called server and export it 
+
+time to make the first integration test
+first in the test folder we want to make a folder called integration and 
+a file inside called genres.test.js 
+
+then we are going create a describe block for the genres route 
+then inside of that another one that handles a specific handler 
+we are basically making a test suite
+first up is GET route handler
+
+now before we go any further we need to load the server object
+now there is a problem when loading the server like this
+the first time when we run the test the server will listen to 3000
+and if we reload jest or save jest will rerun the test and load the server again
+
+because of this we will get a expection because the server is running already 
+so when we do integration test we need to load the server before we run and then close the server when we are finished with each test
+in jasmine and jest we have a utility function called beforeEach
+ we pass a callback jest will call this function before each test inside of the test
+ this is where we are going to load the server so we are going to 
+
+grab the intialization of the server (the require function) and place it inside of 
+the beforeEach function
+
+we also have afterEach which we will use to close the server
+
+
+now we need to load the module supertest 
+this module returns a function we will call request 
+with this we can send a request to a endpoint 
+
+now in the get test function we are going to call the request function and as a argument pass the 
+server object after depending on the type of request we want to send we use that method after the request function
+so in this case we are going to use the get request
+
+now this returns a promise so we should await it this gives us a response(res) object
+and since we are using await we have to use async to mark our function 
+
+Now we can make a assertion
+we are going to expect the res object status to be 200
+now lets test it 
+
+it passes!
+but it is a little generic and we are not sure if it is returning all of the genres so
+in the next lecture we are going to tweak it to return it and prepopulate the test database 
