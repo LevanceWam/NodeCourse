@@ -1,0 +1,15 @@
+This is the notes for RefactoringWithConfidence
+
+We are going to move the new logic we added on the route handler that 
+gets one genre 
+the logic that checks if the objectId is valid so we can use it in multiple places 
+
+so in middleware folder we are going to add a new file
+then create the middleware function and add the logic there 
+
+now back in routes/genre we are going to load the middleware function
+then place in in the route handler function
+
+now that we have all the execution paths covered all of our test will pass 
+
+with automated test we can refactor our code in confidence 
