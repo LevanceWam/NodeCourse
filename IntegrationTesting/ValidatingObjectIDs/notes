@@ -1,0 +1,33 @@
+This is the notes for ValidatingObjectIDs
+
+we are going to add the second integration test this will test 
+if an invalid genre id is passed then we will get a 404
+
+for this test we do not need to populate the database this is because 
+if the id doesn't exist it will do the same thing as when there is nothing in the database
+because the id will not exist
+
+by not adding a document into the database this will make the test faster and code cleaner
+
+now instead of passing genre._id we are going to pass a random number on the route 
+we are going expect the status to be 404 and run the test
+
+The test failed recieving a 500 internal error instead of 404 not found
+when we looked at the error object in terminal we can see that we have an error coming from winston
+this is because earlier we defined a error middleware function that logged the error and sends out a 500 status error
+so the error object is coming from winston 
+
+we have seen this before this is when we had a id in the body of the request 
+we then installed a joi pluggin for validating object ids 
+
+so in routes/genre.js 
+before calling genre.findById we have to make sure that req.params.id is valid ObjectID
+other wise the route handler will not respond with 404
+
+so if it is not valid it will return a 404 message 
+and our test will pass
+
+now we have a problem because we have similar code like this around the project and we
+don't want to have to go around and put this evertwhere
+so on the next lecture we are going to refactor our code and 
+make ValidatingObjectIDs into a middleware function
