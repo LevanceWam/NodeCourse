@@ -70,7 +70,7 @@ describe('/api/genres', () => {
         });
 
         it('should return 400 if genre is less than 5 character', async () => {
-            const token = user.generateAuthToken();
+            const token = new User.generateAuthToken();
 
             const res = await request(server)
                 .post('/api/genre')
@@ -83,7 +83,7 @@ describe('/api/genres', () => {
         });
 
         it('should return 400 if genre is more than 50 character', async () => {
-            const token = user.generateAuthToken();
+            const token = new User.generateAuthToken();
 
             const name = new Array(52).join('a');
 
