@@ -1,0 +1,22 @@
+This is the notes for TestingTheAuthorization
+
+in this lecture we are going to test the route handler for creating 
+new genres
+In this handler we are going to need 2 test 
+for the first execution pass if the genre is invalid we are going to return a status of 400
+
+then the other path we need 2 test 
+we need to make sure that the genre is saved to the database 
+so we are going to have to query the database ans ensure that the genre is sent is in there 
+with the other test we want to make sure that genre is in the body of the request
+then we for the auth we need to make sure that the user is logged in if not return a 401 error
+
+
+in in the test file genre.test.js
+we are going to make a new test suite and we are going to start by 
+making a test for the authorization
+this time when we are using the request function the method we put at the end is going to be post 
+since we are using the post route handler 
+
+and at the end of it we are going to send a genre to test if we are logged in 
+
