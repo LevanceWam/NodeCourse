@@ -1,0 +1,15 @@
+This is the notes for TestingTheInvalidInputs
+
+now lets assume that the user is logged in but they are sending a invalid genre
+
+so we are going to load the user object so we can generate a token so we look like we logged in 
+then using the set method we are going to set the header 
+we pass the name of the header we want to use and then the value  which is our token 
+
+then we are going to send the minimum amount of characters to get a validation error 
+and test it 
+
+after testing the minimum amount we are going to test the maximum amount to make sure that works also
+but instead of having to type a long ugly string we are going to do it a easier way 
+
+if we get a 500 error this is because we didn't set up the requirements on joi to match the one in mongoose
