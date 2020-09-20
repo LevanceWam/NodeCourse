@@ -62,6 +62,7 @@ node nameOfFile.js
 <li><a href='#section9'>Authentication and Authorization</a></li>
 <li><a href='#section10'>Handling and Logging Errors</a></li>
 <li><a href='#section11'>Unit Testing</a></li>
+<li><a href='#section12'>Test-Driven Development</a></li>
 
 
 <h2 id=section1>Node Module System</h2>
@@ -469,3 +470,5 @@ brew services stop mongodb-community@4.4
 <p> We should write each integration test as if it is the only test in the world. Start with a clean state (database). Populate the database only with the data required by the test. Nothing more, nothing less. Clean up after our test using the afterEach function.</p>
 
 <a href="#home">Top</a>
+
+<h2 id=section12>Test-Driven Development</h2>
