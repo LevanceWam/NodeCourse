@@ -1,0 +1,43 @@
+This is the notes UnitTestingTheAuthMiddleware
+In the previous lecture we learned that we can not test every functionality 
+using integration test
+
+this is ehy in any application we need to use both unit test and integration test 
+this is because they complement each other 
+The only thing that matters is that we have a test to validate our functions
+
+So now lets write a unit test for if the user sends a valid jwt req.user will be populated 
+with the payload information 
+
+in test/unit make a folder called middleware 
+and a file called auth.test.js and create the describe block
+
+for this test we are going to need the user object and auth middleware function
+so we will load their modules at the top
+
+next we are going to create a token
+after that we call the auth function and pass 3 agruments req, res and next and we need to mock all of them
+
+so starting with req
+we are going to make a req object that will take a header just like the one we have in the auth middleware file
+we are then going to use mock to return the value of our token 
+
+now that we have the token and assuming it is valid we are going to the try block statement 
+where we verify the token and then set the user property and then call the next middleware function 
+next will also need a mock function
+
+net we are going to define the res object now with this test we are not working with the 
+res object because this is a happy path but we still need to pass res as an argument in the auth function
+
+for now we are going to write a generic expect and we will come back to it later 
+now that we ran the test and it pass lets make it more specific
+
+so before generating the auth token lets intialize the user object with 2 properties ._id and isAdmin these are the properties we put in the payload
+
+remember when defining the id for the user object if we put a id mongoose will ignore it 
+so we have to use mongoose.types.objectId to generate a valid id
+
+now to intialize these user object all we have to do is pass it 
+in the User model
+
+finally we change the expextation
