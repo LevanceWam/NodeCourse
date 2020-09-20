@@ -1,0 +1,17 @@
+This is the notes for SettingUpTheTestDB
+
+Remember that we run integration test off of real databases
+but we do not want this database to be apart of the development database or the production one 
+because in our integration test we are going to be adding and removing documents from the test database
+so we don't want to mess up any of the data in the other databases
+
+So we are going to create our own testing database
+So in the config folder we go to default.json and add a new key 
+called db  and we will set it to our default MongoDB connection string 
+then overwrite it in test config file or test envirnoment
+
+so in startup/db.js take the connection string and place it in the db key value and remove it from db.js 
+then in config/test.json add the db property and at the end of it put _test so signal that this is a test db
+
+now back in db we need to load the config module and then we are going to dynamically read the connection string on the envirnoment in which the application is running
+so in short this will read whether we are in the test, development, or production envirnoment 

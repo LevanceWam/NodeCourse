@@ -1,0 +1,35 @@
+This is the notes for WritingCleanTest
+
+In this lecture we are going to learn mosh's technique for refractoring
+code this is his own technique that he came up with 
+
+We are going to refractor this code we because we noticed there are some parts that are repeating themselves
+
+so at the top if the POST test suite we want to 
+define the happy path and then in each test we chnage one parameter that clearly aligns with the name of the test
+
+so first lets define the happy path
+so lets go back to were we defined it and bring it to the top
+we are going to want to mark it with a todo so we know to come back and put our happy path there 
+
+so at the top of the suite lets define a function called exec and paste the code in this function
+we want to return this immediately and don't forget if since we have await we have to prefix the function with async
+
+now back to the TODO we are going to await the function and since we didn't need the res object here we can leave it as is 
+
+now lets work on the first test 
+what we notice in the first test is that we don't have a token 
+so before we call the exec function we need to get rid of the token
+so lets define token at the top of the block this will make token undefined
+
+now back to the first test, if we want to conduct this test without the user being logged in  we just need to
+set the token to a empty string 
+this works because this test doesn't need a token 
+
+now for the other test we are generating a token for these test this is repetitive so we should set the token as 
+a valid jwt that way we don't have to keep defining it and since the test that doesn't need the token  this works
+perfect because it'll just set it to a empty string 
+
+so we need to move the generateAuthToken into a before each
+
+we are going to download the video for the rest of the notes it is a lot of information

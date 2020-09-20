@@ -1,0 +1,51 @@
+this is the notes for PopulatingTheTestDB
+
+to improve this test we are going to have to populate the test database with genres and change the expectation
+to another expection to assert that what we have in the body of the response is the 
+genre documents that we have in the database
+
+to populate the database we need the genre module
+we are going to use object deconstructing because we are exporting 2 objects 
+and all we want is the genre property
+
+now in the test block for the get handler before the promise
+we are going to call Genre.collection.insertMany() with this method we can add multiple documents to MongoDb
+in one go using one command
+
+now we just pass an array of objects with the name value
+this method returns a promise so we have to await it  
+
+now when we run the program as it is this will fail because atm we are expecting 2 documents 
+based off of the res body length (commented out) but because we are starting and stoping the test
+it keeps adding more documents so what we need to fo is 
+
+empty out the database when we are done with it to avoid this issue 
+we can do this by adding Genre.remove({})
+by passing this empty object this will clean out our test db this
+return a promise so we need to await it
+
+But not so fast their is a problem with the implementation
+if the test fails then this code where it is at will never be executed 
+so we need to move this into the afterEach function that way when we close the server it also cleans the database
+dont forget to mark the function as async 
+
+now we can see that the test are passing 
+
+Here is something to remember:
+We should write and execute each test as if the only test in the world
+it should always be executed in a clean state and if we modify the state we should always clean up after 
+otherwise the test will not be repeatable 
+
+now lets make our test less generic and more specific
+so in the body of the response we have objects with the name genre1 or genre2
+
+so we can write an expect like this 
+res.body.some. some is a array method this looks for the existence of an element in an array
+
+run the test and everything should pass
+
+Here is an exercise back in routes/genres.js
+look at the get a single genre route 
+this handler has 2 execution pass
+one if we dont get a genre otherwise we return a genre
+so we need 2 write 2 execution paths

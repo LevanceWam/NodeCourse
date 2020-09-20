@@ -1,0 +1,27 @@
+This is the notes for TestingTheAuthMiddleware
+
+so currently we have a single test to test the authorization if the  client doesn't give us a 
+token we expect the status to be 401
+
+but if we look at the authorization implementation in middleware/auth.js
+we can see that we have multiple execution paths
+the reason why we haven't tested this everywhere is because we would have to test this for every route 
+we use this for and we don't want to do that the auth test we did so far makes sense on where we have it 
+
+So what we need to do is create the auth middleware function own test
+so we need to make a file called auth.test.js in the test folder
+
+now here we are mixing the auth test and routes test in the future we are going to seperate them by folder
+like we have done with everything else
+
+next we are going to want to set up our describe block
+then complete our first test case 
+this is just like the one we did in the other lecture 
+now in the first case we are testing for if no token is being provided
+if we pass anything even null as a token jwt will still convert it 
+so it has to be empty for this test to return the status error that we want 
+
+for the next test case we want to send a invalid token
+for this we just need pass token as a random string and this test will pass
+
+the next test will be our happy path

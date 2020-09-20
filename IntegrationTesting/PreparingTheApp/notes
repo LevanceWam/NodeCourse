@@ -1,0 +1,12 @@
+This is the notes for PreparingTheApp
+
+Before we start the integration test we need to tweak the app a little bit
+first in package.json we need to add the flag --verbose to our test property
+This will help us troubleshoot problems when something goes wrong
+with this flag jest will give us extra information in the console
+
+in startup/logging.js we need to comment out the require for winston-mongodb 
+while we are trying to do integration test jest and this module doesn't work together very well
+and jest freezes the terminal if we try to use them together 
+
+also comment out line 24

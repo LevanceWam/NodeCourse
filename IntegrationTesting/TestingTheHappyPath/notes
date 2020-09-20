@@ -1,0 +1,20 @@
+This is the notes for TestingTheHappyPath
+
+so for our first execution path we had to write 2 test because there are 
+various possibilities that the input can be invalid
+This is what we meant by having to write the same amount or more test passed off off our 
+execution paths 
+
+now we are going to work on the happy path
+we want to test if the genre is saved in the data base
+
+so in the send method we are going to send genre object then we are going to
+use the genre model to query the database and find the document 
+
+now we expect the genre not to be null
+
+now we are going to do the last test 
+we want to make sure that the genre is in the body of the response
+
+so all we are going to do is to expect that the propert has a id and a name 
+to make sure it is the body

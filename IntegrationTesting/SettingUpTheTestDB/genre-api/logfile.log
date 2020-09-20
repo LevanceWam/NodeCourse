@@ -1,0 +1,11 @@
+{"message":"Something failed during start up","stack":"Error: Something failed during start up\n    at Object.<anonymous> (/Users/vancewamley/Desktop/NodeCourse/HandlingandLoggingErrors/UncaughtExpections/genre-api/index.js:32:7)\n    at Module._compile (internal/modules/cjs/loader.js:1138:30)\n    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)\n    at Module.load (internal/modules/cjs/loader.js:986:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:879:14)\n    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)\n    at internal/main/run_main_module.js:17:47","level":"error","timestamp":"2020-09-06T22:53:01.717Z"}
+{"level":"info","message":"listening on port 3000....","timestamp":"2020-09-08T03:28:42.282Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2020-09-08T03:28:42.309Z"}
+{"level":"info","message":"listening on port 3000....","timestamp":"2020-09-16T00:49:01.314Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2020-09-16T00:49:01.342Z"}
+{"level":"info","message":"listening on port 3000....","timestamp":"2020-09-17T16:35:06.423Z"}
+{"level":"info","message":"Connected to mongodb://localhost/wamVid...","timestamp":"2020-09-17T16:35:06.443Z"}
+{"level":"info","message":"listening on port 3000....","timestamp":"2020-09-17T16:36:43.164Z"}
+{"level":"info","message":"Connected to mongodb://localhost/wamVid_test...","timestamp":"2020-09-17T16:36:43.181Z"}
+{"level":"info","message":"listening on port 3000....","timestamp":"2020-09-17T16:37:03.771Z"}
+{"level":"info","message":"Connected to mongodb://localhost/wamVid...","timestamp":"2020-09-17T16:37:03.790Z"}

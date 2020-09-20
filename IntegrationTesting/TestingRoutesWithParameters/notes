@@ -1,0 +1,31 @@
+This is the notes for TestingRoutesWithParameters
+
+We were tasked with doing a exercise the exercise 
+was to create 2 integration test for the get route handler 
+that gets 1 specific genre
+
+so to start we need to make a new test suite fof the handler 
+once that is done we are going to create a new genre and remember since we are removing the 
+documents in the genre database when we reach this test we are basically at a empty database
+
+Then after that we are going to want to set up the response object and 
+with this one we put the route for getting one genre document but instead of adding the /:id to the 
+route we concatenate genre._id so it will look like this 
+/api/genre/ + genre._id
+
+Now to check and see in the response object body if the document is there we where going 
+to use the toMatchObject() method and pass genre 
+
+but the problem with this is when we run the test we are expecting _id to be an objectId but 
+when we look at why we failed we recieve a string 
+this is one of the issues  we have when we are writing mongoose models because 
+when we save genre to the database mongoose is assigning the id property and sends it to objectId
+and when we read it from the database it will be a string
+
+so this is our way around it 
+we will use the method toHaveProperty() and see if the object has a property and a value
+so in this case the property should be name and the value should be genre.name (this is so it is not generic or specific)
+now all of our test pass
+
+in the next lecture we are going to write a second integration test for this endpoint 
+for if the genre is not there 

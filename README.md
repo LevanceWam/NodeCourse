@@ -463,3 +463,5 @@ brew services stop mongodb-community@4.4
 <a href="#home">Top</a>
 
 <h2 id=section11>Integration Testing</h2>
+
+<p>We learned that with unit test we test functions with out their external resources or dependencies. But moving on to Integration Test we test our application along with the external resources as a whole. To write Integration test we need a real database. That is populated with data for testing now we send an http request to the endpoint we want to test and send a assertion.</p>
