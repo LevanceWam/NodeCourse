@@ -465,3 +465,5 @@ brew services stop mongodb-community@4.4
 <h2 id=section11>Integration Testing</h2>
 
 <p>We learned that with unit test we test functions with out their external resources or dependencies. But moving on to Integration Test we test our application along with the external resources as a whole. To write Integration test we need a real database. That is populated with data for testing now we send an http request to the endpoint we want to test and send a assertion.</p>
+
+<p> We should write each integration test as if it is the only test in the world. Start with a clean state (database). Populate the database only with the data required by the test. Nothing more, nothing less. Clean up after our test using the afterEach function.</p>
