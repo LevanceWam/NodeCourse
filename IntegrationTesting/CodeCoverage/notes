@@ -1,0 +1,12 @@
+This is the notes for CodeCoverage
+
+In this lecture we are going to learn how to see how much of our 
+code is covered by test with jest
+
+in package.json we need to modify our scripts property by adding the flag  coverage and then
+running npm test again
+
+now we have a report of all the code that is covered
+for better visual representation we have a html layout for us to see
+this is a prettier version that was in the terminal
+this is located in the coverage folder 
