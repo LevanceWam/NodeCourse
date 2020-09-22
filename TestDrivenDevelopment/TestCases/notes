@@ -1,0 +1,44 @@
+This is the notes for TestCases
+
+All right going of the last lecture we want to brainstorm and think of all
+test cases we can think of this list can change or extend later 
+
+when we send a request to this endpoint how should it behave 
+first we should make sure that only authorize users can call this 
+
+so we will write a test to:
+Return 401 if the client is not logged in
+
+next we want to assume that they did log in we want to check the customer id  and the movie id
+if the id is not provided:
+return 400 if customer Id is not provided
+return 400 if movie id is not provided
+
+
+now it is possible that the client sends both the customerid and the movie id
+but we dont have a rental for this combo
+so: 
+Return 404 if no rental found for this customer/movie
+
+now what if the rental is already processed as in the customer already returned the movie
+return 400 for bad request:
+
+Return 400 if rental already processed
+
+Now that we got some of the negative cases lets look at somw positive cases
+
+if we make it to this point we should be processing a valid return
+so:
+
+Return 200 if the request is valid
+Set the return date 
+calculate the rental fee
+increase the stock (add the movie back to stock)
+
+Finally what are we going to return to the client in the body of the response
+we can return the summary of the rental:
+
+Return the rental
+
+
+
