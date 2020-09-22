@@ -1,0 +1,19 @@
+This is the notes for ImplementTheReturns
+
+we are going to implement a new feature using TDD
+we want to add the ability to return a movie
+
+so our best option is to create a endpoint to return a movie
+Now we want to do this instead of giving the user the ability to modify the rental fee  and dateReturned property because 
+they can set it to zero or cause more trouble 
+
+we want the value and date to be set by us
+
+so we'll post to a endpoint called api/returns 
+we  will post to this endpoint to send a return request or return command
+in this request we need to add 2 ids movie and customer 
+now on the server we'll look up the rental with the movie and customer id combonation
+we'll get a document like our rental object  and here we well set the retuen date an dthe current date and time
+then calculate the rentalFee
+
+now that we have all of this information we know what we need to do to create our Test case which will be done in the next lecture.
