@@ -1,0 +1,48 @@
+This is the TestingTheAuthorization
+This is the notes for TestingTheAuthorization
+
+let's implement our first testCase
+so if the client is not logged in we return a 401 error 
+
+so for this test we want to send a post request to our endpoint 
+we need to load the supertest module to send a request
+once we load the module in the test we want to call the request function and pass the server object as an argument 
+then we are going to use the post method to make a post request to the route provided 
+
+then we want to include a valid object this way if we get an error we know its an authorization error
+not with the content of our request
+Also remember in ES6 if the value of the key is the key itself then all we have to do is pass the key
+example {customerId: customerId} -> {customerId} this is much cleaner
+
+next we await the response and expect the status to be 401 
+
+now when we run this test this test fails because we didn't implement the endpoint anywhere
+so by default jest fails the test and returns 404
+
+so in the routes folder create a file called returns.js
+inside of this file we need to load express and set up the router for this file 
+then begin writing the the route handler then we want to export the router object 
+
+now we need to include the router in the application object 
+so back in startup/routes.js we made this routes module 
+we need to load the returns module in here 
+
+now we go back into routes/returns.js and we need to write the simplest code to make our test pass
+so if we looked at our test the code all we need to make this test pass is a status of 401 
+and that is what wwe are going to write
+
+Now this does look a little weird but this is the point of test-driven development
+it forces us to write the code that we really need maybe in the future we will come up with
+a different implementation to make this simpler maybe as we continue to test we don't need This
+this is the whole cycle 
+
+Now in terminal when we run our test we get a few failing test due to the fact that 
+port 3000 is in use this was a mistake by us because when we are closing the server this returns a promise
+we needed to await this 
+
+NOTE: 
+This is what we kept getting 
+listen EADDRINUSE: address already in use :::3000 
+all we need to do is await the server because it is returning a promise 
+
+now for the next lecture we are going to work on returning 400 if the customer id is not provided so we should try this 
