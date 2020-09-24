@@ -1,0 +1,10 @@
+This is the notes for TestingTheValidRequest
+
+Here we are writing a test to see if we have a valid request
+so for this all we basically had to do was return a res of 200
+the only thing was that this breaks our 401 endpoint that we made earlier for our authorization
+
+The way to fix this is to remove the endpoint and load the auth module and pass it as a 
+second argument in the handler and everything is passing 
+
+for the next test we are going to set the return date 
