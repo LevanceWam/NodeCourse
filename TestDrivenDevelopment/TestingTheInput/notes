@@ -1,0 +1,16 @@
+This is the notes for TestingTheInput
+
+so the first thing we want to do is load a token to make sure the user is logged in but forgot the customer id
+so dirst load the user module and generate a token 
+
+Then in the response set the header 
+now in the send method we are going to delete the customer id and just send the movie id
+
+now at this point when we run the test it is going to fail 
+this is because the route handler is currently always sending a 401 error
+so lets modify the handler to make both test pass
+
+so in routes/return.js we wrote simple code to get test to pass
+now everything passes
+
+Now we need to do something similar for the movieID
