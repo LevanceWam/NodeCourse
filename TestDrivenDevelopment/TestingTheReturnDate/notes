@@ -1,0 +1,33 @@
+This is the notes for TestingTheReturnDate
+for this test we are going to set the return date 
+
+now to get our expectation we need to get the rental document or the 
+rental object from the database 
+
+so we find the rental by by the id and store it in a constant 
+now that we are not using the rental object here because this has beem
+in the memory but when we execute the request somewhere esle we are modifying 
+the database so that object in memory is not aware of changes in the database
+this is why we need to reload the database 
+
+now the expect we have here is general but we will edit it later 
+we ran the generic test after writing code to make sure that it passed 
+
+Now the next task at hand is this in our production code we need to set the current time
+to the rental when it is saved 
+but when we look at our test and when we are making that assertion against the property we don't 
+have the current time it'll be different from the properties 
+
+so when we are testing scenerios like this we should calculate the difference between the current time
+and the value of the property and ensure the time in between is 10 secs in the worse case scenario
+
+so first we are going to subtract
+new Date() -  rentalInDb.dateReturned
+this will return milliseconds 
+we want to store this in a constant 
+then we are going write and assertion to expect it to be less than 10 seconds 
+
+we run the test and everything passed
+now for the next test 
+we are going to want to calculate the rental fee this fee is basically the number of days the movie has been out 
+x movieDailyRentalRate
