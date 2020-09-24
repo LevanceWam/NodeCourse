@@ -1,0 +1,13 @@
+This is the notes for RefactoringTheValidationLogic
+
+Now the beautiful part about writing test is that now that our file is 100% covered 
+now we can refactor the function and come up with better implementation 
+then if we run all the test and they pass we should be confident that we didnt break anything 
+
+so lets get to refactoring 
+The first thing we want to do is get rid of our validation logic and replace it with joi
+
+now we may notice that we have this line in every file so 
+we are going to make it a middleware function
+
+dowmloaded the video it is a lot to cover 
