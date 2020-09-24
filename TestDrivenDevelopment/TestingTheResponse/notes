@@ -1,0 +1,22 @@
+This is the notes for TestingTheResponse
+
+for this test we are going to want to return the rental in the body of the response 
+so for this test we want to expect the res.body to match the object of rentalInDb (the rental in the database)
+
+now back in the routes/return file we need to write the code to make the code pass
+which is passing the rental object in the return statement with the 200 status
+now this fails the first time we ran this because of how 
+the 2 properties dateOut and dateReturned are set
+
+so in the rental object that we get from mongoose because these properties are set 
+to date their value is a standard JS dateTime
+However the object we are returning in the body of the response 
+that's the standard that is formatted using json so the value is a string
+
+this means that the assertion is a little to specific so we should try to make it a little more general
+We should look for the existence of certain properties the body of the response
+
+To make this a lot easier so we dont have to write a lot of toHaveProperties and make the code look messy
+we can write it out in a arraycContaining to make the job a lot easier 
+this is the same thing as doing that 
+
