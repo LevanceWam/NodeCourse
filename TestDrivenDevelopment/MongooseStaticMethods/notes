@@ -1,0 +1,81 @@
+This is the notes for MongooseStaticMethods
+
+The next thing we want to improve is how we look up a rental
+we are going to look into how to add the lookup method to the rental class  
+instead of having to use findOne
+
+but first time to learn some terminology 
+In OOP we have 2 types of methods
+static methods
+instance methods
+
+static is a method that is availiable directly on a class
+for example Rental.lookup the look up method is a static method 
+
+In contrast,
+An instance method is one that is availiable on a object 
+or an instance of a class 
+for example our generateAuthToken we made on the user class
+this method is a instance method because it is only availiable on 
+a instance of a class a object
+
+we use instance methods when we are working with a particular object 
+and the result is dependent on that object
+
+we use a static method when we are not working with a particular object 
+thats why they are availiable on a class
+
+so lets learn how to add a static method to a class
+
+so in models/rentals.js we need to extract the rental schema and store it 
+in order to make the static method (just like in models/users.js)
+
+once we extract it we are going to call it and its property statics 
+this returns a object and in this object we can define the static methods in the rental class
+so after that we are going to add the key 
+in this case like this:
+
+rentalSchema.statics.lookup
+
+we set it to a function and this function takes 2 parameters customerId and MovieId
+now inside of this function we are going to return the code we had to find the movieId and the customerId
+with this we dont have to await anymore because we simply return the promise we get here 
+and let the caller of the lookup method await that promise 
+then we replace rental with this 
+
+This is what the final look should be 
+
+(incorrect keep reading to findout why)
+rentalSchema.statics.lookup = function (customerId, movieId) {
+    return this.findOne({
+        'customer._id': req.body.customerId,
+        'movie._id': req.body.movieId
+    });
+}
+
+remember the keyword (this) will reference the rental class ok
+and aslo remember because we are using this we can not use the arrow function syntax
+
+now back in routes/return.js
+we need to prefix both customerId and movieId with req.body
+because they are available in the body of the request 
+
+now when we ran the test it failed because we forgot to remove req.body prefix 
+from the customerId and movieId in the diagram above 
+so we need to fix that 
+
+rentalSchema.statics.lookup = function (customerId, movieId) {
+    return this.findOne({
+        'customer._id': customerId,
+        'movie._id': movieId
+    });
+}
+
+we caught this bug from running our test 
+this is the importance of it it helps us pinpoint errors and save plenty of time 
+of trying to find mistakes 
+
+so even though they are hard we need to practice getting better at them and it will help us 
+out in the long run
+
+
