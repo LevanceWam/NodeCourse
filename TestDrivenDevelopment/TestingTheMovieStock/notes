@@ -1,0 +1,30 @@
+This is the notes for TestingTheMovieStock
+
+We need to write a test for 
+processing the return we need to increase the stock of the movie
+
+so first we are going to want to create the movie object in the before each
+then we are going to want to load the module at the top and create the new test 
+
+in the test we want to execute the exec function and find the movie object by its id and save it in a constant
+then we are going to make our assertion
+
+we want to expect that the movie in the db will equal the number in stock of the movie object plus 1
+we don't want to put the exact number because that would be a magic number 
+and we didn't store it because we are unsure if we are going to use it again
+
+now we need to go to the rental route and write the code to make this test pass
+now we can either use the query first approach or use the update first approach to 
+make this test pass
+we are going to do the updateFirst approach since this has to do with the database
+
+so we want to load the movie module first then we are going to want to
+after the rental save write the code for the movie because we are finished with everything related to the rental 
+object and dont need to save anything now we call movie.update()
+in the first argument we need to pass the id of the movie we are targeting 
+then for the second argument the actual update object so basically all the changes we are making 
+now we are going to use the inc operator and increment the number in stock by 1
+dont forget this is returning a promise 
+
+now we need to go back in the test and make sure to write the code to clean up the datebase
+we need to remove the movie document when we are done 

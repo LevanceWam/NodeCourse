@@ -62,6 +62,7 @@ node nameOfFile.js
 <li><a href='#section9'>Authentication and Authorization</a></li>
 <li><a href='#section10'>Handling and Logging Errors</a></li>
 <li><a href='#section11'>Unit Testing</a></li>
+<li><a href='#section12'>Test-Driven Development</a></li>
 
 
 <h2 id=section1>Node Module System</h2>
@@ -469,3 +470,11 @@ brew services stop mongodb-community@4.4
 <p> We should write each integration test as if it is the only test in the world. Start with a clean state (database). Populate the database only with the data required by the test. Nothing more, nothing less. Clean up after our test using the afterEach function.</p>
 
 <a href="#home">Top</a>
+
+<h2 id=section12>Test-Driven Development</h2>
+
+<p>Test-Driven Development (TDD) or test first is an approach to build software. With TDD we write our test before writing the production code. Here are some steps with TDD, First we write a failing test. This test should fail because we don't have any application code ti make it pass. Then we write the simplest code to make the code pass. Then we refactor if necessary. These 3 steps are the foundation of TDD and we repeat these steps until a functionality is completed.</p>
+
+<h4>Benefits of TDD</h4>
+
+<p>The source code will be testable. This makes it to where we don't have to change to the code to it testable. Second all of our code is covered by test. This allows us to refactor and deploy with confidents. Finally this often results in simpler implementation.</p>

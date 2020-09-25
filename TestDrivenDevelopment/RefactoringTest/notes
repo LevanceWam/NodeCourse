@@ -1,0 +1,5 @@
+This is the notes for RefactoringTest
+in this lecture we are going to refactor this code to make it a little bit cleaner
+so here we are going to do moshs refactoring
+
+for the next task we need to return 404 if the rental can not be found with the id combo

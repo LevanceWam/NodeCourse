@@ -1,0 +1,30 @@
+This is the notes for PopulatingTheDatabase
+
+first we are going to want to create our file return.test.js and 
+create the test suite 
+
+now we need load the server and populuate the database before each test 
+and then clean it up after 
+
+now this time we are not going to need to remove/clear the genres instead we ned to delete the
+rentals that we aere going to create 
+for this we are going to need to load the rental module
+
+now in the beforeEach function
+we are going to create the rental object and this object takes the movie object and the Customer object 
+dateOut will automatically fill its value so we dont have to worry about this (this is because we set it to default)
+
+when we are setting the ids for the movie and the customer we want to store them in a variable 
+because we are going to use the ids for posting the request
+
+now we can use this variable in the body of our request when we send it 
+we can also access it by typing rental.customer/movie but this makes our code messy
+
+now that we have the rental object built we can save it to the database
+remember this is a promise so we should await it 
+
+now we are going to test it to see if everything works
+
+the way we are going to test this is by looking for the rental id
+so we are going to use Rental.findById and store it in a constant called result
+then we take this result and expect it not to be null 
