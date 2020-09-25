@@ -1,0 +1,28 @@
+This is the notes for RefactoringTheDomainLogic
+
+Next we are going to tackle refactoring rentalFee logic
+currently the route handler is too busy calculating what is happening to the state
+of the rental object
+
+Any Logic that modifies the state of an object should be encapsulated in that object itself 
+remember the information expert principle and using this principle 
+we move the logic for generating an authentication token inside the user class
+so the user class has the info need to generate a authentication token
+thats why it is encapsulated there 
+
+so based off that all the logic that was here is based on the state of the rental 
+so all of the logic can be encapsulated in the rental object
+
+so we are going to modify the rental object and add a new method here 
+this method will set the return date to now and will calculate the rentalfee
+
+this time we are going to be using a instance method
+this is because this method should be available on a rental object 
+
+so this time we are going to use the methods property
+this is what it will look like rentalSchema.methods.return = function () {
+    this.dateReturned = new Date();
+
+    const rentalDays = moment().diff(this.dateOut, 'days')
+    this.rentalFee = rentalDays * this.movie.dailyRentalRate;
+}
