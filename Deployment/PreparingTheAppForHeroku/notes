@@ -1,0 +1,21 @@
+This is the notes for PreparingTheAppForHeroku
+
+Now it is time to prepare the app to be deployed to heroku 
+in package.json in the script property we need to define a npm command 
+here
+
+when we deploy the application on heroku it will look to start the application
+with npm start but we don't have it defined yet
+
+so in the script property we need to add the start command along with 
+node index.js as the value to start our application
+remember that nodemon is for development 
+
+now write npm start to see of it runs (don't forget to set private key if you have one)
+if it works we have one more thing to change to package.json
+
+we need to add a new property called engines 
+here we define the version of node we are using
+in terminal run node -v to find out and copy it here 
+
+with these changes we are ready to deploy to heroku
