@@ -1,0 +1,24 @@
+This is the intro into the section
+
+In this section we are going to learn how to deploy node applications 
+we have 2 options for this
+
+We can either use a platform as a service provider (PaaS) or we can use Docker
+
+the difference:
+With PaaS is a great option if we dont want to get involved with infrastructure  
+if we don't want to worry about servers, load balancers, reverse proxies or restarting the 
+applications on a crash then Paas is our best friend
+We have quite a few options with this approach
+heroku
+google cloud platform
+AWS
+Azure
+
+for this course we are going to use heroku because its easy and offers a lot of documentation
+
+
+In contrast, if we wanted more control over the deployment 
+if we want to deploy to our own web servers then docker is a great option
+with docker we can easily create a image of our application and simply
+deploy that image to any computer we want

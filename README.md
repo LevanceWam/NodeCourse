@@ -483,3 +483,16 @@ brew services stop mongodb-community@4.4
 <a href="#home">Top</a>
 
 <h2 id=section13>Deployment</h2>
+
+<h4>PaaS vs Docker</h4>
+
+<p>When deploying our application we have 2 options. The first is platform as a service (PaaS) or Docker. The difference is with Paas is a option if we dont want to get involved with infrastructure. If we don't want to worry about servers, load balancers, reverse proxies or restarting the applications on a crash then Paas is our best friend. In contrast, if we wanted more control over the deployment. If we want to deploy to our own web servers then docker is a great option with docker we can easily create a image of our application and simply deploy that image to any computer we want.</p>
+
+<p>Here are some PaaS:</p>
+
+<ul>
+    <li>heroku</li>
+    <li>google cloud platform</li>
+    <li>AWS</li>
+    <li>Azure</li>
+</ul>
