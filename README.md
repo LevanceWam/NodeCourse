@@ -63,6 +63,7 @@ node nameOfFile.js
 <li><a href='#section10'>Handling and Logging Errors</a></li>
 <li><a href='#section11'>Unit Testing</a></li>
 <li><a href='#section12'>Test-Driven Development</a></li>
+<li><a href='#section13'>Deployment</a></li>
 
 
 <h2 id=section1>Node Module System</h2>
@@ -478,3 +479,7 @@ brew services stop mongodb-community@4.4
 <h4>Benefits of TDD</h4>
 
 <p>The source code will be testable. This makes it to where we don't have to change to the code to it testable. Second all of our code is covered by test. This allows us to refactor and deploy with confidents. Finally this often results in simpler implementation.</p>
+
+<a href="#home">Top</a>
+
+<h2 id=section13>Deployment</h2>
