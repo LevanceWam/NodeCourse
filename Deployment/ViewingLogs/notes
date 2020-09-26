@@ -1,0 +1,17 @@
+This is the notes for ViewingLogs
+
+to understand why our application crashed  we can look at heroku logs in the terminal or the 
+dashboard we'll take a look at both ways 
+
+so in terminal we type:
+heroku logs
+
+this brings up a report of what happened and can show us what happened 
+
+the other option is to look at the dashboard 
+we click on the applicstion and find the more link and navigate to the log 
+now for some reason the logs on the dashboard doesn't tell us whats wrong so 
+its a litle bit better to run it in terminal 
+
+now the reason the application crashed is because we didn't define the envirnoment variable on heroku
+we will do that in the next lecture.

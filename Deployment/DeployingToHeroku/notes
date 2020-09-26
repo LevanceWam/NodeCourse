@@ -1,0 +1,38 @@
+This is the notes for DeployingToHeroku
+
+with our source code in a git repo we can deploy the application
+so here in the project folder we can run the command 
+
+(in terminal)
+heroku create (a name can be passed here if no name is passed then a default one is made )
+
+this command does 2 things 
+First it creates an app in heroku and second it creates a git remote in 
+our local git envirnoment 
+
+quick recap about git 
+git is a distrubed source control system so here in this folder we have a git repo
+but we can have one somewhere esle 
+in this case we are going to have a git repo in heroku
+now everytime we modify our code and commit the changes to the repo
+the changes the updated source are in our local git repo lare we can push these changes 
+from this local to ones like the one in heroku 
+
+one we run the heroku create command heroku will create an application
+then provide the address of the app on heroku
+
+now in the project folder if we run 
+git remote -v 
+we can see the list of remote repos
+this gives us the address of git repo
+
+now we can deploy the app with git push heroku master
+once it is done pushinh we get a address 
+copy that address and paste it in postman
+
+then lets send a get request to /api/genres
+
+now we are going to get an error 503 service is unavailable 
+we will have to deal with this time to time 
+
+in the next lecture we are going to look at the logs to see what is wrong to fix the problem 

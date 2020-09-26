@@ -1,0 +1,22 @@
+This is the notes for AddingTheCodeToGitRepository
+
+before we deploy to heroku we need to add our source code inside of a git repositort
+we need to make sure we have git on our machine 
+
+now in the project folder we need to run 3 commands to put our source code inside of a git repo 
+first we want to type in terminal:
+
+git init
+
+this initializes an empty git repo (locally)
+now we need to add a .gitignore this 
+file is used to exclude certian files and folders we don't need 
+
+the next command we need to to run is 
+
+git add . this command those staged files (files that are ready to be added to repo)
+will be committed to the repo
+
+so everything that is not in the gitignore will be committed into our repo
+
+then we do git commit -m 'some message' 

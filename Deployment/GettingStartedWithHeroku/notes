@@ -1,0 +1,16 @@
+This is the notes for GettingStartedWithHeroku
+
+in this lecture we are going to deploy our wamvid application to heroku 
+the 2 steps we need to follow is that we need to create a account and download herokuCLI driver
+Download here 
+https://devcenter.heroku.com/articles/heroku-cli
+
+(Next in terminal)
+so after we make the account we need to login in:
+heroku login
+
+Heds up if the login fails on our side this is because 
+we require the use of a proxy to connect with external http service 
+if this is the case we need to set an envirnoment variable
+on mac export HTTP_PROXY=http://proxy.server.com:1234
+then try to log in 

@@ -1,0 +1,27 @@
+This is the notes for PreparingTheAppForProduction
+
+So before we start with deployment we need to prepare the application
+for production
+
+we need to install a couple of packages
+the first one we are downloading is 
+helmet
+npm i helmet
+helmet is a middleware function that can protect our application from
+well known web vulnerabilites for a refresher go back to express advance topics
+
+the other package is called compression we use this to compress the http response that we send to the client
+npm i compression
+
+inside of the startup folder create a file called prod.js
+all of the middleware we need to install for a production envirnoment will go here 
+so the first one is helmet then compression
+
+now we are going to want to export our function 
+this function should take our application object because we wnat to use This
+to install these middleware pieces
+
+we use app.use to to get the middleware function
+next in the index we are going to want to use the prod module there 
+when we call the prod function we need to remember to pass the express appliction object 
+

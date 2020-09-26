@@ -1,0 +1,39 @@
+This is the notes for SettingEnviromentVariables
+
+we can set envirnoment variables using heroku cli 
+type this into terminal:
+
+heroku config:set wamVid_jwtPrivateKey=someValue
+
+we are also going to set the node envirnoment to production this is going to 
+improve the performance and generate less verbose messages
+
+heroku config:set NODE_ENV=production
+
+note that the envirnoment variables are case sensitive so make sure to use the right casing 
+we can type This
+heroku config 
+to see all of the envirnoment variables we have set 
+
+there is something about the cloud architecture in heroku we need to know about 
+in heroku by default we have one server called a dino if we want to scale the application we will add more dinos 
+these dinos have a temporary file system so everytime theyre restarted their 
+file system is wiped out thats why you can't store anything in their file system 
+so if you want to use storage there are various add ons for storing different kinds of data
+we re going to look at that later 
+
+the only thing that the dino/servers share are the envirnoment variables so if we have 10 dinos 
+we don't need to explicity set these envirnoment variables on each dino
+we set them at the application level and heroku will automatically replicate these across all
+dinos 
+
+since we set the envirnoment variables and everytime there is a change in one of these 
+heroku will restart the application
+
+so back to the logs we the app crashed again this time the mongo network filed 
+because it could not connect to the server
+
+this is because the connection string is set to the connection of a instance of mongoDB
+running on local host
+
+this is bad because we do not have a mongodb on heroku
