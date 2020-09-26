@@ -514,6 +514,9 @@ git add .
 <!-- After that we wan to write a commit message that gives up a overview what was sent in that push -->
 git commit 'some message'
 
+<!-- Next we need to create the appa on heroku this will provide us a link to it live -->
+heroku create (uniqueName) *If left blank will be given a default name 
+
 <!-- Finally we are going to push to the git repo that is on heroku and our code will be there  -->
 git push heroku master 
 ```
