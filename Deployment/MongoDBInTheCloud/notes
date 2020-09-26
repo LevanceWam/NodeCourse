@@ -1,0 +1,27 @@
+This is the notes for MongoDbInTheCloud
+
+In this lecture we are going to learn how to make a mongoDB database in the cloud 
+in the dashboard 
+1.click the application that we want 
+2.go to the resources tab 
+3.find the add on section and click more add-ons
+
+By default when we deploy to heroku we dont have a database if we want any kind of storage we are going to
+to use a add on
+once we click it we have plenty of add ons from email/sms, logging and much more
+the add on we are going to use is called mlab 
+
+4. click on the data store link and find mlab mongoDB
+it is not here any more but thiere is a way around this 
+we are going to go to the main site and create a account for free
+
+Note that mlab has been taken over by MongoDB Atlas 
+so far it is the same but we will see 
+
+so after the account creation create a new cluster and choose your
+cloud provider 
+
+we are going to aws 
+
+download the video to do the rest this is very hard
+
