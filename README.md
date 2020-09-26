@@ -496,3 +496,23 @@ brew services stop mongodb-community@4.4
     <li>AWS</li>
     <li>Azure</li>
 </ul>
+
+<h4>Heroku Deployment Process</h4>
+
+<p>This is the process in terminal I took to push my application to heroku</p>
+```
+<!-- First we need to login on heroku -->
+heroku login
+
+<!-- Next we are going to want to intialize a git repo on our machine  -->
+git init
+
+<!-- Then we want to add all the files that are going to be committed to the repo -->
+git add .
+
+<!-- After that we wan to write a commit message that gives up a overview what was sent in that push -->
+git commit 'some message'
+
+<!-- Finally we are going to push to the git repo that is on heroku and our code will be there  -->
+git push heroku master 
+```
