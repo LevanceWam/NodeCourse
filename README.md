@@ -500,6 +500,7 @@ brew services stop mongodb-community@4.4
 <h4>Heroku Deployment Process</h4>
 
 <p>This is the process in terminal I took to push my application to heroku</p>
+
 ```
 <!-- First we need to login on heroku -->
 heroku login
